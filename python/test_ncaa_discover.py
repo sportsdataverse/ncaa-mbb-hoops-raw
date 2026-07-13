@@ -6,8 +6,9 @@ import tempfile
 from pathlib import Path
 
 import polars as pl
+import pytest
 
-from ncaa_discover import discover_season
+from ncaa_discover import _season_str, discover_season
 
 # Sibling checkout: .../sdv-dev/{hoopR-dev/ncaa-mbb-hoops-raw, sdv-py}.
 FIXTURE = (
@@ -70,10 +71,33 @@ def test_write_master_merges_and_preserves_captured() -> None:
         assert after.height == master.height  # re-run adds nothing new
 
 
+def test_season_str_conversion() -> None:
+    # Ending-year int -> crosswalk "YYYY-YY" format (the live-path filter key).
+    assert _season_str(2026) == "2025-26"
+    assert _season_str(2010) == "2009-10"
+
+
+def test_discover_season_present_season_selects_teams_from_real_crosswalk() -> None:
+    # 2026 -> "2025-26", a season the bundled crosswalk actually contains --
+    # exercises the real (unmocked) crosswalk filter end to end, not team_ids bypass.
+    df = discover_season(2026, league="mbb", limit_teams=3, fetch_fn=lambda tid: _HTML)
+    assert df.height > 0
+
+
+def test_discover_season_raises_on_crosswalk_format_drift() -> None:
+    # No team plays in a season this far outside the bundled crosswalk range
+    # -- must fail loudly, not return an empty, complete-looking frame.
+    with pytest.raises(ValueError):
+        discover_season(1900, fetch_fn=lambda tid: _HTML)
+
+
 def main() -> None:
     test_discover_season_offline()
     test_discover_season_dedups_across_teams()
     test_write_master_merges_and_preserves_captured()
+    test_season_str_conversion()
+    test_discover_season_present_season_selects_teams_from_real_crosswalk()
+    test_discover_season_raises_on_crosswalk_format_drift()
     print("OK")
 
 

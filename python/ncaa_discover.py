@@ -6,13 +6,16 @@ id`` crosswalk (:func:`ncaa_mbb_team_ids`), the team-schedule-page parser
 (:class:`NcaaFetcher`) for the live path. Each game appears on two teams'
 schedules, so the core job here is: fetch every team page for a season,
 extract ``contests/{id}/`` links, and dedup across teams.
+
+Discovery runs single-threaded (one browser, one team page at a time) --
+Playwright's sync API is not thread-safe. Parallelism for the heavier
+capture stage is achieved by running separate launcher PROCESSES over
+disjoint shards, never internal threads sharing one browser.
 """
 
 from __future__ import annotations
 
-import concurrent.futures as cf
 import logging
-import os
 from pathlib import Path
 from typing import Callable, List, Optional, Union
 
@@ -28,6 +31,11 @@ FetchFn = Callable[[int], str]
 _MASTER_COLUMNS: List[str] = ["contest_id", "season", "captured"]
 
 __all__ = ["discover_season"]
+
+
+def _season_str(season: int) -> str:
+    """Ending-year int -> crosswalk ``"YYYY-YY"`` (2026 -> "2025-26")."""
+    return f"{season - 1}-{str(season)[-2:]}"
 
 
 def _default_fetch_fn() -> FetchFn:
@@ -52,10 +60,9 @@ def _team_contest_ids(team_id: int, fetch_fn: FetchFn, league: str) -> List[str]
 
 
 def discover_season(
-    season: Union[int, str],
+    season: int,
     *,
     league: str = "mbb",
-    workers: int = 1,
     limit_teams: Optional[int] = None,
     fetch_fn: Optional[FetchFn] = None,
     team_ids: Optional[List[int]] = None,
@@ -64,13 +71,13 @@ def discover_season(
     """Discover every ``contest_id`` played in *season* by sweeping team pages.
 
     Args:
-        season: Season to discover. Used both to filter the bundled
-            ``(team, season) -> id`` crosswalk (live path) and to stamp the
-            returned frame's ``season`` column.
+        season: Ending year of the season, e.g. ``2026`` for 2025-26 (matches
+            the launcher's ``--season``). Converted to the crosswalk's
+            ``"YYYY-YY"`` format to filter the bundled ``(team, season) ->
+            id`` crosswalk (live path); stamped as-is on the returned frame's
+            ``season`` column.
         league: ``"mbb"`` or ``"wbb"`` (only ``mbb``'s crosswalk is bundled
             as of this task; passed through to the schedule parser).
-        workers: Thread-pool fan-out for team-page fetches. Overridden by the
-            ``NCAA_WORKERS`` env var when set.
         limit_teams: Cap the number of teams swept (a small live smoke, e.g.
             one conference).
         fetch_fn: ``team_id -> html``. Defaults to a live fetch through one
@@ -88,6 +95,10 @@ def discover_season(
         ``contest_id`` (Utf8), ``season`` (Utf8).
 
     Raises:
+        ValueError: The crosswalk filter for *season* matched zero teams on
+            the live path (``team_ids`` not given) -- almost certainly a
+            season-format drift, raised loudly instead of silently returning
+            an empty, complete-looking contest list.
         RuntimeError: A team-page fetch hit a ban-suspect / exhausted-proxy
             response -- discovery stops immediately rather than returning a
             partial result silently.
@@ -95,22 +106,22 @@ def discover_season(
     if team_ids is not None:
         ids = list(team_ids)
     else:
+        season_str = _season_str(season)
         crosswalk = ncaa_mbb_team_ids()
-        ids = crosswalk.filter(pl.col("season") == str(season)).get_column("id").to_list()
+        ids = crosswalk.filter(pl.col("season") == season_str).get_column("id").to_list()
+        if not ids:
+            raise ValueError(
+                f"No teams found in crosswalk for season={season!r} (tried season_str={season_str!r}); "
+                "the NCAA team-ids season format may have drifted."
+            )
     if limit_teams is not None:
         ids = ids[:limit_teams]
 
     fn = fetch_fn if fetch_fn is not None else _default_fetch_fn()
-    n_workers = int(os.environ.get("NCAA_WORKERS", workers))
 
     contest_ids: "set[str]" = set()
-    if n_workers > 1 and len(ids) > 1:
-        with cf.ThreadPoolExecutor(max_workers=n_workers) as ex:
-            for team_ids_batch in ex.map(lambda tid: _team_contest_ids(tid, fn, league), ids):
-                contest_ids.update(team_ids_batch)
-    else:
-        for team_id in ids:
-            contest_ids.update(_team_contest_ids(team_id, fn, league))
+    for team_id in ids:
+        contest_ids.update(_team_contest_ids(team_id, fn, league))
 
     result = pl.DataFrame({"contest_id": sorted(contest_ids)}, schema={"contest_id": pl.Utf8}).with_columns(
         pl.lit(str(season)).alias("season")
