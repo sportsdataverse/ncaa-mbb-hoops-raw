@@ -150,3 +150,44 @@ def capture_contests(
                 closer(None, None, None)
 
     return counts
+
+
+def _parse_shard(spec: str) -> "tuple[int, int]":
+    """``"i/N"`` -> ``(i, N)``. Defaults to ``0/1`` (no sharding)."""
+    i_str, _, n_str = spec.partition("/")
+    i, n = int(i_str), int(n_str or "1")
+    if n < 1 or not (0 <= i < n):
+        raise ValueError(f"invalid --shard {spec!r}; expected 'i/N' with 0<=i<N")
+    return i, n
+
+
+def _main() -> None:
+    import argparse
+
+    import polars as pl
+
+    parser = argparse.ArgumentParser(description="Capture the 3-page bundle for a season's not-yet-captured contests.")
+    parser.add_argument("--season", type=int, required=True, help="Ending year of the season, e.g. 2026.")
+    parser.add_argument(
+        "--root",
+        default=str(Path(__file__).resolve().parents[1]),
+        help="Root of the raw data tree (default: repo root).",
+    )
+    parser.add_argument("--shard", default="0/1", help="This process's shard as 'i/N' (default: 0/1, no sharding).")
+    args = parser.parse_args()
+    i, n = _parse_shard(args.shard)
+
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+
+    master_path = Path(args.root) / "mbb" / "schedule_master.parquet"
+    master = pl.read_parquet(master_path)
+    pending = master.filter(pl.col("captured") == False).get_column("contest_id").to_list()  # noqa: E712
+    my_ids = shard(pending, i, n)
+    print(f"pending={len(pending)} shard={i}/{n} assigned={len(my_ids)}")
+
+    counts = capture_contests(my_ids, args.season, league="mbb", root=args.root)
+    print(f"captured={counts['captured']} skipped={counts['skipped']} failed={counts['failed']}")
+
+
+if __name__ == "__main__":
+    _main()

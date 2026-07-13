@@ -231,3 +231,61 @@ def parse_and_write(bundle: "dict[str, Any]", root: "Union[str, Path]", *, leagu
     """Convenience: :func:`parse_bundle` then :func:`write_parsed`."""
     parsed = parse_bundle(bundle, league=league)
     return write_parsed(root, league, parsed["contest_id"], parsed)
+
+
+def _parse_shard(spec: str) -> "tuple[int, int]":
+    """``"i/N"`` -> ``(i, N)``. Defaults to ``0/1`` (no sharding)."""
+    i_str, _, n_str = spec.partition("/")
+    i, n = int(i_str), int(n_str or "1")
+    if n < 1 or not (0 <= i < n):
+        raise ValueError(f"invalid --shard {spec!r}; expected 'i/N' with 0<=i<N")
+    return i, n
+
+
+def _main() -> None:
+    import argparse
+
+    from ncaa_bundle import read_bundle
+    from ncaa_capture import shard
+
+    parser = argparse.ArgumentParser(description="Parse raw captured bundles into combined per-contest JSON.")
+    parser.add_argument(
+        "--root",
+        default=str(Path(__file__).resolve().parents[1]),
+        help="Root of the raw data tree (default: repo root).",
+    )
+    parser.add_argument("--shard", default="0/1", help="This process's shard as 'i/N' (default: 0/1, no sharding).")
+    parser.add_argument("--league", default="mbb", help="League slug (default: mbb).")
+    args = parser.parse_args()
+    i, n = _parse_shard(args.shard)
+
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+
+    root = Path(args.root)
+    raw_dir = root / args.league / "raw"
+    bundle_paths = sorted(raw_dir.glob("**/*.json.gz"))
+
+    pending = []
+    for p in bundle_paths:
+        contest_id = p.name[: -len(".json.gz")]
+        if not (root / args.league / "json" / f"{contest_id}.json").exists():
+            pending.append(p)
+
+    my_paths = shard([str(p) for p in pending], i, n)
+    print(f"bundles={len(bundle_paths)} pending={len(pending)} shard={i}/{n} assigned={len(my_paths)}")
+
+    counts = {"parsed": 0, "failed": 0}
+    for path_str in my_paths:
+        try:
+            bundle = read_bundle(path_str)
+            parse_and_write(bundle, root, league=args.league)
+            counts["parsed"] += 1
+        except Exception:  # noqa: BLE001 -- one bad bundle must not abort the run
+            logger.warning("ncaa_parse CLI: failed to parse %s", path_str, exc_info=True)
+            counts["failed"] += 1
+
+    print(f"parsed={counts['parsed']} failed={counts['failed']}")
+
+
+if __name__ == "__main__":
+    _main()

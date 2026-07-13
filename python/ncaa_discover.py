@@ -159,3 +159,24 @@ def _write_master(result: pl.DataFrame, root: Union[str, Path], league: str) -> 
     path.parent.mkdir(parents=True, exist_ok=True)
     combined.write_parquet(path)
     return path
+
+
+def _main() -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Discover a season's contest_ids and write schedule_master.parquet.")
+    parser.add_argument("--season", type=int, required=True, help="Ending year of the season, e.g. 2026.")
+    parser.add_argument(
+        "--root",
+        default=str(Path(__file__).resolve().parents[1]),
+        help="Root of the raw data tree (default: repo root).",
+    )
+    args = parser.parse_args()
+
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+    result = discover_season(args.season, league="mbb", root=args.root)
+    print(f"discovered {result.height} contest_ids for season={args.season}")
+
+
+if __name__ == "__main__":
+    _main()
