@@ -12,6 +12,7 @@ import gzip
 import json
 import os
 from pathlib import Path
+from typing import Any
 
 __all__ = ["bundle_path", "write_bundle", "read_bundle", "is_captured"]
 
@@ -26,8 +27,8 @@ def write_bundle(
     league: str,
     season: str,
     contest_id: str,
-    pages: dict,
-    urls: dict,
+    pages: dict[str, Any],
+    urls: dict[str, Any],
     captured_at: str,
 ) -> Path:
     """Gzip-write the contract bundle for a contest, atomically.
@@ -65,7 +66,7 @@ def write_bundle(
     return path
 
 
-def read_bundle(path: str | Path) -> dict:
+def read_bundle(path: str | Path) -> dict[str, Any]:
     """Gunzip and parse a contest bundle written by :func:`write_bundle`."""
     with gzip.open(path, "rb") as f:
         return json.loads(f.read().decode("utf-8"))

@@ -53,6 +53,14 @@ A ban-suspect response is a **hard stop**, not a retry: the process exits
 immediately (`BAN-SUSPECT: capture halted at contest_id=...`). Wait out the
 cooldown before resuming -- do not immediately re-launch.
 
+⚠️ On a persistent ban, the upstream `NcaaFetcher` retries across the entire
+residential proxy pool with no delay before raising -- so a single
+ban-detection can send a ~pool-sized burst before the scraper hard-stops.
+This is bounded (the run terminates), but re-running immediately into a live
+ban will re-churn the pool. On a `BAN-SUSPECT` stop, WAIT for a multi-minute
+cooldown before resuming. (Follow-up: add inter-rotation backoff upstream in
+sdv-py.)
+
 ## Resume story
 
 Every stage is idempotent and re-runnable:
