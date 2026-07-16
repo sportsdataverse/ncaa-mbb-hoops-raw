@@ -179,3 +179,9 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Scrape logs (transient). NOTE: /mbb/ is deliberately NOT ignored -- the raw
+# data tree is this repo's payload and is committed in `feat(data): ...` chunks
+# (~4805 files tracked under mbb/), and the -data builder's HTTP ingest reads it
+# from this repo's main branch.
+/logs/
