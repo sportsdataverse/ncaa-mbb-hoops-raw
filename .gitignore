@@ -185,3 +185,4 @@ cython_debug/
 # (~4805 files tracked under mbb/), and the -data builder's HTTP ingest reads it
 # from this repo's main branch.
 /logs/
+/.omc
