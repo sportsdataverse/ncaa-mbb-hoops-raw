@@ -14,4 +14,8 @@ mkdir -p logs
 LOG="logs/parse_$(date +%Y%m%d_%H%M%S).log"
 echo "log -> ${LOG}  (watch: tail -f ${LOG})"
 "${SDV_PY}/.venv/Scripts/python.exe" python/ncaa_parse.py "$@" 2>&1 | tee -a "${LOG}"
-echo "EXIT=${PIPESTATUS[0]}" | tee -a "${LOG}"
+rc=${PIPESTATUS[0]}
+echo "EXIT=${rc}" | tee -a "${LOG}"
+# Propagate the python exit code -- a bare trailing `echo` would mask a
+# ban hard-stop as success (it did: the 2026-07-13 backfill reported rc=0).
+exit "${rc}"
