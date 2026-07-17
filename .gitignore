@@ -186,3 +186,8 @@ cython_debug/
 # from this repo's main branch.
 /logs/
 /.omc
+
+# Proxy canary: creds + scorecards are local-only (canary_vendors.toml.example
+# IS committed; the filled-in canary_vendors.toml is NOT).
+/canary_vendors.toml
+/canary_out/

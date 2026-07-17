@@ -8,6 +8,38 @@ here is either measured live or explicitly flagged as unproven.
 
 ---
 
+## 2026-07-16 — bm-verify SOLVED (supersedes the "buy a better service" framing below)
+
+**A local browser DOES clear stats.ncaa.org bm-verify — cheaply, no paid service.**
+Winning transport, proven live (10-game canary PASS: 19/20 pages clean, ~11s/page
+warm, one sticky US residential IP, zero degradation):
+
+- **patchright** — anti-detect Playwright fork (`navigator.webdriver=false`,
+  `Runtime.enable` CDP leak patched). `uv pip install patchright && patchright install chromium`.
+- `launch_persistent_context(headless=False, args=["--headless=new"])` → real
+  GPU/ANGLE render (verified RTX 3090 D3D11, **not** SwiftShader). Needs a real-GPU host.
+- **`user_agent` = a real Chrome UA** — **THE fix.** New-headless leaks `HeadlessChrome`
+  in `navigator.userAgent`; that single tell was why every prior browser attempt failed.
+- **US residential sticky proxy.** Decodo: `user-<sub>-country-us-session-<id>@gate.decodo.com:7000`
+  (the port-based `:10001` cred handed out random-geo Spain → flagged).
+- **Navigate once per URL**, then poll the in-page `fetch()` until `_abck` mints;
+  **nav_timeout ≥45 s** (residential is slow; 25 s times out the cold solve). Cold
+  ~45–80 s, warm ~11 s (the cookie is reused across pages in the same browser).
+
+**This corrects the sections below.** The datacenter finding stands (§4/§7 —
+ProxyBonanza is datacenter, ASN-confirmed), but the remedy is **not** a managed
+browser or a paid sensor API. Ruled out en route: datacenter proxies (403), vanilla
+Playwright new-headless (challenge — `webdriver=true`), `curl_cffi` fingerprint-only
+`chrome146` (2310-byte challenge — the site REQUIRES JS-sensor execution, so JA3Proxy
+and the OSS "fingerprint-only HTTP client" class can't work either), and OSS sensor
+generators (none is a working/safe/maintained Python web generator).
+
+**Cost:** ~$9–45 per 6300-game season (patchright free + residential ~$3/GB).
+Tooling: `python/ncaa_canary.py` (`proxy_patchright` vendor). **Production TODO:**
+fold this transport into sdv-py's fetch layer (replace `mbb_ncaa_fetch._PlaywrightTransport`).
+
+---
+
 ## 1. The access model
 
 Two page classes, and they behave completely differently:
