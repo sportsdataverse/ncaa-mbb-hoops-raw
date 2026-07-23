@@ -5,22 +5,30 @@
 #   ./scripts/run_capture.sh --season 2026                  # 1 worker
 #   ./scripts/run_capture.sh --season 2026 --shard 0/2 &     # worker 0 of 2
 #   ./scripts/run_capture.sh --season 2026 --shard 1/2 &     # worker 1 of 2
+# Canary-vendor transport (creds live in canary_vendors.toml, not .Renviron):
+#   ./scripts/run_capture.sh --season 2026 --vendor decodo_patchright
 set -uo pipefail
 cd "$(dirname "$0")/.." || exit 1   # -> ncaa-mbb-hoops-raw repo root
 ROOT="$(pwd)"
 SDV_PY="C:/Users/saiem/Documents/GitHub-Data/sdv-dev/sdv-py"
 
-RENV="${HOME}/.Renviron"
-[ -f "$RENV" ] || RENV="${HOME}/Documents/.Renviron"
-getcred() { grep -E "^$1=" "$RENV" 2>/dev/null | head -1 | cut -d= -f2- | tr -d '"' | tr -d '\r'; }
+if [[ " $* " == *" --vendor"* ]]; then
+  # Vendor transport: creds come from canary_vendors.toml -- ProxyBonanza
+  # env creds are not needed and their absence must not block the run.
+  echo "canary-vendor transport requested -- skipping ProxyBonanza cred check"
+else
+  RENV="${HOME}/.Renviron"
+  [ -f "$RENV" ] || RENV="${HOME}/Documents/.Renviron"
+  getcred() { grep -E "^$1=" "$RENV" 2>/dev/null | head -1 | cut -d= -f2- | tr -d '"' | tr -d '\r'; }
 
-export SDV_PY_PROXYBONANZA_KEY="$(getcred PROXYBONANZA_API_KEY)"
-export SDV_PY_PROXYBONANZA_PKG="$(getcred PROXY_PKG)"
-if [ -z "${SDV_PY_PROXYBONANZA_KEY}" ] || [ -z "${SDV_PY_PROXYBONANZA_PKG}" ]; then
-  echo "ERROR: proxy creds not found in ${RENV} (need PROXYBONANZA_API_KEY + PROXY_PKG)" >&2
-  exit 2
+  export SDV_PY_PROXYBONANZA_KEY="$(getcred PROXYBONANZA_API_KEY)"
+  export SDV_PY_PROXYBONANZA_PKG="$(getcred PROXY_PKG)"
+  if [ -z "${SDV_PY_PROXYBONANZA_KEY}" ] || [ -z "${SDV_PY_PROXYBONANZA_PKG}" ]; then
+    echo "ERROR: proxy creds not found in ${RENV} (need PROXYBONANZA_API_KEY + PROXY_PKG)" >&2
+    exit 2
+  fi
+  echo "proxy creds loaded from ${RENV} (values hidden)"
 fi
-echo "proxy creds loaded from ${RENV} (values hidden)"
 
 export PYTHONPATH="${SDV_PY}:${ROOT}/python"
 export PYTHONUNBUFFERED=1
