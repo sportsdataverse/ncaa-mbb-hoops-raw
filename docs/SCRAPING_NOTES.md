@@ -69,11 +69,14 @@ never again). Delete that dir to force a fresh sweep.
 
 **2025 season result (2026-08-01):** 6,293/6,296 captured (3 contests are
 pageless — cancelled games), all parsed. **4.5% of games (282) parse to empty
-`lineups`+`shots` from HEALTHY bundles** — full-size individual_stats pages,
-so §6's "individual_stats page failure" attribution for 2026's 3.3% is wrong
-(at least partly): the lineup ENGINE bails on games with broken substitution
-data and the per-family swallow hides it. Recoverable OFFLINE by hardening
-the engine + re-parsing; no recapture needed. Tracked follow-up.
+`lineups`+`shots` — RESOLVED as an upstream data limitation, not a defect:**
+all 282 are games vs non-NCAA opponents (NAIA etc.) whose individual_stats
+page carries only ONE team block (classified exhaustively: 282/282 one-title,
+0 name-match failures). `parse_team_name` requires both team titles, so the
+engine cannot build 5-on-5 stints — correctly. `pbp`/`box`/`possessions`
+still land for these games. This supersedes BOTH prior attributions (§6's
+"individual_stats page failure" and the earlier "engine bails on broken
+substitution data"). Expect the same few-percent rate every season.
 
 **Campaign shape:** `run_mbb_backfill_range.sh START END` — seasons descending,
 per-season rounds of (discover-if-needed → capture CHUNK=1400 → parse), cooldowns
