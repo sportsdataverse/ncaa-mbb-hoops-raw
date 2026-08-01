@@ -208,9 +208,22 @@ class _PatchrightTransport:
         }
         if proxy:
             parts = urlsplit(proxy)
+            username = parts.username
+            if username and "-session-" in username:
+                # Sticky-session vendors (Decodo) pin the egress IP to the
+                # session id in the username. Re-mint it on every LAUNCH so a
+                # relaunch after a failed solve lands on a fresh IP -- an aged
+                # session (~70min ceiling) stops clearing bm-verify, and
+                # retrying it on the same IP fails forever.
+                import re as _re
+                import uuid as _uuid
+
+                username = _re.sub(
+                    r"(-session-)\w+", rf"\g<1>{_uuid.uuid4().hex[:12]}", username
+                )
             launch["proxy"] = {
                 "server": f"{parts.scheme}://{parts.hostname}:{parts.port}",
-                **({"username": parts.username} if parts.username else {}),
+                **({"username": username} if username else {}),
                 **({"password": parts.password} if parts.password else {}),
             }
         self._ctx = self._pw.chromium.launch_persistent_context(**launch)
@@ -233,6 +246,9 @@ class _PatchrightTransport:
             status, text = int(result["status"]), str(result["text"])
             if not _browser_response_unsolved(text):
                 return status, text
+        # Retire the (likely aged-out) session so the caller's retry relaunches
+        # on a freshly-minted sticky id instead of re-failing the same IP.
+        self.close()
         raise RuntimeError(
             f"patchright: bm-verify not passed after {self.solve_attempts} attempts ({len(text)}-byte body)"
         )
