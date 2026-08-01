@@ -31,6 +31,11 @@ FetchFn = Callable[[int], str]
 
 _MASTER_COLUMNS: List[str] = ["contest_id", "season", "captured"]
 
+#: Fetch attempts per team page before skipping it (bm-verify flake tolerance).
+_TEAM_TRIES = 3
+#: Consecutive fully-failed teams that reads as a ban -> abort the sweep.
+_MAX_CONSECUTIVE_TEAM_FAILURES = 5
+
 __all__ = ["discover_season"]
 
 
@@ -67,12 +72,10 @@ def _team_contest_ids(team_id: int, fetch_fn: FetchFn, league: str) -> List[str]
         html = fetch_fn(team_id)
     except RuntimeError:
         # NcaaFetcher raises RuntimeError on a ban-suspect / exhausted-proxy
-        # response ("BAN-SUSPECT:<marker>" is folded into the message) --
-        # hard stop rather than silently skipping the team.
-        logger.error(
-            "NCAA discovery hard-stopped on team_id=%s (ban-suspect / fetch failure)",
-            team_id,
-        )
+        # response ("BAN-SUSPECT:<marker>" is folded into the message). The
+        # sweep in discover_season decides retry/skip/abort -- one flaky
+        # bm-verify solve must not read as a ban.
+        logger.warning("fetch failed for team_id=%s (bm-verify / ban-suspect)", team_id)
         raise
     schedule = parse_ncaa_bb_team_schedule(html, team_id, league=league)
     return schedule.get_column("game_id").drop_nulls().to_list()
@@ -140,27 +143,49 @@ def discover_season(
 
     fn = fetch_fn if fetch_fn is not None else _default_fetch_fn()
 
-    # Cold-start warm-up (live fetcher only): the FIRST navigation in a fresh
-    # browser profile can fail bm-verify before the Akamai sensor cookie mints
-    # (observed 2026-08-01: first fetch of a session fails, every later fetch
-    # clears -- regardless of page type). The sweep below hard-stops on any
-    # failure by design (ban detection), so burn up to two tolerant attempts
-    # on the first team before entering it.
-    if fetch_fn is None and ids:
-        for attempt in (1, 2):
+    # Per-team tolerance + a consecutive-failure ban detector. bm-verify
+    # clearing is flaky per navigation (~5% per page on the canary-validated
+    # vendor; the first navigation of a cold profile fails most of all), so a
+    # ~350-team sweep that hard-stops on the FIRST failure has ~zero chance of
+    # completing (0.95^350). Each game appears on TWO teams' pages, so a team
+    # skipped after retries is nearly lossless. A real ban looks like EVERY
+    # team failing -- abort only on a consecutive-failure run.
+    contest_ids: "set[str]" = set()
+    consecutive = 0
+    skipped: "List[int]" = []
+    for team_id in ids:
+        got: Optional[List[str]] = None
+        for _ in range(_TEAM_TRIES):
             try:
-                fn(ids[0])
+                got = _team_contest_ids(team_id, fn, league)
                 break
             except RuntimeError:
-                logger.info(
-                    "cold-start warm-up attempt %d failed (bm-verify still minting); %s",
-                    attempt,
-                    "retrying" if attempt == 1 else "proceeding to the sweep",
+                continue
+        if got is None:
+            consecutive += 1
+            skipped.append(team_id)
+            logger.warning(
+                "team_id=%s skipped after %d tries (%d consecutive team failures)",
+                team_id,
+                _TEAM_TRIES,
+                consecutive,
+            )
+            if consecutive >= _MAX_CONSECUTIVE_TEAM_FAILURES:
+                raise RuntimeError(
+                    f"discovery aborted: {consecutive} consecutive teams failed "
+                    f"(ban-suspect); {len(contest_ids)} contest_ids gathered before abort"
                 )
-
-    contest_ids: "set[str]" = set()
-    for team_id in ids:
-        contest_ids.update(_team_contest_ids(team_id, fn, league))
+            continue
+        consecutive = 0
+        contest_ids.update(got)
+    if skipped:
+        logger.warning(
+            "discovery finished with %d/%d teams skipped: %s%s",
+            len(skipped),
+            len(ids),
+            skipped[:10],
+            "..." if len(skipped) > 10 else "",
+        )
 
     result = pl.DataFrame(
         {"contest_id": sorted(contest_ids)}, schema={"contest_id": pl.Utf8}
