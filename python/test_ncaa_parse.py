@@ -30,7 +30,9 @@ KNOWN_GOOD_GAME = "5722355"
 def _fixture_bundle(contest_id: str) -> dict:
     pbp_html = (_FIX / f"pbp_{contest_id}.html").read_text(encoding="utf-8")
     box_html = (_FIX / f"box_{contest_id}.html").read_text(encoding="utf-8")
-    stats_html = (_FIX / f"individual_stats_{contest_id}.html").read_text(encoding="utf-8")
+    stats_html = (_FIX / f"individual_stats_{contest_id}.html").read_text(
+        encoding="utf-8"
+    )
     return {
         "contest_id": contest_id,
         "league": "mbb",
@@ -51,7 +53,7 @@ def test_all_fixtures_produce_six_family_keys() -> None:
         parsed = parse_bundle(bundle)
         assert parsed["contest_id"] == contest_id
         assert isinstance(parsed["contest_id"], str)
-        assert set(parsed.keys()) == {"contest_id", *FAMILY_KEYS}
+        assert set(parsed.keys()) == {"contest_id", "teams", *FAMILY_KEYS}
         for key in FAMILY_KEYS:
             assert isinstance(parsed[key], list), f"{contest_id}/{key} not a list"
 
@@ -74,7 +76,7 @@ def test_write_parsed_round_trips_valid_json() -> None:
         # plain utf-8 JSON, not gzip
         reloaded = json.loads(path.read_text(encoding="utf-8"))
         assert reloaded["contest_id"] == KNOWN_GOOD_GAME
-        assert set(reloaded.keys()) == {"contest_id", *FAMILY_KEYS}
+        assert set(reloaded.keys()) == {"contest_id", "teams", *FAMILY_KEYS}
 
 
 def test_parse_and_write_convenience() -> None:
