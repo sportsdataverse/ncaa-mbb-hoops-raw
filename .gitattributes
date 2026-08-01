@@ -5,3 +5,6 @@
 mbb/raw/** binary
 mbb/**/*.json.gz binary
 *.json.gz binary
+
+# Parquet is binary — `* text=auto` must never get a vote on it
+*.parquet binary
