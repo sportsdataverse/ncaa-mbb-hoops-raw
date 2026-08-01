@@ -230,3 +230,30 @@ def test_capture_contests_uses_injected_fetcher(tmp_path) -> None:
     counts = capture_contests(["1"], 2026, league="mbb", root=tmp_path, fetcher=fk)
     assert counts == {"captured": 1, "skipped": 0, "failed": 0}
     assert fk.closed
+
+
+def test_select_pending_is_scoped_to_its_season(tmp_path):
+    """Pending ids must be THIS season's only.
+
+    The master accumulates every backfilled season. Filtering on `captured`
+    alone leaks other seasons' ids into the run, and since is_captured() looks
+    under raw/{this season}/, a foreign id always reads as un-captured and is
+    re-fetched into the wrong partition.
+    """
+    import polars as pl
+
+    from ncaa_capture import _select_pending
+
+    master = tmp_path / "schedule_master.parquet"
+    pl.DataFrame(
+        {
+            "contest_id": ["100", "101", "200", "201"],
+            "season": ["2024", "2024", "2025", "2025"],
+            "captured": [False, False, False, False],
+        }
+    ).write_parquet(master)
+
+    assert _select_pending(master, 2024) == ["100", "101"]
+    assert _select_pending(master, 2025) == ["200", "201"]
+    # int season vs Utf8 master column must not silently match nothing
+    assert _select_pending(master, 2099) == []

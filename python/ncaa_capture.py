@@ -56,9 +56,7 @@ def _default_fetch_pages_fn() -> FetchPagesFn:
         return {
             "play_by_play": fetcher.fetch_game_pbp(contest_id, force=True),
             "box_score": fetcher.fetch_game_box(contest_id, force=True),
-            "individual_stats": fetcher.fetch_game_individual_stats(
-                contest_id, force=True
-            ),
+            "individual_stats": fetcher.fetch_game_individual_stats(contest_id, force=True),
         }
 
     return fetch
@@ -138,9 +136,7 @@ def capture_contests(
     counts = {"captured": 0, "skipped": 0, "failed": 0}
     consecutive_failures = 0
 
-    fetch_fn = (
-        fetch_pages_fn if fetch_pages_fn is not None else _default_fetch_pages_fn()
-    )
+    fetch_fn = fetch_pages_fn if fetch_pages_fn is not None else _default_fetch_pages_fn()
 
     # An injected *fetcher* (e.g. a canary-vendor transport from
     # :func:`_vendor_fetcher`) takes precedence; ownership transfers here either
@@ -164,9 +160,7 @@ def capture_contests(
                     contest_id,
                     exc,
                 )
-                raise SystemExit(
-                    f"BAN-SUSPECT: capture halted at contest_id={contest_id}: {exc}"
-                ) from exc
+                raise SystemExit(f"BAN-SUSPECT: capture halted at contest_id={contest_id}: {exc}") from exc
 
             if not all(_is_clean(pages.get(key, "")) for key in PAGE_KEYS):
                 logger.warning(
@@ -175,10 +169,7 @@ def capture_contests(
                 )
                 counts["failed"] += 1
                 consecutive_failures += 1
-                if (
-                    max_consecutive_failures
-                    and consecutive_failures >= max_consecutive_failures
-                ):
+                if max_consecutive_failures and consecutive_failures >= max_consecutive_failures:
                     msg = (
                         f"SOFT-BAN: capture halted after {consecutive_failures} consecutive "
                         f"challenge failures (last contest_id={contest_id}); the browser session "
@@ -202,8 +193,7 @@ def capture_contests(
 
             if max_contests is not None and counts["captured"] >= max_contests:
                 logger.info(
-                    "chunk complete: %d new bundles captured (--max-contests) -- "
-                    "stopping cleanly; re-run to continue",
+                    "chunk complete: %d new bundles captured (--max-contests) -- stopping cleanly; re-run to continue",
                     counts["captured"],
                 )
                 break
@@ -241,16 +231,12 @@ def _vendor_fetcher(
 
     cfg_path = Path(root) / "canary_vendors.toml"
     if not cfg_path.exists():
-        raise SystemExit(
-            f"--vendor requires {cfg_path} (copy from canary_vendors.toml.example)"
-        )
+        raise SystemExit(f"--vendor requires {cfg_path} (copy from canary_vendors.toml.example)")
     with open(cfg_path, "rb") as f:
         doc = tomllib.load(f)
     vendors = {v.get("name"): dict(v) for v in doc.get("vendor", [])}
     if vendor_name not in vendors:
-        raise SystemExit(
-            f"vendor {vendor_name!r} not in {cfg_path} (have: {sorted(vendors)})"
-        )
+        raise SystemExit(f"vendor {vendor_name!r} not in {cfg_path} (have: {sorted(vendors)})")
     vendor = vendors[vendor_name]
     reason = _vendor_ready(vendor)
     if reason is not None:
@@ -258,9 +244,7 @@ def _vendor_fetcher(
 
     if vendor.get("proxies"):
         stamp = f"cap{int(time.time())}w{shard_i}"
-        vendor["proxies"] = [
-            _re.sub(r"-session-\w+", f"-session-{stamp}", p) for p in vendor["proxies"]
-        ]
+        vendor["proxies"] = [_re.sub(r"-session-\w+", f"-session-{stamp}", p) for p in vendor["proxies"]]
         if shard_n > 1:
             # Parallel workers each start the rotation at a different offset so
             # they ride DISJOINT sticky ports (all starting at index 0 would
@@ -300,14 +284,32 @@ def _parse_shard(spec: str) -> "tuple[int, int]":
     return i, n
 
 
+def _select_pending(master_path: Union[str, Path], season: int) -> "List[str]":
+    """Contest ids not yet captured for *season* (dtype-matched Utf8 season key).
+
+    Split out of :func:`_main` so the season filter is unit-testable. The
+    master holds EVERY backfilled season's rows, so filtering on ``captured``
+    alone returns other seasons' ids too -- and because
+    :func:`ncaa_bundle.is_captured` looks under ``raw/{THIS run's season}/``,
+    a foreign id always reads as un-captured and gets re-fetched into the
+    wrong partition. Contest ids sort ascending by season, so the damage only
+    starts once a worker exhausts its own season's slice mid-chunk -- which is
+    why this stayed invisible through the 2025 and 2026 backfills.
+    """
+    import polars as pl
+
+    master = pl.read_parquet(master_path)
+    return (
+        master.filter((pl.col("captured") == False) & (pl.col("season") == str(season)))  # noqa: E712
+        .get_column("contest_id")
+        .to_list()
+    )
+
+
 def _main() -> None:
     import argparse
 
-    import polars as pl
-
-    parser = argparse.ArgumentParser(
-        description="Capture the 3-page bundle for a season's not-yet-captured contests."
-    )
+    parser = argparse.ArgumentParser(description="Capture the 3-page bundle for a season's not-yet-captured contests.")
     parser.add_argument(
         "--season",
         type=int,
@@ -346,9 +348,7 @@ def _main() -> None:
     parser.add_argument(
         "--max-consecutive-failures",
         type=int,
-        default=_env_int(
-            "NCAA_MAX_CONSECUTIVE_FAILURES", DEFAULT_MAX_CONSECUTIVE_FAILURES
-        ),
+        default=_env_int("NCAA_MAX_CONSECUTIVE_FAILURES", DEFAULT_MAX_CONSECUTIVE_FAILURES),
         help=(
             "Hard-stop after N consecutive challenge-not-cleared contests -- the soft-ban "
             "guard (env NCAA_MAX_CONSECUTIVE_FAILURES; 0 disables). "
@@ -358,15 +358,10 @@ def _main() -> None:
     args = parser.parse_args()
     i, n = _parse_shard(args.shard)
 
-    logging.basicConfig(
-        level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s"
-    )
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
     master_path = Path(args.root) / "mbb" / "schedule_master.parquet"
-    master = pl.read_parquet(master_path)
-    pending = (
-        master.filter(pl.col("captured") == False).get_column("contest_id").to_list()
-    )  # noqa: E712
+    pending = _select_pending(master_path, args.season)
     my_ids = shard(pending, i, n)
     print(f"pending={len(pending)} shard={i}/{n} assigned={len(my_ids)}")
     if args.vendor:
@@ -377,15 +372,11 @@ def _main() -> None:
         args.season,
         league="mbb",
         root=args.root,
-        fetcher=_vendor_fetcher(args.vendor, args.root, shard_i=i, shard_n=n)
-        if args.vendor
-        else None,
+        fetcher=_vendor_fetcher(args.vendor, args.root, shard_i=i, shard_n=n) if args.vendor else None,
         max_contests=args.max_contests,
         max_consecutive_failures=args.max_consecutive_failures,
     )
-    print(
-        f"captured={counts['captured']} skipped={counts['skipped']} failed={counts['failed']}"
-    )
+    print(f"captured={counts['captured']} skipped={counts['skipped']} failed={counts['failed']}")
 
 
 if __name__ == "__main__":
