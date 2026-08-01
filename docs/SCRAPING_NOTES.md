@@ -1,10 +1,63 @@
 # stats.ncaa.org scraping — everything we know
 
-Hard-won operational knowledge for the NCAA raw scraper. Last updated **2026-07-16**.
+Hard-won operational knowledge for the NCAA raw scraper. Last updated **2026-08-01**.
 Written after a backfill stalled at 38% and burned two proxy subnets; every claim
 here is either measured live or explicitly flagged as unproven.
 
-**Read the "Open questions" section before spending money on proxies.**
+**READ THIS WHOLE FILE BEFORE ANY SCRAPE RUN.** The 2026-08-01 campaign burned
+~3 hours re-deriving facts already recorded here.
+
+---
+
+## 2026-08-01 — multi-season campaign: session ceiling, tolerant discovery, port pool
+
+Backfill campaign 2025→2010 (`scripts/run_mbb_backfill_range.sh`). Three failed
+launches before a stable recipe; every fix below is committed.
+
+**The winning stack (use this, don't re-derive):**
+
+- **Transport:** patchright new-headless + real Chrome UA (unchanged from 07-16).
+- **Proxy pool:** `decodo_patchright` vendor in `canary_vendors.toml` now holds
+  **20 port-pinned sticky endpoints** `us.decodo.com:10001–10020`.
+  **Geo-canary PASSED 2026-08-01**: all sampled ports egress US residential
+  (AT&T / Verizon / T-Mobile / Spectrum / Frontier). This CORRECTS the 07-16
+  note "port-based `:10001` = random-geo Spain" — that applied to a different
+  hostname/cred; the `us.decodo.com` host pins country=US. Port style beats the
+  single `gate.decodo.com:7000 -session-` URL for a pool: 20 independent sticky
+  IPs, each auto-refreshed by Decodo, rotation = pick another port.
+- **Discovery rides the same vendor seam**: `NCAA_VENDOR=decodo_patchright`
+  (`754ed1a`). Team pages are bm-verify-challenged like game pages; the
+  ProxyBonanza datacenter pool stopped clearing them entirely.
+
+**Failure modes found (and their fixes):**
+
+1. **Sticky-session aging ceiling (~70 min).** One browser context on one sticky
+   session serves a whole ~350-team discovery sweep; past ~40–65 min bm-verify
+   stops clearing on that session and every retry re-fails the same IP. Fix
+   (`bc0d42e`): an exhausted solve **closes the browser context**, and every
+   (re)launch **re-mints the `-session-` id** in a gate-style username — with the
+   port pool, the fetcher's rotation moves to a different port = different IP.
+   Matches the 07-13 observation (`31.14.9.13` died at ~70 min) — this is a
+   session/IP property, not a code bug.
+2. **Hard-stop discovery is mathematically doomed.** bm-verify clearing flakes
+   ~5%/page even on a healthy vendor; a 350-page sweep that aborts on first
+   failure completes with probability ≈ 0.95^350 ≈ 0. Fix (`945a1a5`): per-team
+   retries (3), skip-after-retries, abort only on **5 consecutive** failed teams
+   (real-ban signature). Skips are nearly lossless — every game appears on TWO
+   teams' pages.
+3. **Cold-start flake is worst on the first navigation** of a fresh profile
+   (`413cfe4` added warm-up + range-script discover retry with ban cooldown; the
+   range script must `continue`, not `break`, on a failed discover or the season
+   silently never backfills).
+4. **Orphan processes from stopped tasks** (bash children survive TaskStop) cause
+   store collisions. Kill by `Name -match "^(python|chrome)"` + script-name
+   pattern only — a broad CommandLine match self-kills the cleanup shell.
+
+**Campaign shape:** `run_mbb_backfill_range.sh START END` — seasons descending,
+per-season rounds of (discover-if-needed → capture CHUNK=1400 → parse), cooldowns
+between chunks (300 s) and after hard stops (1800 s), `MAX_ROUNDS=12`/season.
+All knobs env-only. Watch: `tail -f logs/backfill_range_<ts>.log`. Scale:
+~90–95k games 2010–2025 ≈ 75–80 h at ~1200 bundles/hr serial.
 
 ---
 
