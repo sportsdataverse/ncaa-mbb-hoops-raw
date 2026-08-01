@@ -15,6 +15,7 @@ disjoint shards, never internal threads sharing one browser.
 
 from __future__ import annotations
 
+import json
 import logging
 import os
 from pathlib import Path
@@ -110,7 +111,11 @@ def discover_season(
             entirely -- lets offline tests drive discovery without the
             crosswalk having the fixture's team id for the given season.
         root: If given, also write/merge ``{root}/{league}/schedule_master.
-            parquet`` (columns ``contest_id``, ``season``, ``captured``).
+            parquet`` (columns ``contest_id``, ``season``, ``captured``), and
+            checkpoint each swept team page to ``{root}/{league}/.discover/
+            {season}/{team_id}.json`` so an aborted sweep RESUMES instead of
+            restarting (disk-is-checkpoint, same pattern as capture). Delete
+            that directory to force a from-scratch re-sweep of the season.
 
     Returns:
         One row per unique ``contest_id`` (deduped across teams, sorted):
@@ -150,10 +155,34 @@ def discover_season(
     # completing (0.95^350). Each game appears on TWO teams' pages, so a team
     # skipped after retries is nearly lossless. A real ban looks like EVERY
     # team failing -- abort only on a consecutive-failure run.
+    # Per-team disk checkpoint: a swept team's contest ids persist immediately,
+    # so an abort (ban detector, Ctrl-C, crash) never loses the sweep -- the
+    # re-run skips checkpointed teams and only fetches the remainder.
+    scratch: Optional[Path] = None
+    checkpointed: "dict[int, List[str]]" = {}
+    if root is not None:
+        scratch = Path(root) / league / ".discover" / str(season)
+        if scratch.is_dir():
+            for f in scratch.glob("*.json"):
+                try:
+                    checkpointed[int(f.stem)] = json.loads(f.read_text())
+                except (ValueError, json.JSONDecodeError):
+                    continue
+        if checkpointed:
+            already = sum(1 for t in ids if t in checkpointed)
+            logger.info(
+                "resuming discovery: %d/%d team pages already checkpointed",
+                already,
+                len(ids),
+            )
+
     contest_ids: "set[str]" = set()
     consecutive = 0
     skipped: "List[int]" = []
     for team_id in ids:
+        if team_id in checkpointed:
+            contest_ids.update(checkpointed[team_id])
+            continue
         got: Optional[List[str]] = None
         for _ in range(_TEAM_TRIES):
             try:
@@ -178,6 +207,9 @@ def discover_season(
             continue
         consecutive = 0
         contest_ids.update(got)
+        if scratch is not None:
+            scratch.mkdir(parents=True, exist_ok=True)
+            (scratch / f"{team_id}.json").write_text(json.dumps(got))
     if skipped:
         logger.warning(
             "discovery finished with %d/%d teams skipped: %s%s",

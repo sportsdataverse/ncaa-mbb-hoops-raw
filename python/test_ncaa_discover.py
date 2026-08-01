@@ -103,3 +103,35 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+def test_discover_resumes_from_checkpoint(tmp_path):
+    """An aborted sweep's checkpointed teams are NOT refetched on re-run."""
+    import ncaa_discover as nd
+
+    def flaky_fetch(team_id):
+        if team_id == 2:
+            raise RuntimeError("BAN-SUSPECT:stub")
+        return _HTML
+
+    # First run: team 2 fails all retries -> skipped (tolerant sweep); teams
+    # 1 + 3 succeed and are checkpointed to disk.
+    out1 = nd.discover_season(
+        2020, team_ids=[1, 2, 3], fetch_fn=flaky_fetch, root=tmp_path
+    )
+    assert out1.height > 0
+    scratch = tmp_path / "mbb" / ".discover" / "2020"
+    assert sorted(p.stem for p in scratch.glob("*.json")) == ["1", "3"]
+
+    # Second run: teams 1 + 3 must come from the checkpoint (fetch would now
+    # blow up for them); only the previously-skipped team 2 is fetched.
+    def second_fetch(team_id):
+        assert team_id == 2, f"checkpointed team {team_id} was refetched"
+        return _HTML
+
+    out2 = nd.discover_season(
+        2020, team_ids=[1, 2, 3], fetch_fn=second_fetch, root=tmp_path
+    )
+    assert set(out2.get_column("contest_id").to_list()) == set(
+        out1.get_column("contest_id").to_list()
+    )

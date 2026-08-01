@@ -192,3 +192,6 @@ cython_debug/
 /canary_vendors.toml
 /canary_out/
 .ncaa_fetch_cache/
+
+# per-team discovery checkpoints (scratch; schedule_master is the durable output)
+*/.discover/

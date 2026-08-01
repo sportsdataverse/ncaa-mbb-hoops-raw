@@ -28,8 +28,13 @@ PY="${SDV_PY}/.venv/Scripts/python.exe"
 
 SEASON="${1:?usage: run_mbb_backfill.sh <season>  (ending year, e.g. 2026)}"
 WORKERS="${WORKERS:-1}"
-case "$WORKERS" in 1|2) ;; *)
-  echo "REFUSING WORKERS='$WORKERS' -- measured safe ceiling is 2 (4 workers => ban). Use 1 or 2." >&2
+# Ceiling history: 2 was measured on the shared ProxyBonanza datacenter pool
+# (4 workers piled onto few IPs => ban). With per-worker DISJOINT sticky
+# residential ports (decodo us.decodo.com:10001-10050, sharded by worker index
+# in _vendor_fetcher), 8+ workers have run clean -- the limit that matters is
+# per-IP pacing, not process count. Cap at 16 (keep >= 2 ports per worker).
+case "$WORKERS" in [1-9]|1[0-6]) ;; *)
+  echo "REFUSING WORKERS='$WORKERS' -- use 1-16 (per-worker disjoint sticky ports)." >&2
   exit 2 ;;
 esac
 

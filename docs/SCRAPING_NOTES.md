@@ -53,11 +53,27 @@ launches before a stable recipe; every fix below is committed.
    store collisions. Kill by `Name -match "^(python|chrome)"` + script-name
    pattern only — a broad CommandLine match self-kills the cleanup shell.
 
+**Worker ceiling CORRECTED (user-verified):** the "WORKERS 1–2 max, 4 = ban"
+rule in §5 was measured on the shared ProxyBonanza datacenter pool — it is
+**pool-relative, not absolute**. With per-worker DISJOINT sticky residential
+ports, up to 8 workers have run clean (request-session runs). What matters is
+**per-IP pacing**, not process count. `_vendor_fetcher` now shards the port
+pool by worker index (`shard_i/shard_n` — offset rotation) so parallel workers
+never pile onto one port; launcher cap raised to 16 (keep ≥2 ports/worker).
+
+**Resumability (2026-08-01):** BOTH stages are now disk-checkpointed. Capture
+always was (file-exists per contest). Discovery now checkpoints each swept team
+page to `{league}/.discover/{season}/{team_id}.json` — an aborted sweep resumes
+instead of restarting (the 08-01 round-1 abort threw away 67 min of team pages;
+never again). Delete that dir to force a fresh sweep.
+
 **Campaign shape:** `run_mbb_backfill_range.sh START END` — seasons descending,
 per-season rounds of (discover-if-needed → capture CHUNK=1400 → parse), cooldowns
 between chunks (300 s) and after hard stops (1800 s), `MAX_ROUNDS=12`/season.
 All knobs env-only. Watch: `tail -f logs/backfill_range_<ts>.log`. Scale:
-~90–95k games 2010–2025 ≈ 75–80 h at ~1200 bundles/hr serial.
+~90–95k games 2010–2025 ≈ 75–80 h at ~1200 bundles/hr serial; N workers on
+disjoint ports multiply that (16 workers ≈ a season's capture in well under
+an hour — keep per-IP volume ≤ ~1400/session and canary first).
 
 ---
 

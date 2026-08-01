@@ -216,7 +216,13 @@ def capture_contests(
     return counts
 
 
-def _vendor_fetcher(vendor_name: str, root: "Union[str, Path]") -> Any:
+def _vendor_fetcher(
+    vendor_name: str,
+    root: "Union[str, Path]",
+    *,
+    shard_i: int = 0,
+    shard_n: int = 1,
+) -> Any:
     """Build an ``NcaaFetcher`` from a ``canary_vendors.toml`` entry.
 
     Reuses :func:`ncaa_canary.build_fetcher`, so any canary-proven transport
@@ -251,10 +257,16 @@ def _vendor_fetcher(vendor_name: str, root: "Union[str, Path]") -> Any:
         raise SystemExit(f"vendor {vendor_name!r} not ready: {reason}")
 
     if vendor.get("proxies"):
-        stamp = f"cap{int(time.time())}"
+        stamp = f"cap{int(time.time())}w{shard_i}"
         vendor["proxies"] = [
             _re.sub(r"-session-\w+", f"-session-{stamp}", p) for p in vendor["proxies"]
         ]
+        if shard_n > 1:
+            # Parallel workers each start the rotation at a different offset so
+            # they ride DISJOINT sticky ports (all starting at index 0 would
+            # pile every worker onto one IP -- the burst pattern that bans).
+            k = (shard_i * len(vendor["proxies"])) // shard_n
+            vendor["proxies"] = vendor["proxies"][k:] + vendor["proxies"][:k]
         logger.info(
             "vendor %s: %d prox(y/ies), sticky session re-minted -> session-%s",
             vendor_name,
@@ -365,7 +377,9 @@ def _main() -> None:
         args.season,
         league="mbb",
         root=args.root,
-        fetcher=_vendor_fetcher(args.vendor, args.root) if args.vendor else None,
+        fetcher=_vendor_fetcher(args.vendor, args.root, shard_i=i, shard_n=n)
+        if args.vendor
+        else None,
         max_contests=args.max_contests,
         max_consecutive_failures=args.max_consecutive_failures,
     )
