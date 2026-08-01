@@ -8,6 +8,27 @@ JSON). Data tree lives under `<root>/mbb/` (default root = repo root):
 `schedule_master.parquet`, `raw/{season}/{contest_id}.json.gz`,
 `json/{contest_id}.json`.
 
+Three further committed datasets — **schedules**, **teams**, **rosters** — ride
+along for free. `discover` already fetches every team's schedule page and
+`rosters` already fetches every roster page, so both trees are persisted from
+those existing fetches at **zero extra HTTP**; `teams` needs no fetch at all
+(it is the bundled sdv-py crosswalk). Per team the source `html` and the parsed
+`json` are kept; `parquet` is the one compiled dataset per season:
+
+```
+mbb/schedules/html/{season}/{team_id}.html     mbb/rosters/html/{season}/{team_id}.html
+mbb/schedules/json/{season}/{team_id}.json     mbb/rosters/json/{season}/{team_id}.json
+mbb/schedules/parquet/{season}.parquet         mbb/rosters/parquet/{season}.parquet
+mbb/teams/{html,json,parquet}/{season}.*
+```
+
+Every one of them carries human-readable names next to the machine ids —
+schedules pair `team_id`/`opponent_id` with `team`/`opponent`, rosters pair
+`player_id` with `clean_name` (display form) *and* `player` (the ALL-CAPS
+`FIRST.LAST` play-by-play join key), teams pair `ncaa_team_id` with the NCAA
+name, conference and `division` (constant `"I"` — the crosswalk is scoped to
+the Division-I `season_divisions` id).
+
 ## Setup
 
 Requires the sibling `sdv-py` checkout at
@@ -27,9 +48,18 @@ values. `parse` is fully offline and needs no creds.
 
 ```sh
 bash scripts/run_discover.sh --season 2026     # -> mbb/schedule_master.parquet (~5.5-6k contest_ids)
+                                               #    + mbb/schedules/{html,json}/2026/
 bash scripts/run_capture.sh  --season 2026     # -> mbb/raw/2026/{contest_id}.json.gz
 bash scripts/run_parse.sh                      # -> mbb/json/{contest_id}.json
+bash scripts/run_rosters.sh  --season 2026     # -> mbb/rosters/{html,json}/2026/
+bash scripts/run_datasets.sh --season 2026     # -> the season parquets + mbb/teams/
 ```
+
+`run_datasets.sh` is fully offline (no creds, no network) and **not sharded**:
+each season parquet is a single output file, so concurrent `--shard` workers
+would race it. Run it once, after the sharded sweeps finish. It also re-derives
+any missing per-team json from committed html, so a parser fix can be replayed
+across every captured season with `--overwrite` and no re-scrape.
 
 Watch a running job live:
 
