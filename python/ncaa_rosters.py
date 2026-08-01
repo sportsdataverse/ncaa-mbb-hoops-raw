@@ -33,13 +33,13 @@ _MAX_CONSECUTIVE_TEAM_FAILURES = 5
 __all__ = ["capture_rosters"]
 
 
-def _default_fetch_fn() -> Callable[[str], str]:
+def _default_fetch_fn(shard_i: int = 0, shard_n: int = 1) -> Callable[[str], str]:
     vendor = os.environ.get("NCAA_VENDOR")
     if vendor:
         from ncaa_capture import _vendor_fetcher
 
         repo_root = Path(__file__).resolve().parents[1]
-        fetcher = _vendor_fetcher(vendor, repo_root)
+        fetcher = _vendor_fetcher(vendor, repo_root, shard_i=shard_i, shard_n=shard_n)
         return fetcher.fetch_html
     from sportsdataverse.mbb.mbb_ncaa_fetch import NcaaFetcher
 
@@ -54,6 +54,7 @@ def capture_rosters(
     limit_teams: Optional[int] = None,
     fetch_fn: Optional[Callable[[str], str]] = None,
     team_ids: Optional[List[int]] = None,
+    shard: "tuple[int, int]" = (0, 1),
 ) -> "tuple[int, int, int]":
     """Capture every team roster for *season*. Returns (written, skipped_existing, failed)."""
     root = Path(root) if root is not None else Path(__file__).resolve().parents[1]
@@ -72,8 +73,10 @@ def capture_rosters(
         pairs = [(t, None) for t in team_ids]
     if limit_teams is not None:
         pairs = pairs[:limit_teams]
+    i, n = shard
+    pairs = pairs[i::n]  # disjoint slice per worker
 
-    fn = fetch_fn if fetch_fn is not None else _default_fetch_fn()
+    fn = fetch_fn if fetch_fn is not None else _default_fetch_fn(shard_i=i, shard_n=n)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     written = skipped_existing = 0
@@ -141,14 +144,18 @@ def _main() -> None:
     )
     parser.add_argument("--league", default="mbb")
     parser.add_argument("--limit-teams", type=int, default=None)
+    parser.add_argument("--shard", default="0/1", help="This process's shard as 'i/N'.")
     args = parser.parse_args()
+    i, n = (int(x) for x in args.shard.split("/"))
     logging.basicConfig(
         level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s"
     )
     w, s, f = capture_rosters(
-        args.season, league=args.league, limit_teams=args.limit_teams
+        args.season, league=args.league, limit_teams=args.limit_teams, shard=(i, n)
     )
-    print(f"rosters season={args.season}: written={w} skipped_existing={s} failed={f}")
+    print(
+        f"rosters season={args.season} shard={args.shard}: written={w} skipped_existing={s} failed={f}"
+    )
 
 
 if __name__ == "__main__":
