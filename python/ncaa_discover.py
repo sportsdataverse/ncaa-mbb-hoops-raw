@@ -140,6 +140,24 @@ def discover_season(
 
     fn = fetch_fn if fetch_fn is not None else _default_fetch_fn()
 
+    # Cold-start warm-up (live fetcher only): the FIRST navigation in a fresh
+    # browser profile can fail bm-verify before the Akamai sensor cookie mints
+    # (observed 2026-08-01: first fetch of a session fails, every later fetch
+    # clears -- regardless of page type). The sweep below hard-stops on any
+    # failure by design (ban detection), so burn up to two tolerant attempts
+    # on the first team before entering it.
+    if fetch_fn is None and ids:
+        for attempt in (1, 2):
+            try:
+                fn(ids[0])
+                break
+            except RuntimeError:
+                logger.info(
+                    "cold-start warm-up attempt %d failed (bm-verify still minting); %s",
+                    attempt,
+                    "retrying" if attempt == 1 else "proceeding to the sweep",
+                )
+
     contest_ids: "set[str]" = set()
     for team_id in ids:
         contest_ids.update(_team_contest_ids(team_id, fn, league))

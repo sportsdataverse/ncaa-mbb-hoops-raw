@@ -78,8 +78,12 @@ for season in $(seq "$START" -1 "$END"); do
       say "season ${season}: COMPLETE (round ${round})"
       break
     elif [ "$left" = "-1" ]; then
-      say "season ${season}: no schedule_master rows after discover -- check the discover log; moving on"
-      break
+      # Discovery produced no rows (a bm-verify hard-stop mid-sweep kills the
+      # whole season's discover by design). RETRY with the ban cooldown rather
+      # than skipping the season -- a skipped season silently never backfills.
+      say "season ${season}: no schedule_master rows after discover (round ${round}) -- cooling ${BAN_COOLDOWN_S}s then retrying discover"
+      sleep "$BAN_COOLDOWN_S"
+      continue
     fi
     if [ "$rc" -ne 0 ]; then
       say "season ${season}: chunk ${round} hard-stopped (rc=${rc}), ${left} remaining -- cooling ${BAN_COOLDOWN_S}s"
