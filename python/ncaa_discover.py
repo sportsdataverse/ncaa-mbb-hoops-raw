@@ -45,7 +45,7 @@ def _season_str(season: int) -> str:
     return f"{season - 1}-{str(season)[-2:]}"
 
 
-def _default_fetch_fn() -> FetchFn:
+def _default_fetch_fn(shard_i: int = 0, shard_n: int = 1) -> FetchFn:
     """Live fetch: one shared browser-transport session, ``teams/{id}``.
 
     ``NCAA_VENDOR`` (e.g. ``decodo_patchright``) routes discovery through a
@@ -60,7 +60,7 @@ def _default_fetch_fn() -> FetchFn:
         from ncaa_capture import _vendor_fetcher
 
         repo_root = Path(__file__).resolve().parents[1]
-        fetcher = _vendor_fetcher(vendor, repo_root)
+        fetcher = _vendor_fetcher(vendor, repo_root, shard_i=shard_i, shard_n=shard_n)
         return lambda team_id: fetcher.fetch_html(f"teams/{team_id}")
     from sportsdataverse.mbb.mbb_ncaa_fetch import NcaaFetcher
 
@@ -90,6 +90,8 @@ def discover_season(
     fetch_fn: Optional[FetchFn] = None,
     team_ids: Optional[List[int]] = None,
     root: Optional[Union[str, Path]] = None,
+    shard: "tuple[int, int]" = (0, 1),
+    write_master: bool = True,
 ) -> pl.DataFrame:
     """Discover every ``contest_id`` played in *season* by sweeping team pages.
 
@@ -145,8 +147,19 @@ def discover_season(
             )
     if limit_teams is not None:
         ids = ids[:limit_teams]
+    shard_i, shard_n = shard
+    if shard_n > 1:
+        # Disjoint team slice per worker. Each shard writes its own per-team
+        # checkpoints; a final shard-less pass reads ALL of them (every team
+        # then hits the checkpoint branch, so it fetches nothing) and writes
+        # schedule_master -- which is why shard runs pass write_master=False.
+        ids = ids[shard_i::shard_n]
 
-    fn = fetch_fn if fetch_fn is not None else _default_fetch_fn()
+    fn = (
+        fetch_fn
+        if fetch_fn is not None
+        else _default_fetch_fn(shard_i=shard_i, shard_n=shard_n)
+    )
 
     # Per-team tolerance + a consecutive-failure ban detector. bm-verify
     # clearing is flaky per navigation (~5% per page on the canary-validated
@@ -223,7 +236,7 @@ def discover_season(
         {"contest_id": sorted(contest_ids)}, schema={"contest_id": pl.Utf8}
     ).with_columns(pl.lit(str(season)).alias("season"))
 
-    if root is not None:
+    if root is not None and write_master:
         _write_master(result, root, league)
 
     return result
@@ -278,13 +291,31 @@ def _main() -> None:
         default=str(Path(__file__).resolve().parents[1]),
         help="Root of the raw data tree (default: repo root).",
     )
+    parser.add_argument(
+        "--shard",
+        default="0/1",
+        help="This process's shard as 'i/N'. A sharded run sweeps only its "
+        "team slice and does NOT write schedule_master -- run a final "
+        "shard-less pass (all teams checkpointed, so it fetches nothing) "
+        "to merge every shard's checkpoints into the master.",
+    )
     args = parser.parse_args()
+    i, n = (int(x) for x in args.shard.split("/"))
 
     logging.basicConfig(
         level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s"
     )
-    result = discover_season(args.season, league="mbb", root=args.root)
-    print(f"discovered {result.height} contest_ids for season={args.season}")
+    result = discover_season(
+        args.season,
+        league="mbb",
+        root=args.root,
+        shard=(i, n),
+        write_master=(n == 1),
+    )
+    print(
+        f"discovered {result.height} contest_ids for season={args.season} "
+        f"shard={args.shard}{'' if n == 1 else ' (master NOT written -- merge pass pending)'}"
+    )
 
 
 if __name__ == "__main__":

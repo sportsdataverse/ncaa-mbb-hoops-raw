@@ -135,3 +135,35 @@ def test_discover_resumes_from_checkpoint(tmp_path):
     assert set(out2.get_column("contest_id").to_list()) == set(
         out1.get_column("contest_id").to_list()
     )
+
+
+def test_discover_shard_slices_and_skips_master(tmp_path):
+    """A sharded run sweeps only its slice and never writes schedule_master."""
+    import ncaa_discover as nd
+
+    seen: "list[int]" = []
+
+    def fetch(team_id):
+        seen.append(team_id)
+        return _HTML
+
+    ids = [1, 2, 3, 4, 5, 6]
+    nd.discover_season(
+        2020, team_ids=ids, fetch_fn=fetch, root=tmp_path, shard=(1, 3),
+        write_master=False,
+    )
+    assert seen == [2, 5]  # ids[1::3]
+    assert not (tmp_path / "mbb" / "schedule_master.parquet").exists()
+
+    # Remaining shards, then the merge pass: it re-reads every shard's
+    # checkpoints, fetches nothing new, and writes the master.
+    for i in (0, 2):
+        nd.discover_season(
+            2020, team_ids=ids, fetch_fn=fetch, root=tmp_path, shard=(i, 3),
+            write_master=False,
+        )
+    swept = len(seen)
+    out = nd.discover_season(2020, team_ids=ids, fetch_fn=fetch, root=tmp_path)
+    assert len(seen) == swept  # merge pass fetched nothing
+    assert out.height > 0
+    assert (tmp_path / "mbb" / "schedule_master.parquet").exists()
