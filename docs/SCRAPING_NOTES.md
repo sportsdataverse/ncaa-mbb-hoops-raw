@@ -67,6 +67,14 @@ page to `{league}/.discover/{season}/{team_id}.json` — an aborted sweep resume
 instead of restarting (the 08-01 round-1 abort threw away 67 min of team pages;
 never again). Delete that dir to force a fresh sweep.
 
+**2025 season result (2026-08-01):** 6,293/6,296 captured (3 contests are
+pageless — cancelled games), all parsed. **4.5% of games (282) parse to empty
+`lineups`+`shots` from HEALTHY bundles** — full-size individual_stats pages,
+so §6's "individual_stats page failure" attribution for 2026's 3.3% is wrong
+(at least partly): the lineup ENGINE bails on games with broken substitution
+data and the per-family swallow hides it. Recoverable OFFLINE by hardening
+the engine + re-parsing; no recapture needed. Tracked follow-up.
+
 **Campaign shape:** `run_mbb_backfill_range.sh START END` — seasons descending,
 per-season rounds of (discover-if-needed → capture CHUNK=1400 → parse), cooldowns
 between chunks (300 s) and after hard stops (1800 s), `MAX_ROUNDS=12`/season.
