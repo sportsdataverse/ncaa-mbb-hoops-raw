@@ -16,6 +16,7 @@ disjoint shards, never internal threads sharing one browser.
 from __future__ import annotations
 
 import logging
+import os
 from pathlib import Path
 from typing import Callable, List, Optional, Union
 
@@ -39,7 +40,22 @@ def _season_str(season: int) -> str:
 
 
 def _default_fetch_fn() -> FetchFn:
-    """Live fetch: one shared browser-transport session, ``teams/{id}``."""
+    """Live fetch: one shared browser-transport session, ``teams/{id}``.
+
+    ``NCAA_VENDOR`` (e.g. ``decodo_patchright``) routes discovery through a
+    ``canary_vendors.toml`` transport — the same seam capture uses. Team pages
+    sit behind the same Akamai bm-verify as game pages, and the ProxyBonanza
+    datacenter pool stopped clearing it (2026-08-01: a 2025 discovery burned
+    35 minutes in re-solve loops with zero yield), while Decodo US-residential
+    cleared the same canary 10/10.
+    """
+    vendor = os.environ.get("NCAA_VENDOR")
+    if vendor:
+        from ncaa_capture import _vendor_fetcher
+
+        repo_root = Path(__file__).resolve().parents[1]
+        fetcher = _vendor_fetcher(vendor, repo_root)
+        return lambda team_id: fetcher.fetch_html(f"teams/{team_id}")
     from sportsdataverse.mbb.mbb_ncaa_fetch import NcaaFetcher
 
     fetcher = NcaaFetcher.with_browser()
@@ -53,7 +69,10 @@ def _team_contest_ids(team_id: int, fetch_fn: FetchFn, league: str) -> List[str]
         # NcaaFetcher raises RuntimeError on a ban-suspect / exhausted-proxy
         # response ("BAN-SUSPECT:<marker>" is folded into the message) --
         # hard stop rather than silently skipping the team.
-        logger.error("NCAA discovery hard-stopped on team_id=%s (ban-suspect / fetch failure)", team_id)
+        logger.error(
+            "NCAA discovery hard-stopped on team_id=%s (ban-suspect / fetch failure)",
+            team_id,
+        )
         raise
     schedule = parse_ncaa_bb_team_schedule(html, team_id, league=league)
     return schedule.get_column("game_id").drop_nulls().to_list()
@@ -108,7 +127,9 @@ def discover_season(
     else:
         season_str = _season_str(season)
         crosswalk = ncaa_mbb_team_ids()
-        ids = crosswalk.filter(pl.col("season") == season_str).get_column("id").to_list()
+        ids = (
+            crosswalk.filter(pl.col("season") == season_str).get_column("id").to_list()
+        )
         if not ids:
             raise ValueError(
                 f"No teams found in crosswalk for season={season!r} (tried season_str={season_str!r}); "
@@ -123,9 +144,9 @@ def discover_season(
     for team_id in ids:
         contest_ids.update(_team_contest_ids(team_id, fn, league))
 
-    result = pl.DataFrame({"contest_id": sorted(contest_ids)}, schema={"contest_id": pl.Utf8}).with_columns(
-        pl.lit(str(season)).alias("season")
-    )
+    result = pl.DataFrame(
+        {"contest_id": sorted(contest_ids)}, schema={"contest_id": pl.Utf8}
+    ).with_columns(pl.lit(str(season)).alias("season"))
 
     if root is not None:
         _write_master(result, root, league)
@@ -141,14 +162,18 @@ def _write_master(result: pl.DataFrame, root: Union[str, Path], league: str) -> 
     dropping any existing ``captured=True`` row.
     """
     path = Path(root) / league / "schedule_master.parquet"
-    new_rows = result.with_columns(pl.lit(False).alias("captured")).select(_MASTER_COLUMNS)
+    new_rows = result.with_columns(pl.lit(False).alias("captured")).select(
+        _MASTER_COLUMNS
+    )
 
     if path.exists():
         existing = pl.read_parquet(path)
         if "captured" not in existing.columns:
             existing = existing.with_columns(pl.lit(False).alias("captured"))
         combined = (
-            pl.concat([existing.select(_MASTER_COLUMNS), new_rows], how="diagonal_relaxed")
+            pl.concat(
+                [existing.select(_MASTER_COLUMNS), new_rows], how="diagonal_relaxed"
+            )
             .sort("captured", descending=True)
             .unique(subset="contest_id", keep="first")
         )
@@ -164,8 +189,15 @@ def _write_master(result: pl.DataFrame, root: Union[str, Path], league: str) -> 
 def _main() -> None:
     import argparse
 
-    parser = argparse.ArgumentParser(description="Discover a season's contest_ids and write schedule_master.parquet.")
-    parser.add_argument("--season", type=int, required=True, help="Ending year of the season, e.g. 2026.")
+    parser = argparse.ArgumentParser(
+        description="Discover a season's contest_ids and write schedule_master.parquet."
+    )
+    parser.add_argument(
+        "--season",
+        type=int,
+        required=True,
+        help="Ending year of the season, e.g. 2026.",
+    )
     parser.add_argument(
         "--root",
         default=str(Path(__file__).resolve().parents[1]),
@@ -173,7 +205,9 @@ def _main() -> None:
     )
     args = parser.parse_args()
 
-    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+    logging.basicConfig(
+        level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s"
+    )
     result = discover_season(args.season, league="mbb", root=args.root)
     print(f"discovered {result.height} contest_ids for season={args.season}")
 
