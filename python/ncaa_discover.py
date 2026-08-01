@@ -1,11 +1,11 @@
 """Season -> contest_id discovery (team-ids -> schedules -> dedup).
 
 Reuses the bigballR port already vendored in sdv-py: the ``(team, season) ->
-id`` crosswalk (:func:`ncaa_mbb_team_ids`), the team-schedule-page parser
-(:func:`parse_ncaa_bb_team_schedule`), and the browser-transport fetcher
-(:class:`NcaaFetcher`) for the live path. Each game appears on two teams'
-schedules, so the core job here is: fetch every team page for a season,
-extract ``contests/{id}/`` links, and dedup across teams.
+id`` crosswalk (:func:`ncaa_mbb_team_ids` / :func:`ncaa_mbb_team_ids`), the
+team-schedule-page parser (:func:`parse_ncaa_bb_team_schedule`), and the
+browser-transport fetcher (:class:`NcaaFetcher`) for the live path. Each game
+appears on two teams' schedules, so the core job here is: fetch every team
+page for a season, extract ``contests/{id}/`` links, and dedup across teams.
 
 Discovery runs single-threaded (one browser, one team page at a time) --
 Playwright's sync API is not thread-safe. Parallelism for the heavier
@@ -24,7 +24,12 @@ from typing import Callable, List, Optional, Union
 import polars as pl
 
 from sportsdataverse.mbb.mbb_ncaa_schedule import parse_ncaa_bb_team_schedule
-from sportsdataverse.mbb.mbb_ncaa_team_ids import ncaa_mbb_team_ids
+
+# The schedules dataset tree is a pure side effect of the sweep below: this
+# module already fetches every team's page, so persisting it costs zero extra
+# HTTP. ncaa_datasets is a leaf (it never imports this module) -- no cycle.
+from ncaa_datasets import TEAM_ID_CROSSWALKS as _TEAM_ID_CROSSWALKS
+from ncaa_datasets import persist_schedule, read_html
 
 logger = logging.getLogger(__name__)
 
@@ -68,7 +73,26 @@ def _default_fetch_fn(shard_i: int = 0, shard_n: int = 1) -> FetchFn:
     return lambda team_id: fetcher.fetch_html(f"teams/{team_id}")
 
 
-def _team_contest_ids(team_id: int, fetch_fn: FetchFn, league: str) -> List[str]:
+def _contest_ids_from_html(
+    html: str, team_id: int, league: str, season: int, root: Optional[Union[str, Path]]
+) -> List[str]:
+    """Contest ids for one team page, persisting the schedules tree en route.
+
+    With a *root* the page is written to ``{lg}/schedules/{html,json,parquet}/``
+    and the ids come off the enriched frame -- ONE parse either way, so the
+    dataset tree costs no extra parse and no extra fetch.
+    """
+    if root is None:
+        return (
+            parse_ncaa_bb_team_schedule(html, int(team_id), league=league).get_column("game_id").drop_nulls().to_list()
+        )
+    df = persist_schedule(html, team_id, season, league=league, root=root)
+    return df.get_column("contest_id").drop_nulls().to_list()
+
+
+def _team_contest_ids(
+    team_id: int, fetch_fn: FetchFn, league: str, season: int, root: Optional[Union[str, Path]]
+) -> List[str]:
     try:
         html = fetch_fn(team_id)
     except RuntimeError:
@@ -78,8 +102,7 @@ def _team_contest_ids(team_id: int, fetch_fn: FetchFn, league: str) -> List[str]
         # bm-verify solve must not read as a ban.
         logger.warning("fetch failed for team_id=%s (bm-verify / ban-suspect)", team_id)
         raise
-    schedule = parse_ncaa_bb_team_schedule(html, team_id, league=league)
-    return schedule.get_column("game_id").drop_nulls().to_list()
+    return _contest_ids_from_html(html, team_id, league, season, root)
 
 
 def discover_season(
@@ -101,8 +124,9 @@ def discover_season(
             ``"YYYY-YY"`` format to filter the bundled ``(team, season) ->
             id`` crosswalk (live path); stamped as-is on the returned frame's
             ``season`` column.
-        league: ``"mbb"`` or ``"wbb"`` (only ``mbb``'s crosswalk is bundled
-            as of this task; passed through to the schedule parser).
+        league: ``"mbb"`` or ``"wbb"`` -- selects both the ``(team, season)
+            -> id`` crosswalk (both are bundled in sdv-py) and the schedule
+            parser's league mode.
         limit_teams: Cap the number of teams swept (a small live smoke, e.g.
             one conference).
         fetch_fn: ``team_id -> html``. Defaults to a live fetch through one
@@ -119,30 +143,52 @@ def discover_season(
             restarting (disk-is-checkpoint, same pattern as capture). Delete
             that directory to force a from-scratch re-sweep of the season.
 
+            It ALSO persists the schedules dataset tree from the very same
+            fetch -- ``{root}/{league}/schedules/html/{season}/{team_id}.html``
+            plus the parsed ``.../json/{season}/{team_id}.json`` (see
+            :mod:`ncaa_datasets`). That costs zero extra HTTP: the page was
+            already being fetched and its HTML discarded. A team whose HTML is
+            already committed is re-parsed offline, so a re-run neither
+            re-fetches it nor loses its dataset row. The compiled
+            ``schedules/parquet/{season}.parquet`` is NOT written here (a shard
+            sees only its slice, and one shared output file would race) -- run
+            ``scripts/run_datasets.sh`` for that.
+        shard: ``(i, N)`` -- with ``N > 1`` this process sweeps only the
+            ``ids[i::N]`` slice, so ``N`` launcher PROCESSES cover disjoint
+            teams (see :func:`_default_fetch_fn` for the per-worker proxy
+            rotation that keeps their sticky sessions disjoint too).
+        write_master: Set ``False`` on a sharded run -- a shard sees only its
+            slice, so only the final shard-less merge pass should write
+            ``schedule_master.parquet``.
+
     Returns:
         One row per unique ``contest_id`` (deduped across teams, sorted):
         ``contest_id`` (Utf8), ``season`` (Utf8).
 
     Raises:
-        ValueError: The crosswalk filter for *season* matched zero teams on
-            the live path (``team_ids`` not given) -- almost certainly a
+        ValueError: *league* isn't ``"mbb"`` or ``"wbb"``, or the crosswalk
+            filter for *season* matched zero teams on the live path
+            (``team_ids`` not given) -- the latter almost certainly a
             season-format drift, raised loudly instead of silently returning
             an empty, complete-looking contest list.
-        RuntimeError: A team-page fetch hit a ban-suspect / exhausted-proxy
-            response -- discovery stops immediately rather than returning a
-            partial result silently.
+        RuntimeError: ``_MAX_CONSECUTIVE_TEAM_FAILURES`` teams in a row failed
+            every retry -- the real-ban signature. Whatever was swept before
+            the abort is already checkpointed to disk, so the re-run resumes.
     """
     if team_ids is not None:
         ids = list(team_ids)
     else:
+        try:
+            crosswalk_fn = _TEAM_ID_CROSSWALKS[league]
+        except KeyError:
+            raise ValueError(f"unrecognized league={league!r}; expected one of {sorted(_TEAM_ID_CROSSWALKS)}") from None
         season_str = _season_str(season)
-        crosswalk = ncaa_mbb_team_ids()
-        ids = (
-            crosswalk.filter(pl.col("season") == season_str).get_column("id").to_list()
-        )
+        crosswalk = crosswalk_fn()
+        ids = crosswalk.filter(pl.col("season") == season_str).get_column("id").to_list()
         if not ids:
             raise ValueError(
-                f"No teams found in crosswalk for season={season!r} (tried season_str={season_str!r}); "
+                f"No teams found in {league!r} crosswalk for season={season!r} "
+                f"(tried season_str={season_str!r}); "
                 "the NCAA team-ids season format may have drifted."
             )
     if limit_teams is not None:
@@ -155,11 +201,7 @@ def discover_season(
         # schedule_master -- which is why shard runs pass write_master=False.
         ids = ids[shard_i::shard_n]
 
-    fn = (
-        fetch_fn
-        if fetch_fn is not None
-        else _default_fetch_fn(shard_i=shard_i, shard_n=shard_n)
-    )
+    fn = fetch_fn if fetch_fn is not None else _default_fetch_fn(shard_i=shard_i, shard_n=shard_n)
 
     # Per-team tolerance + a consecutive-failure ban detector. bm-verify
     # clearing is flaky per navigation (~5% per page on the canary-validated
@@ -193,13 +235,27 @@ def discover_season(
     consecutive = 0
     skipped: "List[int]" = []
     for team_id in ids:
+        # The committed schedules HTML outranks the .discover checkpoint: it is
+        # the same page, durably tracked in git, and re-parsing it offline both
+        # yields the contest ids and refreshes json/parquet after a parser fix.
+        # Either way the network is not touched for this team.
+        cached = read_html(root, league, "schedules", season, team_id) if root is not None else None
+        if cached is not None:
+            got_cached = _contest_ids_from_html(cached, team_id, league, season, root)
+            contest_ids.update(got_cached)
+            if scratch is not None:
+                scratch.mkdir(parents=True, exist_ok=True)
+                (scratch / f"{team_id}.json").write_text(json.dumps(got_cached))
+            continue
         if team_id in checkpointed:
+            # Legacy resume path: swept before the schedules tree existed, so
+            # the HTML is gone. The ids still stand; the dataset row does not.
             contest_ids.update(checkpointed[team_id])
             continue
         got: Optional[List[str]] = None
         for _ in range(_TEAM_TRIES):
             try:
-                got = _team_contest_ids(team_id, fn, league)
+                got = _team_contest_ids(team_id, fn, league, season, root)
                 break
             except RuntimeError:
                 continue
@@ -232,9 +288,9 @@ def discover_season(
             "..." if len(skipped) > 10 else "",
         )
 
-    result = pl.DataFrame(
-        {"contest_id": sorted(contest_ids)}, schema={"contest_id": pl.Utf8}
-    ).with_columns(pl.lit(str(season)).alias("season"))
+    result = pl.DataFrame({"contest_id": sorted(contest_ids)}, schema={"contest_id": pl.Utf8}).with_columns(
+        pl.lit(str(season)).alias("season")
+    )
 
     if root is not None and write_master:
         _write_master(result, root, league)
@@ -250,18 +306,14 @@ def _write_master(result: pl.DataFrame, root: Union[str, Path], league: str) -> 
     dropping any existing ``captured=True`` row.
     """
     path = Path(root) / league / "schedule_master.parquet"
-    new_rows = result.with_columns(pl.lit(False).alias("captured")).select(
-        _MASTER_COLUMNS
-    )
+    new_rows = result.with_columns(pl.lit(False).alias("captured")).select(_MASTER_COLUMNS)
 
     if path.exists():
         existing = pl.read_parquet(path)
         if "captured" not in existing.columns:
             existing = existing.with_columns(pl.lit(False).alias("captured"))
         combined = (
-            pl.concat(
-                [existing.select(_MASTER_COLUMNS), new_rows], how="diagonal_relaxed"
-            )
+            pl.concat([existing.select(_MASTER_COLUMNS), new_rows], how="diagonal_relaxed")
             .sort("captured", descending=True)
             .unique(subset="contest_id", keep="first")
         )
@@ -277,9 +329,7 @@ def _write_master(result: pl.DataFrame, root: Union[str, Path], league: str) -> 
 def _main() -> None:
     import argparse
 
-    parser = argparse.ArgumentParser(
-        description="Discover a season's contest_ids and write schedule_master.parquet."
-    )
+    parser = argparse.ArgumentParser(description="Discover a season's contest_ids and write schedule_master.parquet.")
     parser.add_argument(
         "--season",
         type=int,
@@ -290,6 +340,13 @@ def _main() -> None:
         "--root",
         default=str(Path(__file__).resolve().parents[1]),
         help="Root of the raw data tree (default: repo root).",
+    )
+    parser.add_argument("--league", default="mbb", help="League slug: 'mbb' or 'wbb' (default: mbb).")
+    parser.add_argument(
+        "--limit-teams",
+        type=int,
+        default=None,
+        help="Cap the number of teams swept -- a small live smoke. Pair with --root <scratch> to keep a smoke out of the committed tree.",
     )
     parser.add_argument(
         "--shard",
@@ -302,14 +359,13 @@ def _main() -> None:
     args = parser.parse_args()
     i, n = (int(x) for x in args.shard.split("/"))
 
-    logging.basicConfig(
-        level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s"
-    )
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     result = discover_season(
         args.season,
-        league="mbb",
+        league=args.league,
         root=args.root,
         shard=(i, n),
+        limit_teams=args.limit_teams,
         write_master=(n == 1),
     )
     print(

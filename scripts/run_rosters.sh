@@ -4,7 +4,14 @@
 #   NCAA_VENDOR=decodo_patchright ./scripts/run_rosters.sh --season 2025
 #   ./scripts/run_rosters.sh --season 2025 --limit-teams 3    # smoke
 #
-# Resumable: existing mbb/team_rosters/{season}/{team_id}.json are skipped.
+# Also persists the rosters dataset tree from the SAME fetch (zero extra HTTP):
+#   mbb/rosters/html/{season}/{team_id}.html   -- the raw page
+#   mbb/rosters/json/{season}/{team_id}.json   -- player_id + clean_name + player
+# The compiled mbb/rosters/parquet/{season}.parquet is built separately by
+# ./scripts/run_datasets.sh (one non-sharded pass -- shards would race it).
+#
+# Resumable: existing mbb/team_rosters/{season}/{team_id}.json are skipped, and
+# a team whose rosters html is already committed is re-parsed offline.
 # Watch live:   tail -f logs/rosters_<ts>.log
 set -uo pipefail
 cd "$(dirname "$0")/.." || exit 1

@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 # User-run launcher: discover a season's contest_ids -> mbb/schedule_master.parquet.
 #
+# Also persists the schedules dataset tree from the SAME team-page fetches this
+# sweep already makes (zero extra HTTP):
+#   mbb/schedules/html/{season}/{team_id}.html   -- the raw page
+#   mbb/schedules/json/{season}/{team_id}.json   -- team/opponent ids AND names
+# The compiled mbb/schedules/parquet/{season}.parquet is built separately by
+# ./scripts/run_datasets.sh (one non-sharded pass -- shards would race it).
+#
 # Fans out DISCOVER_WORKERS shard processes (default 12) over disjoint team
 # slices, then runs ONE shard-less merge pass that reads every shard's per-team
 # checkpoints (so it fetches nothing) and writes schedule_master.parquet.

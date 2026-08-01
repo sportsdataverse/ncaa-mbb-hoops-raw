@@ -3,8 +3,20 @@
 Fetches ``teams/{team_id}/roster`` for every team in the season's crosswalk
 through the same canary-vendor transport as capture/discovery, parses it with
 sdv-py's ``parse_ncaa_bb_team_roster`` (which extracts the stats.ncaa.org
-``player_id`` from each row's ``/players/{id}`` link), and writes one JSON per
-team under ``{root}/{league}/team_rosters/{season}/{team_id}.json``.
+``player_id`` from each row's ``/players/{id}`` link), and writes, per team:
+
+- ``{root}/{league}/rosters/html/{season}/{team_id}.html`` -- the raw page,
+  persisted from the fetch this stage was already making (zero extra HTTP).
+- ``{root}/{league}/rosters/json/{season}/{team_id}.json`` -- the tidy frame,
+  carrying ``player_id`` AND ``clean_name`` (properly-cased display name) AND
+  ``player`` (the ALL-CAPS ``FIRST.LAST`` play-by-play join key), plus
+  ``team_id`` + ``team``.
+- ``{root}/{league}/team_rosters/{season}/{team_id}.json`` -- the original
+  payload shape, still written for existing consumers.
+
+The compiled ``rosters/parquet/{season}.parquet`` is NOT written here (a
+``--shard`` worker sees only its slice, and one shared output file would race)
+-- ``scripts/run_datasets.sh`` compiles it in one non-sharded pass.
 
 Disk-is-checkpoint: an existing team file is skipped, so Ctrl-C + re-run
 resumes. Tolerant sweep (same rationale as discovery): per-team retries, skip
@@ -22,8 +34,12 @@ from typing import Callable, List, Optional
 
 import polars as pl
 
+# The roster parser is league-agnostic (sdv-py's mbb schedule module reuses this
+# exact function); only the (team, season) -> id crosswalk is league-specific,
+# and ncaa_datasets owns that two-entry mapping plus the tree writers.
+from ncaa_datasets import TEAM_ID_CROSSWALKS as _TEAM_ID_CROSSWALKS
+from ncaa_datasets import persist_roster, read_html
 from sportsdataverse.mbb.mbb_ncaa_schedule import parse_ncaa_bb_team_roster
-from sportsdataverse.mbb.mbb_ncaa_team_ids import ncaa_mbb_team_ids
 
 logger = logging.getLogger(__name__)
 
@@ -62,13 +78,11 @@ def capture_rosters(
 
     if team_ids is None:
         season_str = f"{season - 1}-{str(season)[-2:]}"
-        crosswalk = ncaa_mbb_team_ids()
+        crosswalk = _TEAM_ID_CROSSWALKS[league]()
         rows = crosswalk.filter(pl.col("season") == season_str)
         if rows.height == 0:
             raise ValueError(f"no crosswalk teams for season={season} ({season_str})")
-        pairs = list(
-            zip(rows.get_column("id").to_list(), rows.get_column("team").to_list())
-        )
+        pairs = list(zip(rows.get_column("id").to_list(), rows.get_column("team").to_list()))
     else:
         pairs = [(t, None) for t in team_ids]
     if limit_teams is not None:
@@ -85,15 +99,22 @@ def capture_rosters(
     for team_id, team_name in pairs:
         dest = out_dir / f"{team_id}.json"
         if dest.exists():
+            # Captured already. Seasons captured BEFORE the rosters tree existed
+            # have no html to re-parse; ncaa_datasets.rebuild_missing seeds their
+            # json + parquet from this payload instead -- still no re-fetch.
             skipped_existing += 1
             continue
-        html: Optional[str] = None
-        for _ in range(_TEAM_TRIES):
-            try:
-                html = fn(f"teams/{team_id}/roster")
-                break
-            except RuntimeError:
-                continue
+        # A committed roster page is re-parsed offline rather than re-fetched:
+        # that is how an interrupted run resumes without spending a request, and
+        # how a parser fix reaches every captured season for free.
+        html: Optional[str] = read_html(root, league, "rosters", season, team_id)
+        if html is None:
+            for _ in range(_TEAM_TRIES):
+                try:
+                    html = fn(f"teams/{team_id}/roster")
+                    break
+                except RuntimeError:
+                    continue
         if html is None:
             consecutive += 1
             failed.append(team_id)
@@ -110,6 +131,8 @@ def capture_rosters(
                 )
             continue
         consecutive = 0
+        # rosters/{html,json,parquet}/ -- the tidy tree, ids + readable names.
+        persist_roster(html, team_id, season, league=league, root=root)
         df = parse_ncaa_bb_team_roster(html, int(team_id))
         payload = {
             "team_id": int(team_id),
@@ -129,9 +152,7 @@ def capture_rosters(
             "" if df.height else " (EMPTY roster table)",
         )
     if failed:
-        logger.warning(
-            "finished with %d/%d teams failed: %s", len(failed), len(pairs), failed[:10]
-        )
+        logger.warning("finished with %d/%d teams failed: %s", len(failed), len(pairs), failed[:10])
     return written, skipped_existing, len(failed)
 
 
@@ -139,23 +160,22 @@ def _main() -> None:
     import argparse
 
     parser = argparse.ArgumentParser(description="Capture a season's team rosters.")
+    parser.add_argument("--season", type=int, required=True, help="Ending year, e.g. 2025.")
+    parser.add_argument("--league", default="mbb", help="League slug: 'mbb' or 'wbb'.")
     parser.add_argument(
-        "--season", type=int, required=True, help="Ending year, e.g. 2025."
+        "--root",
+        default=str(Path(__file__).resolve().parents[1]),
+        help="Root of the raw data tree (default: repo root). Point a live smoke at a scratch dir to keep it out of the committed tree.",
     )
-    parser.add_argument("--league", default="mbb")
     parser.add_argument("--limit-teams", type=int, default=None)
     parser.add_argument("--shard", default="0/1", help="This process's shard as 'i/N'.")
     args = parser.parse_args()
     i, n = (int(x) for x in args.shard.split("/"))
-    logging.basicConfig(
-        level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s"
-    )
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     w, s, f = capture_rosters(
-        args.season, league=args.league, limit_teams=args.limit_teams, shard=(i, n)
+        args.season, league=args.league, root=Path(args.root), limit_teams=args.limit_teams, shard=(i, n)
     )
-    print(
-        f"rosters season={args.season} shard={args.shard}: written={w} skipped_existing={s} failed={f}"
-    )
+    print(f"rosters season={args.season} shard={args.shard}: written={w} skipped_existing={s} failed={f}")
 
 
 if __name__ == "__main__":
