@@ -195,3 +195,6 @@ cython_debug/
 
 # per-team discovery checkpoints (scratch; schedule_master is the durable output)
 */.discover/
+
+# oh-my-claudecode tooling scratch (not project files)
+.omc/
