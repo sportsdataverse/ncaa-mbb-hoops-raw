@@ -6,7 +6,10 @@
 # wait a while and just re-run this script -- it picks up where it left off.
 # Parse is fully offline and safe to run on a partial capture.
 #
-# SAFE RATE (measured): 1-2 capture workers OK, 4 => ban. WORKERS is capped at 2.
+# SAFE RATE: the old "1-2 workers, 4 => ban" figure was measured on the SHARED
+# ProxyBonanza datacenter pool and is pool-relative, not absolute. With
+# per-worker disjoint sticky residential ports it no longer binds -- see the
+# WORKERS guard below for the current cap and its rationale.
 # SESSION CEILING (measured 2026-07-13): a browser session captures cleanly for
 # ~70min/~1400 bundles, then bm-verify stops clearing; the run degraded to ZERO
 # yield for a full hour and earned a hard 403 at 2402/6300. So CHUNK it: capture
@@ -31,10 +34,13 @@ WORKERS="${WORKERS:-1}"
 # Ceiling history: 2 was measured on the shared ProxyBonanza datacenter pool
 # (4 workers piled onto few IPs => ban). With per-worker DISJOINT sticky
 # residential ports (decodo us.decodo.com:10001-10050, sharded by worker index
-# in _vendor_fetcher), 8+ workers have run clean -- the limit that matters is
-# per-IP pacing, not process count. Cap at 16 (keep >= 2 ports per worker).
-case "$WORKERS" in [1-9]|1[0-6]) ;; *)
-  echo "REFUSING WORKERS='$WORKERS' -- use 1-16 (per-worker disjoint sticky ports)." >&2
+# in _vendor_fetcher), 8 and 16 have both run clean -- the limit that matters
+# is per-IP pacing, not process count. Cap at 24: the pool is 50 ports, so 24
+# still leaves ~2 ports per worker, and per-IP rate stays far under the ~20
+# pages/min that measured safe on a SINGLE ip. Going past ~25 would put more
+# than one worker on an ip at a time, which is the pattern that actually bans.
+case "$WORKERS" in [1-9]|1[0-9]|2[0-4]) ;; *)
+  echo "REFUSING WORKERS='$WORKERS' -- use 1-24 (per-worker disjoint sticky ports; pool is 50)." >&2
   exit 2 ;;
 esac
 
