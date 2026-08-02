@@ -77,6 +77,30 @@ would race it. Run it once, after the sharded sweeps finish. It also re-derives
 any missing per-team json from committed html, so a parser fix can be replayed
 across every captured season with `--overwrite` and no re-scrape.
 
+Wrapper drivers around that per-stage sequence:
+
+- `scripts/run_mbb_backfill.sh <season>` — one-command **single-season**
+  chain (discover -> capture -> parse), resumable; `CHUNK=` / `WORKERS=`
+  knobs per its header.
+- `scripts/run_mbb_backfill_range.sh [start] [end]` — **multi-season
+  campaign** (default 2025 down to 2010), newest-first, wrapping
+  `run_mbb_backfill.sh` per season: capture runs in chunked rounds (a
+  fresh sticky IP each chunk) with cooldowns between rounds and after
+  ban hard-stops, and up to `MAX_ROUNDS` straggler rounds per season
+  before moving on (re-run later to finish the remainder).
+- `scripts/run_reference_backfill.sh [start] [end]` — reference-only
+  companion to the pbp backfill: per season (newest-first) it chains
+  `run_discover.sh` -> sharded `ncaa_rosters.py` -> `run_datasets.sh`,
+  then commits + pushes that season. Reference data is cheap (~2 pages
+  per team-season vs 3 per game), so it runs first / independently of
+  `run_mbb_backfill*.sh`; it does **no** pbp capture.
+- `scripts/run_autocommit.sh` — incremental commit(+push) sweep of
+  capture output every `INTERVAL` seconds. It stages only files whose
+  mtime has settled at least `SETTLE` minutes, so an in-flight bundle
+  is never committed half-flushed — safe to run **concurrently with an
+  active capture**. The backfill drivers deliberately do not commit;
+  this keeps the repo close to pushed during a long campaign.
+
 Watch a running job live:
 
 ```sh
