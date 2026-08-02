@@ -30,9 +30,7 @@ KNOWN_GOOD_GAME = "5722355"
 def _fixture_bundle(contest_id: str) -> dict:
     pbp_html = (_FIX / f"pbp_{contest_id}.html").read_text(encoding="utf-8")
     box_html = (_FIX / f"box_{contest_id}.html").read_text(encoding="utf-8")
-    stats_html = (_FIX / f"individual_stats_{contest_id}.html").read_text(
-        encoding="utf-8"
-    )
+    stats_html = (_FIX / f"individual_stats_{contest_id}.html").read_text(encoding="utf-8")
     return {
         "contest_id": contest_id,
         "league": "mbb",
@@ -121,6 +119,44 @@ def test_corrupt_pbp_page_yields_empty_pbp_without_raising() -> None:
         assert isinstance(parsed[key], list)
 
 
+def test_every_family_row_carries_contest_id_and_no_game_id() -> None:
+    """One per-game identifier, named `contest_id`, on every row of every family."""
+    for contest_id in CONTEST_IDS:
+        parsed = parse_bundle(_fixture_bundle(contest_id))
+        for family in FAMILY_KEYS:
+            for row in parsed[family]:
+                assert "game_id" not in row, f"{contest_id}/{family} still has game_id"
+                assert row["contest_id"] == contest_id, f"{contest_id}/{family} mismatch"
+                assert isinstance(row["contest_id"], str), f"{contest_id}/{family} not Utf8"
+
+
+def test_shots_contest_id_is_populated_and_agrees_with_the_other_families() -> None:
+    """Regression: the shots adapter hardcodes `game_id=None`, so shots used to be
+    the one family you could not join to the rest without enrichment."""
+    parsed = parse_bundle(_fixture_bundle(KNOWN_GOOD_GAME))
+    assert len(parsed["shots"]) > 0
+    shot_ids = {r["contest_id"] for r in parsed["shots"]}
+    pbp_ids = {r["contest_id"] for r in parsed["pbp"]}
+    assert shot_ids == pbp_ids == {KNOWN_GOOD_GAME}
+    assert None not in shot_ids
+
+
+def test_contest_id_is_never_a_float_stringification() -> None:
+    """`"5722355.0"` is the classic join-breaking defect; the value is the bundle's own str."""
+    parsed = parse_bundle(_fixture_bundle(KNOWN_GOOD_GAME))
+    for family in FAMILY_KEYS:
+        for row in parsed[family]:
+            assert "." not in row["contest_id"]
+
+
+def test_espn_game_id_present_on_every_family_even_without_a_crosswalk() -> None:
+    """The column never varies game-to-game: unbuilt crosswalk means null, not absent."""
+    parsed = parse_bundle(_fixture_bundle(KNOWN_GOOD_GAME))
+    for family in FAMILY_KEYS:
+        for row in parsed[family]:
+            assert "espn_game_id" in row, f"{family} is missing the espn_game_id column"
+
+
 def main() -> None:
     test_all_fixtures_produce_six_family_keys()
     test_known_good_game_has_populated_families()
@@ -128,6 +164,10 @@ def main() -> None:
     test_parse_and_write_convenience()
     test_bundle_written_then_read_still_parses()
     test_corrupt_pbp_page_yields_empty_pbp_without_raising()
+    test_every_family_row_carries_contest_id_and_no_game_id()
+    test_shots_contest_id_is_populated_and_agrees_with_the_other_families()
+    test_contest_id_is_never_a_float_stringification()
+    test_espn_game_id_present_on_every_family_even_without_a_crosswalk()
     print("OK")
 
 
