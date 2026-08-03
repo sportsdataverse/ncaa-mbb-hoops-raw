@@ -79,6 +79,14 @@ across every captured season with `--overwrite` and no re-scrape.
 
 Wrapper drivers around that per-stage sequence:
 
+- `scripts/run_canary.sh` — **pre-flight**: score each proxy vendor in
+  `canary_vendors.toml` against the same small bm-verify canary (10 games x 2
+  pages per vendor) and write a scorecard you pick a vendor from. Cheap and
+  gentle; creds come from that file, not `.Renviron`. Run it before a campaign
+  when a vendor looks degraded. (The WBB twin documents this in its
+  `docs/SCRAPING_NOTES.md` stage table; this repo's notes are a dated incident
+  log, so it lives here.)
+
 - `scripts/run_mbb_backfill.sh <season>` — one-command **single-season**
   chain (discover -> capture -> parse), resumable; `CHUNK=` / `WORKERS=`
   knobs per its header.
