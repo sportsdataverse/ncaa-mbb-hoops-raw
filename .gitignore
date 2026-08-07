@@ -56,7 +56,6 @@ cover/
 *.pot
 
 # Django stuff:
-*.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -180,12 +179,14 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
-# Scrape logs (transient). NOTE: /mbb/ is deliberately NOT ignored -- the raw
-# data tree is this repo's payload and is committed in `feat(data): ...` chunks
-# (~4805 files tracked under mbb/), and the -data builder's HTTP ingest reads it
-# from this repo's main branch.
-/logs/
-/.omc
+# Stray root logs only (D8: top-level *.log/*.out never belong in git).
+# NOTE: `logs/` is deliberately NOT ignored (D22: run logs are tracked in
+# every repo; per-season names overwrite). NOTE: /mbb/ is deliberately NOT
+# ignored -- the raw data tree is this repo's payload and is committed in
+# `feat(data): ...` chunks (~175k files tracked under mbb/), and the -data
+# builder's HTTP ingest reads it from this repo's main branch.
+/*.log
+/*.out
 
 # Proxy canary: creds + scorecards are local-only (canary_vendors.toml.example
 # IS committed; the filled-in canary_vendors.toml is NOT).
@@ -196,5 +197,18 @@ cython_debug/
 # per-team discovery checkpoints (scratch; schedule_master is the durable output)
 */.discover/
 
-# oh-my-claudecode tooling scratch (not project files)
+# Tool scratch dirs (D10) -- bare and nested
 .omc/
+**/.omc/
+.Rproj.user/
+**/.Rproj.user/
+.ruff_cache/
+**/.ruff_cache/
+.understand-anything/
+**/.understand-anything/
+.superpowers/
+**/.superpowers/
+.pytest_cache/
+**/.pytest_cache/
+.venv/
+**/.venv/
