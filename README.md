@@ -117,9 +117,14 @@ tail -f logs/capture_*.log
 
 ## Safe-rate rule (capture)
 
-**1-2 workers max, ever.** Each worker is a *separate process* running
-`run_capture.sh` with a disjoint `--shard i/N` -- never threads inside one
-process, never 4+ processes:
+**The worker ceiling is pool-relative, not absolute** (user-verified
+2026-08-01, `docs/SCRAPING_NOTES.md`): the old "1-2 workers max" rule was
+measured on a shared datacenter pool. With per-worker DISJOINT sticky
+residential ports (the `decodo_patchright` port pool), up to 8 workers have
+run clean — what matters is **per-IP pacing**, and the fetcher shards the
+port pool by worker index so workers never pile onto one port. Each worker is
+a *separate process* running `run_capture.sh` with a disjoint `--shard i/N`
+-- never threads inside one process. On a shared/unsharded pool, stay at 1-2:
 
 ```sh
 ./scripts/run_capture.sh --season 2026                    # 1 worker (proven-safe default, ~6h)
@@ -144,10 +149,13 @@ sdv-py.)
 Every stage is idempotent and re-runnable:
 
 - **discover** merges new contest_ids into the existing `schedule_master.parquet`
-  without touching rows already `captured=True`.
-- **capture** only fetches contest_ids where `captured==False` in the master
-  file; re-running after a ban-suspect stop (or a plain interruption) picks up
-  where it left off.
+  (and checkpoints each swept team page under `mbb/.discover/{season}/`, so an
+  aborted sweep resumes instead of restarting).
+- **capture** resume is **file-exists based**: a contest is skipped iff its
+  `mbb/raw/{season}/{contest_id}.json.gz` bundle is already on disk. The
+  master's `captured` column is vestigial (always `False`) — see
+  `docs/SCRAPING_NOTES.md` §5. Re-running after a ban-suspect stop (or a plain
+  interruption) picks up where it left off.
 - **parse** skips any contest_id that already has a `mbb/json/{contest_id}.json`
   output; re-running only parses newly captured bundles.
 
