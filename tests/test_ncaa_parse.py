@@ -9,7 +9,7 @@ from pathlib import Path
 from ncaa_bundle import read_bundle, write_bundle
 from ncaa_parse import parse_and_write, parse_bundle, write_parsed
 
-_FIX = Path(__file__).resolve().parent / "tests" / "fixtures" / "ncaa" / "bigballr" / "html"
+_FIX = Path(__file__).resolve().parent / "fixtures" / "ncaa" / "bigballr" / "html"
 
 CONTEST_IDS = [
     "1613299",
