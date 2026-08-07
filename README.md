@@ -161,3 +161,21 @@ Every stage is idempotent and re-runnable:
 
 So `bash scripts/run_discover.sh --season 2026 && bash scripts/run_capture.sh --season 2026 && bash scripts/run_parse.sh`
 is safe to re-run wholesale after any interruption.
+
+## Status
+
+The `python/` package (league-binding shims over the shared
+`sportsdataverse.scrape.ncaa` engine, sdv-py #328/#330) is complete and
+validated offline. **The reference backfill HAS run live**: schedules,
+rosters and teams for 2010-2026 are committed under `mbb/`. **The pbp
+capture is in progress** -- see `docs/RESUME.md` for the current
+season-by-season count (56,039/100,037 games as of the last recorded
+checkpoint) and where to resume it.
+
+## Phase 2: the season `-data` builder
+
+The season `-data` builder lives in the sibling repo
+`../ncaa-mbb-hoops-data` (package `ncaa_mbb_data_build`), mirroring
+`../ncaa-wbb-hoops-data`. It ingests this repo's committed `mbb/` tree over
+HTTP from `main`, which is why the data tree must stay committed (see
+`.gitignore`).
