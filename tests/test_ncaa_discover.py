@@ -7,7 +7,6 @@ from pathlib import Path
 
 import polars as pl
 import pytest
-
 from ncaa_discover import _season_str, discover_season
 
 # Sibling checkout: .../sdv-dev/{hoopR-dev/ncaa-mbb-hoops-raw, sdv-py}.

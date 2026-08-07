@@ -239,7 +239,6 @@ def test_select_pending_is_scoped_to_its_season(tmp_path):
     re-fetched into the wrong partition.
     """
     import polars as pl
-
     from ncaa_capture import _select_pending
 
     master = tmp_path / "schedule_master.parquet"
