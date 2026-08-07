@@ -11,18 +11,15 @@ from ncaa_discover import _season_str, discover_season
 
 # Sibling checkout: .../sdv-dev/{hoopR-dev/ncaa-mbb-hoops-raw, sdv-py}.
 FIXTURE = (
-    Path(__file__).resolve().parent
-    / "fixtures"
-    / "ncaa"
-    / "bigballr"
-    / "html"
-    / "team_609554.html"
+    Path(__file__).resolve().parent / "fixtures" / "ncaa" / "bigballr" / "html" / "team_609554.html"
 )
 _HTML = FIXTURE.read_text(encoding="utf-8")
 
 
 def test_discover_season_offline() -> None:
-    df = discover_season(2020, league="mbb", limit_teams=1, team_ids=[609554], fetch_fn=lambda tid: _HTML)
+    df = discover_season(
+        2020, league="mbb", limit_teams=1, team_ids=[609554], fetch_fn=lambda tid: _HTML
+    )
 
     assert df.schema["contest_id"] == pl.Utf8
     assert df.height > 0
@@ -38,7 +35,9 @@ def test_discover_season_dedups_across_teams() -> None:
     two_teams = discover_season(2020, team_ids=[609554, 700000], fetch_fn=lambda tid: _HTML)
 
     assert two_teams.height == solo.height
-    assert set(two_teams.get_column("contest_id").to_list()) == set(solo.get_column("contest_id").to_list())
+    assert set(two_teams.get_column("contest_id").to_list()) == set(
+        solo.get_column("contest_id").to_list()
+    )
 
 
 def test_write_master_merges_and_preserves_captured() -> None:
@@ -57,7 +56,10 @@ def test_write_master_merges_and_preserves_captured() -> None:
         # re-run discovery -- the captured=True row must survive the merge.
         first_id = master.get_column("contest_id")[0]
         updated = master.with_columns(
-            pl.when(pl.col("contest_id") == first_id).then(True).otherwise(pl.col("captured")).alias("captured")
+            pl.when(pl.col("contest_id") == first_id)
+            .then(True)
+            .otherwise(pl.col("captured"))
+            .alias("captured")
         )
         updated.write_parquet(master_path)
 
@@ -113,9 +115,7 @@ def test_discover_resumes_from_checkpoint(tmp_path):
 
     # First run: team 2 fails all retries -> skipped (tolerant sweep); teams
     # 1 + 3 succeed and are checkpointed to disk.
-    out1 = nd.discover_season(
-        2020, team_ids=[1, 2, 3], fetch_fn=flaky_fetch, root=tmp_path
-    )
+    out1 = nd.discover_season(2020, team_ids=[1, 2, 3], fetch_fn=flaky_fetch, root=tmp_path)
     assert out1.height > 0
     scratch = tmp_path / "mbb" / ".discover" / "2020"
     assert sorted(p.stem for p in scratch.glob("*.json")) == ["1", "3"]
@@ -126,9 +126,7 @@ def test_discover_resumes_from_checkpoint(tmp_path):
         assert team_id == 2, f"checkpointed team {team_id} was refetched"
         return _HTML
 
-    out2 = nd.discover_season(
-        2020, team_ids=[1, 2, 3], fetch_fn=second_fetch, root=tmp_path
-    )
+    out2 = nd.discover_season(2020, team_ids=[1, 2, 3], fetch_fn=second_fetch, root=tmp_path)
     assert set(out2.get_column("contest_id").to_list()) == set(
         out1.get_column("contest_id").to_list()
     )
@@ -146,7 +144,11 @@ def test_discover_shard_slices_and_skips_master(tmp_path):
 
     ids = [1, 2, 3, 4, 5, 6]
     nd.discover_season(
-        2020, team_ids=ids, fetch_fn=fetch, root=tmp_path, shard=(1, 3),
+        2020,
+        team_ids=ids,
+        fetch_fn=fetch,
+        root=tmp_path,
+        shard=(1, 3),
         write_master=False,
     )
     assert seen == [2, 5]  # ids[1::3]
@@ -156,7 +158,11 @@ def test_discover_shard_slices_and_skips_master(tmp_path):
     # checkpoints, fetches nothing new, and writes the master.
     for i in (0, 2):
         nd.discover_season(
-            2020, team_ids=ids, fetch_fn=fetch, root=tmp_path, shard=(i, 3),
+            2020,
+            team_ids=ids,
+            fetch_fn=fetch,
+            root=tmp_path,
+            shard=(i, 3),
             write_master=False,
         )
     swept = len(seen)
@@ -164,3 +170,37 @@ def test_discover_shard_slices_and_skips_master(tmp_path):
     assert len(seen) == swept  # merge pass fetched nothing
     assert out.height > 0
     assert (tmp_path / "mbb" / "schedule_master.parquet").exists()
+
+
+def test_discover_season_raises_on_unrecognized_league() -> None:
+    with pytest.raises(ValueError):
+        discover_season(2020, league="xbb", fetch_fn=lambda tid: _HTML)
+
+
+def test_discover_tolerates_flaky_team_and_skips_it() -> None:
+    """One team failing every retry is SKIPPED, not fatal (bm-verify flake)."""
+    tries: "dict[int, int]" = {}
+
+    def flaky_fetch(team_id: int) -> str:
+        tries[team_id] = tries.get(team_id, 0) + 1
+        if team_id == 2:
+            raise RuntimeError("BAN-SUSPECT:stub")
+        return _HTML
+
+    out = discover_season(2020, team_ids=[1, 2, 3], fetch_fn=flaky_fetch)
+    assert out.height > 0
+    assert tries[2] == 3  # _TEAM_TRIES retries before giving up on that team
+
+
+def test_discover_aborts_on_consecutive_team_failures() -> None:
+    """A real ban looks like EVERY team failing -> abort on the run."""
+
+    def _always_ban_fetch(team_id: int) -> str:
+        raise RuntimeError("BAN-SUSPECT:stub")
+
+    with pytest.raises(RuntimeError, match="consecutive teams failed"):
+        discover_season(
+            2020,
+            team_ids=list(range(1, 9)),
+            fetch_fn=_always_ban_fetch,
+        )
