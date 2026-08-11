@@ -99,6 +99,7 @@ REQUIRED_TEST_FUNCTIONS: dict[str, frozenset[str]] = {
             "test_classify_error_buckets",
             "test_classify_markerless_stub",
             "test_example_config_every_vendor_is_skipped",
+            "test_module_entry_point_actually_runs_the_engine",
             "test_vendor_ready_accepts_real_creds",
             "test_vendor_ready_skips_placeholders",
         }
@@ -329,6 +330,35 @@ def test_layout_is_discoverable() -> None:
         "ast parsing found zero test_* functions in any registered file -- "
         "the parser (or the registry's filenames) is broken, not this repo's tests"
     )
+
+
+def test_numbered_modules_are_runnable_and_libraries_are_not() -> None:
+    """The number IS the promise: numbered == runnable stage, unnumbered == library.
+
+    This exists because the promise was silently broken. The shim reduction
+    (``8e92a31d9``) rewrote the canary as a re-export and dropped the
+    ``if __name__ == "__main__": raise SystemExit(main())`` its predecessor
+    carried, so ``run_98_canary.sh`` ran a file that defined some names and
+    exited 0 -- a green log, a written EXIT=0, and no probe. Nothing else in
+    the suite could see that: every other test imports the module rather
+    than running it.
+    """
+    lg = _league()
+    problems: list[str] = []
+    for num, key, *_ in STAGES:
+        module = f"ncaa_{lg}_{num}_{key}"
+        if not _has_cli(module):
+            problems.append(
+                f"{module}.py is numbered but has no `if __name__ == '__main__'` "
+                "block -- running it does nothing and its driver still exits 0"
+            )
+    for lib in LIBRARY_MODULES:
+        if _has_cli(f"ncaa_{lib}"):
+            problems.append(
+                f"ncaa_{lib}.py is documented as a LIBRARY but carries a CLI -- "
+                "give it a stage number or drop the entry point"
+            )
+    assert not problems, "\n".join(problems)
 
 
 def test_stage_numbers_are_unique_and_ascending() -> None:

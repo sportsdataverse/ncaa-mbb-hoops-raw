@@ -6,6 +6,10 @@ No network, no browser. Run: pytest tests/test_98_canary.py
 
 from __future__ import annotations
 
+import subprocess
+import sys
+from pathlib import Path
+
 from ncaa_mbb_98_canary_probe import (
     BAN,
     CHALLENGE,
@@ -41,23 +45,15 @@ def test_classify_ban_beats_size_floor() -> None:
 
 def test_classify_error_buckets() -> None:
     assert (
-        classify_error(
-            RuntimeError("NCAA fetch failed: every proxy in the pool is banned")
-        )
-        == BAN
+        classify_error(RuntimeError("NCAA fetch failed: every proxy in the pool is banned")) == BAN
     )
-    assert (
-        classify_error(RuntimeError("bm-verify not passed after 2 attempts"))
-        == CHALLENGE
-    )
+    assert classify_error(RuntimeError("bm-verify not passed after 2 attempts")) == CHALLENGE
     assert classify_error(Exception("Read timed out")) == "timeout"
     assert classify_error(Exception("some other boom")) == "error"
 
 
 def test_vendor_ready_skips_placeholders() -> None:
-    assert _vendor_ready(
-        {"type": "proxy_browser", "proxies": ["http://USER:PASS@gw:1"]}
-    )
+    assert _vendor_ready({"type": "proxy_browser", "proxies": ["http://USER:PASS@gw:1"]})
     assert _vendor_ready({"type": "unblocker_zyte", "api_key": "YOUR_ZYTE_API_KEY"})
     assert _vendor_ready({"type": "unblocker_proxy", "proxy": ""})
     assert _vendor_ready({"type": "bogus"})
@@ -65,9 +61,7 @@ def test_vendor_ready_skips_placeholders() -> None:
 
 def test_vendor_ready_accepts_real_creds() -> None:
     assert (
-        _vendor_ready(
-            {"type": "proxy_browser", "proxies": ["http://u123:p456@1.2.3.4:8080"]}
-        )
+        _vendor_ready({"type": "proxy_browser", "proxies": ["http://u123:p456@1.2.3.4:8080"]})
         is None
     )
     assert _vendor_ready({"type": "unblocker_zyte", "api_key": "abc123realkey"}) is None
@@ -79,11 +73,36 @@ def test_example_config_every_vendor_is_skipped() -> None:
     import pathlib
     import tomllib
 
-    example = (
-        pathlib.Path(__file__).resolve().parents[1] / "canary_vendors.toml.example"
-    )
+    example = pathlib.Path(__file__).resolve().parents[1] / "canary_vendors.toml.example"
     conf = tomllib.loads(example.read_text(encoding="utf-8"))
     for vendor in conf["vendor"]:
         assert _vendor_ready(vendor), (
             f"{vendor.get('name')} should be skipped in the example config"
         )
+
+
+def test_module_entry_point_actually_runs_the_engine(tmp_path: Path) -> None:
+    """``python python/ncaa_<lg>_98_canary_probe.py`` must reach the engine.
+
+    Structural sibling to the stage gate's numbered/library check, but from
+    the other side: that one proves a ``__main__`` block EXISTS, this proves
+    it is WIRED to the engine's ``main``. A missing --config is the cheapest
+    engine-observable behavior (it returns 2 rather than probing anything),
+    so the check needs no network, no browser, and no vendor creds.
+
+    Regression: the shim reduction dropped this entry point entirely and
+    ``run_98_canary.sh`` reported EXIT=0 without probing a single vendor.
+    """
+    shim = next((Path(__file__).resolve().parents[1] / "python").glob("ncaa_*_98_canary_probe.py"))
+    missing = tmp_path / "not_a_config.toml"
+    done = subprocess.run(
+        [sys.executable, str(shim), "--config", str(missing)],
+        capture_output=True,
+        text=True,
+    )
+    assert done.returncode == 2, (
+        f"expected the engine's missing-config exit code 2, got {done.returncode}. "
+        f"rc=0 with empty output means the module ran and did nothing.\n"
+        f"stdout={done.stdout!r}\nstderr={done.stderr!r}"
+    )
+    assert "config not found" in done.stderr
