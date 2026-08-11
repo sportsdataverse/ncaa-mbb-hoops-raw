@@ -10,7 +10,7 @@ name: tests
 #
 # Sparse-checkout on purpose: the captured `mbb/` tree is ~175k files the tests
 # never read -- a full checkout of this repo never finishes on a runner.
-# canary_vendors.toml.example IS read (test_ncaa_canary). Tests that DO need
+# canary_vendors.toml.example IS read (test_98_canary). Tests that DO need
 # the archive tree carry the `archive` marker and are deselected here.
 
 on:

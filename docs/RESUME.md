@@ -86,7 +86,7 @@ Estimated remaining: MBB ~17h at 24 workers (~45 games/min). WBB ~35h from zero.
    `shots` whose id was hardcoded `None`), ESPN game+team ids, and the ten
    on-court player id/name columns. Do it AFTER capture finishes so it sweeps
    once. Per-season commit+push — one shot would be a multi-GB push.
-   `ncaa_parse.py` needs `--overwrite`/`--season` flags first; it currently
+   `ncaa_mbb_03_games_parse.py` needs `--overwrite`/`--season` flags first; it currently
    skips any game whose json exists.
 2. **WBB pbp capture** — ~93k games, 16 seasons, reference data ready.
 3. Enrichment size is **1.678x** base json. Dropping the ten on-court

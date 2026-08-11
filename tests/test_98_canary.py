@@ -1,12 +1,12 @@
 """Offline checks for the canary's pure logic: classifier + vendor gating.
 
-No network, no browser. Run: pytest python/test_ncaa_canary.py
-(with PYTHONPATH="${SDV_PY}:${ROOT}/python", same as scripts/run_canary.sh).
+No network, no browser. Run: pytest tests/test_98_canary.py
+(with PYTHONPATH="${SDV_PY}:${ROOT}/python", same as scripts/run_98_canary.sh).
 """
 
 from __future__ import annotations
 
-from ncaa_canary import (
+from ncaa_mbb_98_canary_probe import (
     BAN,
     CHALLENGE,
     CLEAN,

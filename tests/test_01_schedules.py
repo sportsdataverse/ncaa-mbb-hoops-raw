@@ -7,7 +7,7 @@ from pathlib import Path
 
 import polars as pl
 import pytest
-from ncaa_discover import _season_str, discover_season
+from ncaa_mbb_01_schedules_scrape import _season_str, discover_season
 
 # Sibling checkout: .../sdv-dev/{hoopR-dev/ncaa-mbb-hoops-raw, sdv-py}.
 FIXTURE = (
@@ -106,7 +106,7 @@ if __name__ == "__main__":
 
 def test_discover_resumes_from_checkpoint(tmp_path):
     """An aborted sweep's checkpointed teams are NOT refetched on re-run."""
-    import ncaa_discover as nd
+    import ncaa_mbb_01_schedules_scrape as nd
 
     def flaky_fetch(team_id):
         if team_id == 2:
@@ -134,7 +134,7 @@ def test_discover_resumes_from_checkpoint(tmp_path):
 
 def test_discover_shard_slices_and_skips_master(tmp_path):
     """A sharded run sweeps only its slice and never writes schedule_master."""
-    import ncaa_discover as nd
+    import ncaa_mbb_01_schedules_scrape as nd
 
     seen: "list[int]" = []
 
