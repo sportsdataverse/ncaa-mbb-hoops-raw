@@ -63,15 +63,15 @@ values. `parse` is fully offline and needs no creds.
 ## Run order
 
 ```sh
-bash scripts/run_discover.sh --season 2026     # -> mbb/schedule_master.parquet (~5.5-6k contest_ids)
+bash scripts/run_01_schedules.sh --season 2026  # -> mbb/schedule_master.parquet (~5.5-6k contest_ids)
                                                #    + mbb/schedules/{html,json}/2026/
-bash scripts/run_capture.sh  --season 2026     # -> mbb/raw/2026/{contest_id}.json.gz
-bash scripts/run_parse.sh                      # -> mbb/json/{contest_id}.json
-bash scripts/run_rosters.sh  --season 2026     # -> mbb/rosters/{html,json}/2026/
-bash scripts/run_datasets.sh --season 2026     # -> the season parquets + mbb/teams/
+bash scripts/run_02_games.sh     --season 2026  # -> mbb/raw/2026/{contest_id}.json.gz
+bash scripts/run_03_parse.sh                    # -> mbb/json/{contest_id}.json
+bash scripts/run_04_rosters.sh   --season 2026  # -> mbb/rosters/{html,json}/2026/
+bash scripts/run_05_datasets.sh  --season 2026  # -> the season parquets + mbb/teams/
 ```
 
-`run_datasets.sh` is fully offline (no creds, no network) and **not sharded**:
+`run_05_datasets.sh` is fully offline (no creds, no network) and **not sharded**:
 each season parquet is a single output file, so concurrent `--shard` workers
 would race it. Run it once, after the sharded sweeps finish. It also re-derives
 any missing per-team json from committed html, so a parser fix can be replayed
@@ -79,7 +79,7 @@ across every captured season with `--overwrite` and no re-scrape.
 
 Wrapper drivers around that per-stage sequence:
 
-- `scripts/run_canary.sh` — **pre-flight**: score each proxy vendor in
+- `scripts/run_98_canary.sh` — **pre-flight**: score each proxy vendor in
   `canary_vendors.toml` against the same small bm-verify canary (10 games x 2
   pages per vendor) and write a scorecard you pick a vendor from. Cheap and
   gentle; creds come from that file, not `.Renviron`. Run it before a campaign
@@ -98,7 +98,7 @@ Wrapper drivers around that per-stage sequence:
   before moving on (re-run later to finish the remainder).
 - `scripts/run_reference_backfill.sh [start] [end]` — reference-only
   companion to the pbp backfill: per season (newest-first) it chains
-  `run_discover.sh` -> sharded `ncaa_rosters.py` -> `run_datasets.sh`,
+  `run_01_schedules.sh` -> sharded `ncaa_mbb_04_rosters_scrape.py` -> `run_05_datasets.sh`,
   then commits + pushes that season. Reference data is cheap (~2 pages
   per team-season vs 3 per game), so it runs first / independently of
   `run_mbb_backfill*.sh`; it does **no** pbp capture.
@@ -123,13 +123,13 @@ measured on a shared datacenter pool. With per-worker DISJOINT sticky
 residential ports (the `decodo_patchright` port pool), up to 8 workers have
 run clean — what matters is **per-IP pacing**, and the fetcher shards the
 port pool by worker index so workers never pile onto one port. Each worker is
-a *separate process* running `run_capture.sh` with a disjoint `--shard i/N`
+a *separate process* running `run_02_games.sh` with a disjoint `--shard i/N`
 -- never threads inside one process. On a shared/unsharded pool, stay at 1-2:
 
 ```sh
-./scripts/run_capture.sh --season 2026                    # 1 worker (proven-safe default, ~6h)
-./scripts/run_capture.sh --season 2026 --shard 0/2 &       # 2 workers (~4h), only after 1-worker is stable
-./scripts/run_capture.sh --season 2026 --shard 1/2 &
+./scripts/run_02_games.sh --season 2026                    # 1 worker (proven-safe default, ~6h)
+./scripts/run_02_games.sh --season 2026 --shard 0/2 &       # 2 workers (~4h), only after 1-worker is stable
+./scripts/run_02_games.sh --season 2026 --shard 1/2 &
 ```
 
 A ban-suspect response is a **hard stop**, not a retry: the process exits
@@ -159,7 +159,7 @@ Every stage is idempotent and re-runnable:
 - **parse** skips any contest_id that already has a `mbb/json/{contest_id}.json`
   output; re-running only parses newly captured bundles.
 
-So `bash scripts/run_discover.sh --season 2026 && bash scripts/run_capture.sh --season 2026 && bash scripts/run_parse.sh`
+So `bash scripts/run_01_schedules.sh --season 2026 && bash scripts/run_02_games.sh --season 2026 && bash scripts/run_03_parse.sh`
 is safe to re-run wholesale after any interruption.
 
 ## Status

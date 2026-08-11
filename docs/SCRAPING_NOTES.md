@@ -115,7 +115,7 @@ and the OSS "fingerprint-only HTTP client" class can't work either), and OSS sen
 generators (none is a working/safe/maintained Python web generator).
 
 **Cost:** ~$9–45 per 6300-game season (patchright free + residential ~$3/GB).
-Tooling: `python/ncaa_canary.py` (`proxy_patchright` vendor). **Production TODO:**
+Tooling: `python/ncaa_mbb_98_canary_probe.py` (`proxy_patchright` vendor). **Production TODO:**
 fold this transport into sdv-py's fetch layer (replace `mbb_ncaa_fetch._PlaywrightTransport`).
 
 ---
@@ -157,7 +157,7 @@ Why it slipped through: the stub is HTTP **200** with **no ban marker**, so
 Callers rejected it as too-small and logged `"challenge not cleared"` — while the
 fetcher, believing it had succeeded, never re-solved and never rotated.
 
-> ⚠️ `ncaa_capture`'s `"challenge not cleared"` warning is emitted for **any** page
+> ⚠️ `ncaa_mbb_02_games_scrape`'s `"challenge not cleared"` warning is emitted for **any** page
 > failing `_is_clean`. It is not evidence of a challenge. It misled a whole
 > debugging session. Do not trust that log line — inspect the actual bytes.
 

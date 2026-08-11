@@ -6,7 +6,7 @@ import tempfile
 from pathlib import Path
 
 from ncaa_bundle import is_captured, read_bundle
-from ncaa_capture import capture_contests, shard
+from ncaa_mbb_02_games_scrape import capture_contests, shard
 
 # Sibling checkout: .../sdv-dev/{hoopR-dev/ncaa-mbb-hoops-raw, sdv-py}.
 FIXTURE_DIR = Path(__file__).resolve().parent / "fixtures" / "ncaa" / "bigballr" / "html"
@@ -227,7 +227,7 @@ def test_select_pending_scopes_to_requested_season(tmp_path):
     re-fetched into the wrong partition.
     """
     import polars as pl
-    from ncaa_capture import _select_pending
+    from ncaa_mbb_02_games_scrape import _select_pending
 
     master = tmp_path / "schedule_master.parquet"
     pl.DataFrame(
