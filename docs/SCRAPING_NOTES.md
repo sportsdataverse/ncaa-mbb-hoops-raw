@@ -18,10 +18,21 @@ Raising it to 24 would have changed *nothing*.
 **Why.** `capture.shard()` splits the season by `k % n` over the SORTED
 contest-id list. If an earlier campaign ran with `n` workers and ONE shard
 died (ban, hard-stop, round cap), the contests it never captured are exactly
-the positions `k ≡ r (mod n)` — a **stride-n residual**. Re-running with any
-worker count that shares a factor with `n` maps that whole block back onto a
-single worker, so one process does every remaining fetch sequentially while
-the rest exit instantly with `captured=0 skipped=NNN`.
+the positions `k ≡ r (mod n)` — a **stride-n residual**. Re-running with `m`
+workers lands that residual on exactly **`m / gcd(n, m)`** shards. A coprime `m`
+spreads it across ALL `m`; a shared factor concentrates it — worst case
+(`gcd(n, m) == m`, i.e. `m` divides `n`) puts every remaining fetch on ONE
+worker while the rest exit instantly with `captured=0 skipped=NNN`.
+
+The measured table below is that formula, not a separate observation. `m=16`
+against `n=24`: `gcd 8`, so `16/8 = 2` busy shards. `m=24`: `gcd 24`, so `1` —
+the pathological case. `m=23`: `gcd 1`, so all 23.
+
+The table reads 2 busy shards where the formula says 1 because the residual is
+not purely one dead shard — a few contests are missing for unrelated reasons
+(pageless, other rounds). The DEEPEST-shard column is the number that matters
+for wall clock, and it tracks the formula exactly: 172 at `m ∈ {8,12,24}`, 86 at
+`m=16` (half, as `2` busy shards implies), 9 at `m=23`.
 
 The August run used `WORKERS=24`. Measured distribution of what it left:
 
