@@ -1,11 +1,64 @@
 # stats.ncaa.org scraping — everything we know
 
-Hard-won operational knowledge for the NCAA raw scraper. Last updated **2026-08-01**.
+Hard-won operational knowledge for the NCAA raw scraper. Last updated **2026-08-11**.
 Written after a backfill stalled at 38% and burned two proxy subnets; every claim
 here is either measured live or explicitly flagged as unproven.
 
 **READ THIS WHOLE FILE BEFORE ANY SCRAPE RUN.** The 2026-08-01 campaign burned
 ~3 hours re-deriving facts already recorded here.
+
+---
+
+## 2026-08-11 — WORKERS must be COPRIME to the worker count that left the gap
+
+**Measured, 11x speedup.** Re-running a season's stragglers went from ~3
+captures/min to **34.6/min** by changing one number: `WORKERS` 8 -> **23**.
+Raising it to 24 would have changed *nothing*.
+
+**Why.** `capture.shard()` splits the season by `k % n` over the SORTED
+contest-id list. If an earlier campaign ran with `n` workers and ONE shard
+died (ban, hard-stop, round cap), the contests it never captured are exactly
+the positions `k ≡ r (mod n)` — a **stride-n residual**. Re-running with any
+worker count that shares a factor with `n` maps that whole block back onto a
+single worker, so one process does every remaining fetch sequentially while
+the rest exit instantly with `captured=0 skipped=NNN`.
+
+The August run used `WORKERS=24`. Measured distribution of what it left:
+
+| WORKERS | shards with work | deepest shard (= wall clock) |
+|---|---|---|
+| 8 | 2 of 8 | 172 fetches |
+| 12 | 2 of 12 | 172 |
+| 16 | 3 of 16 | 86 |
+| 24 | 2 of 24 | 172 |
+| **23** | **23 of 23** | **9** |
+
+**The rule: pick a `WORKERS` value coprime to the one that created the gap**
+(and to its divisors). Against a stride-24 residual, 23 works; so would 25,
+7, or 5. The driver's guard allows 1..24, so **23 is the practical choice**.
+Check the port budget too — keep >=2 proxy ports per worker (the Decodo
+vendor reported 50 ports, so 23 workers is ~2.2 each).
+
+**The tell, in the log:** most workers printing `captured=0 skipped=~N/n` and
+exiting within seconds, while one or two keep running. That is NOT "the
+season is nearly done" — it is the whole remainder queued behind one process.
+
+**Diagnose before turning the dial** — the shard math is cheap to compute:
+
+```python
+ids = sorted(master.filter(season==S).contest_id)          # from schedule_master
+have = {p.name.split(".")[0] for p in os.scandir(f"mbb/raw/{S}")}
+miss = [k for k, c in enumerate(ids) if c not in have]
+for n in (8, 16, 23, 24):
+    deepest = max(sum(1 for k in miss if k % n == r) for r in range(n))
+    print(n, "->", deepest, "fetches deep")
+```
+
+Also confirmed this run: the 2017 residual (105 contests the August campaign
+gave up on at `MAX_ROUNDS`) captured cleanly down to **1** remaining once the
+work was spread. Those contests were never "un-capturable" — they were a
+dead shard. Do not read a `MAX_ROUNDS` abandonment as evidence a contest has
+no page.
 
 ---
 

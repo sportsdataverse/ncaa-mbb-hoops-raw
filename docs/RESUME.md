@@ -1,9 +1,12 @@
 # Resume the NCAA basketball backfill
 
-State as of **2026-08-11 19:15 EDT**, verified by an on-disk census (not by
-reading the previous edition of this file — it was ~9 days stale and claimed
-56% complete with "2016..2010 not started", all of which was false by then).
-Everything below is committed and pushed; nothing is running.
+State as of **2026-08-11 22:10 EDT**, verified by an on-disk census after the
+2017-2012 recovery run. Everything below is committed and pushed; nothing is
+running.
+
+Trust the census, not a previous edition of this file: the edition before this
+one was ~9 days stale and claimed 56% complete with "2016..2010 not started",
+all false by the time anyone read it.
 
 Read `docs/SCRAPING_NOTES.md` first — it is the canonical operational
 reference for stats.ncaa.org, and it supersedes this file wherever they
@@ -11,59 +14,51 @@ disagree about transport.
 
 ## Where it stopped
 
-The last campaign ran **2026-08-02 14:02 → 2026-08-05 14:40** (range 2017→2010)
-and ended with `campaign finished 2017..2010`. That line means the driver
-walked the whole season range — **not** that every season completed. Four
-seasons were abandoned mid-recovery at the round cap.
+State verified by on-disk census **2026-08-11 22:10 EDT**. Nothing is running.
 
-MBB pbp capture: **99,240 / 100,037 contests (99.2%)**, and every captured
-bundle is parsed (`mbb/json/` count == `mbb/raw/` count, parse reports
-`pending=0`).
+**The 2026-08-11 run closed the 2017-2012 residual**: +692 contests captured in
+~50 minutes of wall clock. MBB pbp capture is now **99,932 / 100,037 (99.895%)**,
+every captured bundle parsed (`mbb/json/` count == `mbb/raw/` count).
 
-| season | captured | in master | gap | terminal state |
+| season | captured | in master | gap | note |
 | --- | ---: | ---: | ---: | --- |
-| 2026 | 6297 | 6300 | 3 | complete (pageless) |
+| 2026 | 6297 | 6300 | 3 | pageless |
 | 2025 | 6293 | 6293 | 0 | complete |
 | 2024 | 6243 | 6243 | 0 | complete |
-| 2023 | 6221 | 6222 | 1 | complete (pageless) |
-| 2022 | 5970 | 5971 | 1 | complete (pageless) |
-| 2021 | 4269 | 4286 | 17 | complete (pageless) |
+| 2023 | 6221 | 6222 | 1 | pageless |
+| 2022 | 5970 | 5971 | 1 | pageless |
+| 2021 | 4269 | 4286 | 17 | pageless |
 | 2020 | 5783 | 5783 | 0 | complete |
-| 2019 | 6040 | 6042 | 2 | complete (pageless) |
-| 2018 | 6002 | 6003 | 1 | complete (pageless) |
-| **2017** | **5867** | 5972 | **105** | **MAX_ROUNDS=12 — "re-run later to finish"** |
-| **2016** | **5708** | 5950 | **242** | **MAX_ROUNDS=12 — "re-run later to finish"** |
-| 2015 | 5927 | 5932 | 5 | straggler guard: a round captured nothing |
-| 2014 | 5946 | 5947 | 1 | straggler guard: a round captured nothing |
-| **2013** | **5625** | 5814 | **189** | **MAX_ROUNDS=12 — "re-run later to finish"** |
-| **2012** | **5600** | 5775 | **175** | **MAX_ROUNDS=12 — "re-run later to finish"** |
-| 2011 | 5737 | 5749 | 12 | straggler guard: a round captured nothing |
-| 2010 | 5712 | 5755 | 43 | straggler guard: a round captured nothing |
-| **TOTAL** | **99240** | **100037** | **797** | |
+| 2019 | 6040 | 6042 | 2 | pageless |
+| 2018 | 6002 | 6003 | 1 | pageless |
+| 2017 | 5971 | 5972 | 1 | **+104 on 08-11** |
+| 2016 | 5949 | 5950 | 1 | **+241 on 08-11** |
+| 2015 | 5927 | 5932 | 5 | +0 (no page) |
+| 2014 | 5946 | 5947 | 1 | +0 (no page) |
+| 2013 | 5809 | 5814 | 5 | **+184 on 08-11** |
+| 2012 | 5763 | 5775 | 12 | **+163 on 08-11** |
+| 2011 | 5737 | 5749 | 12 | NOT yet re-run |
+| 2010 | 5712 | 5755 | 43 | NOT yet re-run |
+| **TOTAL** | **99932** | **100037** | **105** | |
 
-The 797 missing contests are three different things, and only the first group
-is known to be worth re-running:
+### What the remaining 105 are
 
-- **711 abandoned at the round cap** (2016 242, 2013 189, 2012 175, 2017 105).
-  The driver's own message is `MAX_ROUNDS=12 reached with N remaining -- moving
-  on (re-run later to finish)`. Their rounds ended `chunk N hard-stopped
-  (rc=1) ... cooling 1800s` — the run was being refused, so these were never
-  shown to be uncapturable. **This is the work to pick up.**
-- **61 exhausted by the straggler guard** (2010 43, 2011 12, 2015 5, 2014 1).
-  The guard exits a season when a whole round captures nothing and labels the
-  remainder "un-capturable". That is a heuristic, **not** proof the pages don't
-  exist — see the warning below.
-- **25 pageless**, documented before this campaign (2021 17, 2026 3, 2019 2,
-  and one each in 2018 / 2022 / 2023). Contests in `schedule_master` with no
-  game page on stats.ncaa.org; they will never capture.
+- **55 in 2010-2011**, untouched tonight because the run was scoped 2017-2012.
+  **These are the next real work** — and they are very likely the same dead-shard
+  residual, so re-run them with the coprime-WORKERS rule below, not with 8/24.
+- **25 pageless** in 2018-2026, documented before this campaign.
+- **25 across 2012-2017** after tonight's sweep. Each season converged to a
+  handful and stopped yielding, which is the signature of contests with no game
+  page rather than blocked ones.
 
-> ⚠️ **Do not classify the residual from the log's `challenge not cleared`
-> lines.** That warning fires for ANY page failing `_is_clean` — a thin Akamai
-> stub and a legitimately absent page produce the same message. SCRAPING_NOTES
-> §2 and §8 record that trusting this line sent three successive diagnoses the
-> wrong way. Only 92 distinct contest ids ever emitted it. To settle
-> pageless-vs-blocked, dump the actual bytes (status, length, first 300 chars)
-> for a sample — nobody has done that for these 797.
+### The correction this run forced
+
+The 711 contests the August campaign abandoned at `MAX_ROUNDS` were **never
+"un-capturable"** — 692 of them captured cleanly tonight against the same site
+with a healthy vendor. They were **one dead worker-shard**, re-serialized onto a
+single worker by every retry (see the coprime-WORKERS rule below and
+SCRAPING_NOTES 2026-08-11). Do not read a `MAX_ROUNDS` abandonment, or a
+straggler-guard "un-capturable" label, as evidence a contest has no page.
 
 WBB pbp capture: **0 games** (never started). Its reference data is complete.
 See the WBB twin's own docs before starting it.
@@ -110,7 +105,7 @@ the NCAA<->ESPN **team** crosswalk which lives in sdv-py (merged, PR #314).
    `git -C ../../sdv-py diff --stat HEAD origin/main -- sportsdataverse/scrape/ncaa/`
    (empty output = safe) rather than assuming either way.
 
-## To resume — the 711
+## To resume — the 55 left in 2011-2010
 
 ```sh
 cd C:/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw
@@ -119,16 +114,24 @@ cd C:/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw
 bash scripts/run_98_canary.sh --games 10
 #    -> canary_out/canary_<ts>.md ; PASS = >=90% clean
 
-# 1. the four unfinished seasons, newest-first. Resume is free: capture skips
-#    every contest already on disk, so the ~23k already-captured games in this
-#    range cost a file-exists check each, not a fetch.
+# 1. the two seasons never re-run, newest-first. Resume is free: capture skips
+#    every contest already on disk, so the ~11.4k already-captured games in
+#    this range cost a file-exists check each, not a fetch.
 #    NOTE the knob is VENDOR, not NCAA_VENDOR: the range driver exports
 #    NCAA_VENDOR="$VENDOR" to each season, so an outer NCAA_VENDOR is
 #    OVERRIDDEN. (VENDOR already defaults to decodo_patchright; set it
 #    explicitly anyway so the Decodo-only rule is visible in the command.)
+#
+#    WORKERS=23 IS DELIBERATE, NOT A TYPO. The August run used 24 workers and
+#    lost a shard, so its residual sits at positions k = r (mod 24) and any
+#    WORKERS sharing a factor with 24 (8/12/16/24) hands the whole block back
+#    to ONE worker -- measured 172 fetches deep vs 9 at 23. Coprime wins:
+#    3 captures/min -> 34.6/min. See SCRAPING_NOTES 2026-08-11.
+#    RE-CHECK THE SHARD MATH FOR 2011/2010 before launching (snippet in
+#    SCRAPING_NOTES): their residual may have a different stride than 24.
 VENDOR=decodo_patchright \
-WORKERS=8 CHUNK=400 PARSE_WORKERS=12 MAX_ROUNDS=12 \
-  nohup bash scripts/run_mbb_backfill_range.sh 2017 2012 >> logs/campaign.log 2>&1 &
+WORKERS=23 CHUNK=400 PARSE_WORKERS=16 MAX_ROUNDS=12 \
+  nohup bash scripts/run_mbb_backfill_range.sh 2011 2010 >> logs/campaign.log 2>&1 &
 
 # 2. ALWAYS start this too -- the campaign commits NOTHING itself
 nohup bash scripts/run_autocommit.sh >> logs/autocommit_nohup.log 2>&1 &
@@ -147,8 +150,15 @@ exactly where it stopped. `EXIT=` lines mark each stage's real exit code; a
 before pushing further rather than burning rounds on cooldowns (that is how
 these four seasons were lost the first time).
 
-Note that 2015 and 2014 sit inside the 2017→2012 range and have only 6
-outstanding contests between them; they cost one quick skip-pass each.
+Budget ~5 minutes of fixed overhead per season even when there is nothing to
+fetch: 23 workers still scan every contest id for file existence, then a parse
+sweep runs, then the straggler round repeats both. On 2026-08-11 that overhead,
+not the fetching, was most of the wall clock once the shards were balanced.
+
+**Kill leftover workers between runs.** Capture workers from a finished season
+were found still alive 45 minutes later, holding proxy sessions and competing
+with the current round for the port pool. Check for python processes older than
+the current season's start time and stop those by PID.
 
 ## Known wrinkles (not blockers)
 
