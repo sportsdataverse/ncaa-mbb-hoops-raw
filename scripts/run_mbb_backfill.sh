@@ -30,6 +30,38 @@ SDV_PY="C:/Users/saiem/Documents/GitHub-Data/sdv-dev/sdv-py"
 PY="${SDV_PY}/.venv/Scripts/python.exe"
 
 SEASON="${1:?usage: run_mbb_backfill.sh <season>  (ending year, e.g. 2026)}"
+
+# SEASON RANGE: MIN/MAX_SEASON track the bundled MBB crosswalk
+# (sportsdataverse/mbb/data/ncaa_teamids_mbb.csv), which covers 2009-10..2025-26.
+# Refusing here gives the real cause; without it discover_season() raises its
+# generic "crosswalk drift" ValueError and the operator debugs the wrong thing.
+# Ported from the WBB twin, where a STALE ceiling (MAX_SEASON=2025 after the
+# crosswalk already covered 2026) refused a valid season with rc=2, the range
+# driver read that as a capture hard-stop, and the 2026-08-01 campaign captured
+# ZERO bundles while discovery looked healthy. **Bump MAX_SEASON in the same
+# change as the crosswalk season** -- a stale guard does not fail loudly, it
+# burns a campaign.
+MIN_SEASON=2010
+MAX_SEASON=2026
+case "$SEASON" in
+  ''|*[!0-9]*)
+    echo "REFUSING SEASON='${SEASON}' -- must be a plain integer ending year (e.g. 2026)." >&2
+    exit 2 ;;
+esac
+if [ "$SEASON" -lt "$MIN_SEASON" ]; then
+  echo "REFUSING season=${SEASON} -- the bundled MBB crosswalk (sportsdataverse/mbb/data/ncaa_teamids_mbb.csv)" >&2
+  echo "  starts at season ${MIN_SEASON} (2009-10); there is no earlier row." >&2
+  exit 2
+fi
+if [ "$SEASON" -gt "$MAX_SEASON" ]; then
+  echo "REFUSING season=${SEASON} -- the bundled MBB crosswalk (sportsdataverse/mbb/data/ncaa_teamids_mbb.csv)" >&2
+  echo "  only covers seasons through ${MAX_SEASON}; there is no later row yet." >&2
+  echo "  This is a crosswalk coverage gap, not the 'team-ids format drift' that discover_season()" >&2
+  echo "  would otherwise report. Extending the crosswalk is a separate sdv-py change; once it" >&2
+  echo "  lands, bump MAX_SEASON in this script." >&2
+  exit 2
+fi
+
 WORKERS="${WORKERS:-1}"
 # Ceiling history: 2 was measured on the shared ProxyBonanza datacenter pool
 # (4 workers piled onto few IPs => ban). With per-worker DISJOINT sticky
@@ -39,10 +71,25 @@ WORKERS="${WORKERS:-1}"
 # still leaves ~2 ports per worker, and per-IP rate stays far under the ~20
 # pages/min that measured safe on a SINGLE ip. Going past ~25 would put more
 # than one worker on an ip at a time, which is the pattern that actually bans.
-case "$WORKERS" in [1-9]|1[0-9]|2[0-4]) ;; *)
-  echo "REFUSING WORKERS='$WORKERS' -- use 1-24 (per-worker disjoint sticky ports; pool is 50)." >&2
-  exit 2 ;;
+#
+# WHY THE CEILING MATTERS BEYOND THROUGHPUT: capture.shard() splits a season by
+# `k % n`, so a campaign that loses one shard leaves a stride-n residual, and
+# re-running with any WORKERS sharing a factor with n re-serialises that whole
+# block onto ONE worker. On 2026-08-11 the fix was WORKERS=23 -- coprime to the
+# 24 that left the gap -- taking the deepest shard from 172 fetches to 9 and the
+# rate from 3/min to 34.6/min. A ceiling below 23 would have forced a value that
+# shares a factor with 24. See docs/SCRAPING_NOTES.md 2026-08-11.
+#
+# Numeric form (not a `case` glob) so it matches the WBB twin exactly and so a
+# leading-zero value like 023 is read as 23 rather than refused.
+case "$WORKERS" in
+  ''|*[!0-9]*) WORKERS=0 ;;
 esac
+if [ "$WORKERS" -lt 1 ] || [ "$WORKERS" -gt 24 ]; then
+  echo "REFUSING WORKERS='${WORKERS}' -- must be 1..24 (each worker rides its own" >&2
+  echo "  disjoint sticky proxy session; pool is 50 ports, keep >=2 per worker)." >&2
+  exit 2
+fi
 
 mkdir -p logs
 TS="$(date +%Y%m%d_%H%M%S)"
