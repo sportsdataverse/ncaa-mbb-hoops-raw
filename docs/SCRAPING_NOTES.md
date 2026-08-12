@@ -147,15 +147,23 @@ if [ -x "${SDV_PY}/.venv/bin/python" ]; then PY="${PY:-${SDV_PY}/.venv/bin/pytho
 else PY="${PY:-${SDV_PY}/.venv/Scripts/python.exe}"; fi
 ```
 
-**MBB's runners have NOT been ported** — do this before running MBB here.
+**MBB's runners WERE ported on 2026-08-12** — `run_01_schedules.sh`, `run_02_games.sh`, `run_03_parse.sh`, `run_mbb_backfill.sh` and `run_mbb_backfill_range.sh` now use the same env-overridable `SDV_PY` + per-OS `PY` resolution, matching the WBB five.
 
-### LATENT BUG in `ncaa-mbb-hoops-raw/scripts/run_capture.sh`
+### ~~LATENT BUG~~ FIXED 2026-08-12 — `run_02_games.sh` cred gate (was `run_capture.sh`)
 
-Its ProxyBonanza cred gate keys off the **`--vendor` CLI flag**:
+**Fixed.** It now keys off `NCAA_VENDOR`, matching `run_01_schedules.sh` and
+the WBB twin. The bug was that the gate keyed off the **`--vendor` CLI flag**:
 
 ```sh
 if [[ " $* " == *" --vendor"* ]]; then ... else <demand PB creds; exit 2> fi
 ```
+
+`run_mbb_backfill.sh` drives capture and exports `NCAA_VENDOR`; it does not pass
+`--vendor`. So a Decodo-driven MBB campaign still hit the ProxyBonanza check and
+exited 2 on a box without PB creds. Verified after the fix: with
+`NCAA_VENDOR` set and `HOME` pointed at a nonexistent dir, the script prints
+`transport: NCAA_VENDOR=... (ProxyBonanza not used)` and proceeds; with neither,
+it still refuses with rc=2.
 
 But `ncaa_capture.py`'s `--vendor` **defaults to `os.environ.get("NCAA_VENDOR")`**,
 and `run_mbb_backfill.sh` never passes the flag. So the documented env-var

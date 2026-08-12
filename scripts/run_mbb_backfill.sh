@@ -26,8 +26,10 @@
 set -uo pipefail
 cd "$(dirname "$0")/.." || exit 1          # -> ncaa-mbb-hoops-raw repo root
 ROOT="$(pwd)"
-SDV_PY="C:/Users/saiem/Documents/GitHub-Data/sdv-dev/sdv-py"
-PY="${SDV_PY}/.venv/Scripts/python.exe"
+SDV_PY="${SDV_PY:-C:/Users/saiem/Documents/GitHub-Data/sdv-dev/sdv-py}"
+# .venv layout is OS-dependent: Linux/droplet = .venv/bin, Windows = .venv/Scripts
+if [ -x "${SDV_PY}/.venv/bin/python" ]; then PY="${PY:-${SDV_PY}/.venv/bin/python}"
+else PY="${PY:-${SDV_PY}/.venv/Scripts/python.exe}"; fi
 
 SEASON="${1:?usage: run_mbb_backfill.sh <season>  (ending year, e.g. 2026)}"
 
@@ -73,12 +75,13 @@ WORKERS="${WORKERS:-1}"
 # than one worker on an ip at a time, which is the pattern that actually bans.
 #
 # WHY THE CEILING MATTERS BEYOND THROUGHPUT: capture.shard() splits a season by
-# `k % n`, so a campaign that loses one shard leaves a stride-n residual, and
-# re-running with any WORKERS sharing a factor with n re-serialises that whole
-# block onto ONE worker. On 2026-08-11 the fix was WORKERS=23 -- coprime to the
-# 24 that left the gap -- taking the deepest shard from 172 fetches to 9 and the
-# rate from 3/min to 34.6/min. A ceiling below 23 would have forced a value that
-# shares a factor with 24. See docs/SCRAPING_NOTES.md 2026-08-11.
+# `k % n`, so a campaign that loses one shard leaves a stride-n residual. A
+# re-run with m workers lands it on m/gcd(n,m) shards -- a coprime m spreads it
+# across ALL m, a shared factor concentrates it (worst case, onto one worker).
+# On 2026-08-11 the fix was WORKERS=23, coprime to the 24 that left the gap,
+# taking the deepest shard from 172 fetches to 9 and the rate from 3/min to
+# 34.6/min. A ceiling below 23 forces a value sharing a factor with 24.
+# See docs/SCRAPING_NOTES.md 2026-08-11.
 #
 # Numeric form (not a `case` glob) so it matches the WBB twin exactly and so a
 # leading-zero value like 023 is read as 23 rather than refused.
