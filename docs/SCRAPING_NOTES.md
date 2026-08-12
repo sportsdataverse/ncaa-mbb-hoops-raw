@@ -62,6 +62,130 @@ no page.
 
 ---
 
+## 2026-08-02 — DROPLET works: SwiftShader clears bm-verify; measured rates are far below §2026-08-01
+
+Measured on the **Linux droplet** (`sdv-data`, DigitalOcean, 8 cores / 15 GB),
+running the WBB sibling (`ncaa-wbb-hoops-raw`) — same host, same Akamai
+bm-verify, same `decodo_patchright` transport, so these numbers carry to MBB.
+
+### CORRECTION 1: a real GPU is NOT required (supersedes §2026-07-16)
+
+§2026-07-16 says the patchright transport renders via real GPU/ANGLE
+("verified RTX 3090 D3D11, **not** SwiftShader. Needs a real-GPU host."), and
+`canary_vendors.toml.example` still tells the reader to buy a managed browser.
+**Both are wrong about the GPU.** On a virtio-GPU droplet, Chrome falls back to:
+
+```
+ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)
+```
+
+…and bm-verify **clears normally** — 342 WBB bundles captured with **zero**
+challenge failures, zero bans. Cold solve ~51 s, warming to ~33 s, then faster.
+
+The load-bearing tells are `navigator.webdriver=false` (patchright) + a **real
+Chrome UA**, exactly as §2026-07-16 identified. The WebGL renderer string is
+NOT part of the check. Do not buy a GPU host or a managed browser for this.
+
+### CORRECTION 2: ~1,200 bundles/hr is not reproducible — measure, don't assume
+
+§2026-08-01 budgets "~1200 bundles/hr serial" and "16 workers ≈ a season's
+capture in well under an hour". Measured on the droplet, season 2025 WBB:
+
+| workers | aggregate rate | s/bundle | notes |
+|---|---|---|---|
+| 1 | **80 /hr** | 45.0 | vs ~1,200 /hr claimed — **15x** off |
+| 8 | **292 → 404 /hr** | 12.3 → 8.9 | rate climbs as `_abck` warms per worker |
+
+Scaling efficiency at 8 workers is only **46 %** (404 vs 640 linear) — CPU
+contention, since SwiftShader software rendering is CPU-heavy and 8 chrome
+instances share 8 cores. On a real-GPU host the per-worker figure should be
+better; the ~1,200/hr claim still needs a citation.
+
+**Practical consequence:** a full 2010-2025 WBB backfill (~82.6k contests) is
+**~11.8 days** at 8 droplet workers, not the ~75-80 h §2026-08-01 implies.
+Re-derive the ETA per host before planning a campaign around it.
+
+### Droplet-specific operational rules
+
+- **RSS-sum badly overestimates chrome.** Peak RSS for one capture worker
+  (python + all chrome children) is **1.37 GB**, which predicts 8 workers need
+  ~11 GB. Actual: 8 workers ran with **~4.3 GB still available** — the sum
+  double-counts shared libs and zygote copy-on-write pages. Use PSS
+  (`/proc/*/smaps_rollup`), not summed RSS, to decide whether N workers fit.
+- **The droplet is NOT idle — shield the OOM killer.** It also runs postgres
+  (sdv-db), `sdv-db-api`, `sdv-orch-flows`, `sdv-orch-prefect` and a GH Actions
+  runner. The kernel OOM killer picks the largest RSS, which is **postgres**,
+  not the scrapers. Launch capture under `choom -n 1000 --` —
+  `oom_score_adj` is inherited by every child, so the whole capture tree is
+  sacrificed before any production service. Verified: parent 1000, child 1000,
+  postgres 0. `scripts/droplet_wbb_campaign.sh` in the WBB repo does this and
+  auto-halves 8→4→2→1 on any new kernel OOM kill.
+- Even shielded, 8 workers put the box under memory pressure while sdv-db
+  ingest is running. Prefer 4 workers when ingest is active — at 46 % scaling
+  it costs only ~25-30 % throughput.
+
+### Script portability (both repos)
+
+Every `scripts/run_*.sh` in BOTH repos hardcodes the Windows dev-box
+interpreter `C:/Users/saiem/.../.venv/Scripts/python.exe`, so none of them run
+on Linux as-is. The WBB repo's five capture-path runners are now portable:
+
+```sh
+SDV_PY="${SDV_PY:-C:/Users/saiem/.../sdv-py}"      # env-overridable, Windows default kept
+if [ -x "${SDV_PY}/.venv/bin/python" ]; then PY="${PY:-${SDV_PY}/.venv/bin/python}"
+else PY="${PY:-${SDV_PY}/.venv/Scripts/python.exe}"; fi
+```
+
+**MBB's runners have NOT been ported** — do this before running MBB here.
+
+### LATENT BUG in `ncaa-mbb-hoops-raw/scripts/run_capture.sh`
+
+Its ProxyBonanza cred gate keys off the **`--vendor` CLI flag**:
+
+```sh
+if [[ " $* " == *" --vendor"* ]]; then ... else <demand PB creds; exit 2> fi
+```
+
+But `ncaa_capture.py`'s `--vendor` **defaults to `os.environ.get("NCAA_VENDOR")`**,
+and `run_mbb_backfill.sh` never passes the flag. So the documented env-var
+invocation (`NCAA_VENDOR=decodo_patchright ./scripts/run_mbb_backfill.sh …`,
+the very form §2026-08-01 prescribes for discovery) falls into the `else`
+branch and demands ProxyBonanza creds it will never use. **Masked on the dev
+box** because `.Renviron` has them; it hard-exits 2 anywhere that lacks them
+(the droplet has no `PROXYBONANZA_API_KEY`). Fix = test the env var too:
+
+```sh
+if [ -n "${NCAA_VENDOR:-}" ] || [[ " $* " == *" --vendor"* ]]; then
+```
+
+The WBB repo hit exactly this and now guards on `NCAA_VENDOR`.
+
+### Killing a run: use the bracket pattern
+
+`pkill -f ncaa_capture.py` **self-kills the cleanup shell** — the shell's own
+command line contains the pattern (observed: exit 144, mid-cleanup). This is
+failure mode #4 in §2026-08-01 restated for bash. Use:
+
+```sh
+kill $(pgrep -f 'ncaa_captur[e]\.py')      # bracket prevents self-match
+pkill -9 -f 'headless_shel[l]'
+```
+
+Verified 0 orphans afterward.
+
+### Also confirmed on the droplet
+
+- `pending=NNNN` in capture's first log line is **cosmetic and never
+  decreases** — `ncaa_capture.py:296-298` says the `captured` parquet column is
+  never set True; real resumability is `is_captured()` checking **disk** per
+  contest. Never use `pending` as a progress signal; count files in
+  `<league>/raw/<season>/`.
+- Port pool expanded 20 → **50** (`us.decodo.com:10001-10050`). At 8 workers
+  that is ~6 disjoint ports each, well past the ≥2/worker rule. Ports were
+  never the constraint — RAM and CPU are.
+
+---
+
 ## 2026-08-01 — multi-season campaign: session ceiling, tolerant discovery, port pool
 
 Backfill campaign 2025→2010 (`scripts/run_mbb_backfill_range.sh`). Three failed
