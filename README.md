@@ -179,3 +179,14 @@ The season `-data` builder lives in the sibling repo
 `../ncaa-wbb-hoops-data`. It ingests this repo's committed `mbb/` tree over
 HTTP from `main`, which is why the data tree must stay committed (see
 `.gitignore`).
+
+## Automation & status
+
+<!-- BEGIN GENERATED: status -->
+
+| workflow | schedule | last run |
+|---|---|---|
+| [![orphan_scripts.yml](https://github.com/sportsdataverse/ncaa-mbb-hoops-raw/actions/workflows/orphan_scripts.yml/badge.svg)](https://github.com/sportsdataverse/ncaa-mbb-hoops-raw/actions/workflows/orphan_scripts.yml) | on push / PR / dispatch | 2026-08-21 |
+| [![tests.yml](https://github.com/sportsdataverse/ncaa-mbb-hoops-raw/actions/workflows/tests.yml/badge.svg)](https://github.com/sportsdataverse/ncaa-mbb-hoops-raw/actions/workflows/tests.yml) | on push / PR / dispatch | 2026-08-21 |
+
+<!-- END GENERATED: status -->
