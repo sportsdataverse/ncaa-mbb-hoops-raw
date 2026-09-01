@@ -45,6 +45,101 @@ slots — `home_1`..`home_5` / `away_1`..`away_5` on `pbp` and `possessions`
 each gain `{slot}_player_id` + `{slot}_clean_name` — off the same
 game-scoped roster index as `player_1`/`player_2`.
 
+## ncaa-mbb-hoops workflow diagram
+
+```mermaid
+  graph LR;
+    S[stats.ncaa.org]-->A[ncaa-mbb-hoops-raw];
+    A[ncaa-mbb-hoops-raw]-->B[ncaa-mbb-hoops-data];
+    B[ncaa-mbb-hoops-data]-->C1[ncaa_mbb_team_ids];
+    B[ncaa-mbb-hoops-data]-->C2[ncaa_mbb_schedule];
+    B[ncaa-mbb-hoops-data]-->C3[ncaa_mbb_team_rosters];
+    B[ncaa-mbb-hoops-data]-->C4[ncaa_mbb_rosters];
+    B[ncaa-mbb-hoops-data]-->C5[ncaa_mbb_pbp];
+    B[ncaa-mbb-hoops-data]-->C6[ncaa_mbb_player_box];
+    B[ncaa-mbb-hoops-data]-->C7[ncaa_mbb_team_box];
+    B[ncaa-mbb-hoops-data]-->C8[ncaa_mbb_lineups];
+    B[ncaa-mbb-hoops-data]-->C9[ncaa_mbb_matchup_stints];
+    B[ncaa-mbb-hoops-data]-->C10[ncaa_mbb_possessions];
+    B[ncaa-mbb-hoops-data]-->C11[ncaa_mbb_shots];
+    B[ncaa-mbb-hoops-data]-->C12[ncaa_mbb_rapm];
+    B[ncaa-mbb-hoops-data]-->C13[ncaa_mbb_rapm_within_team];
+```
+
+```mermaid
+flowchart TB;
+    subgraph A[ncaa-mbb-hoops-raw];
+        direction TB;
+        A0[scripts/run_mbb_backfill.sh]-->A1[python/ncaa_mbb_01_schedules_scrape.py];
+        A1[python/ncaa_mbb_01_schedules_scrape.py]-->A2[python/ncaa_mbb_02_games_scrape.py];
+        A2[python/ncaa_mbb_02_games_scrape.py]-->A3[python/ncaa_mbb_03_games_parse.py];
+        A3[python/ncaa_mbb_03_games_parse.py]-->A4[python/ncaa_mbb_04_rosters_scrape.py];
+        A4[python/ncaa_mbb_04_rosters_scrape.py]-->A5[python/ncaa_mbb_05_datasets_build.py];
+        A5[python/ncaa_mbb_05_datasets_build.py]-->A6[python/ncaa_mbb_06_xwalk_build.py];
+        A6[python/ncaa_mbb_06_xwalk_build.py]-->A7[python/ncaa_mbb_98_canary_probe.py];
+    end;
+
+    subgraph B[ncaa-mbb-hoops-data];
+        direction TB;
+        B0[scripts/run_build.sh]-->B1[python/ncaa_mbb_01_team_ids_creation.py];
+        B1[python/ncaa_mbb_01_team_ids_creation.py]-->B2[python/ncaa_mbb_02_schedule_creation.py];
+        B2[python/ncaa_mbb_02_schedule_creation.py]-->B3[python/ncaa_mbb_03_team_rosters_creation.py];
+        B3[python/ncaa_mbb_03_team_rosters_creation.py]-->B4[python/ncaa_mbb_04_rosters_creation.py];
+        B4[python/ncaa_mbb_04_rosters_creation.py]-->B5[python/ncaa_mbb_05_pbp_creation.py];
+        B5[python/ncaa_mbb_05_pbp_creation.py]-->B6[python/ncaa_mbb_06_player_box_creation.py];
+        B6[python/ncaa_mbb_06_player_box_creation.py]-->B7[python/ncaa_mbb_07_team_box_creation.py];
+        B7[python/ncaa_mbb_07_team_box_creation.py]-->B8[python/ncaa_mbb_08_lineups_creation.py];
+        B8[python/ncaa_mbb_08_lineups_creation.py]-->B9[python/ncaa_mbb_09_matchup_stints_creation.py];
+        B9[python/ncaa_mbb_09_matchup_stints_creation.py]-->B10[python/ncaa_mbb_10_possessions_creation.py];
+        B10[python/ncaa_mbb_10_possessions_creation.py]-->B11[python/ncaa_mbb_11_shots_creation.py];
+        B11[python/ncaa_mbb_11_shots_creation.py]-->B12[python/ncaa_mbb_99_schedule_master_creation.py];
+        B12[python/ncaa_mbb_99_schedule_master_creation.py]-->B13[ops/build_rapm.py];
+        B13[ops/build_rapm.py]-->B14[ops/build_rapm_league.py];
+    end;
+
+    subgraph C[sportsdataverse-data Releases];
+        direction TB;
+        C1[ncaa_mbb_team_ids];
+        C2[ncaa_mbb_schedule];
+        C3[ncaa_mbb_team_rosters];
+        C4[ncaa_mbb_rosters];
+        C5[ncaa_mbb_pbp];
+        C6[ncaa_mbb_player_box];
+        C7[ncaa_mbb_team_box];
+        C8[ncaa_mbb_lineups];
+        C9[ncaa_mbb_matchup_stints];
+        C10[ncaa_mbb_possessions];
+        C11[ncaa_mbb_shots];
+        C12[ncaa_mbb_rapm];
+        C13[ncaa_mbb_rapm_within_team];
+    end;
+
+    A-->B;
+    B-->C;
+```
+
+`scripts/run_mbb_backfill.sh` (raw) and `scripts/run_build.sh` (data) are the drivers;
+`run_autocommit.sh` commits captures as they land. Stage numbers are intended build
+order, not run order.
+
+[hoopR-mbb-raw repository (source: ESPN)](https://github.com/sportsdataverse/hoopR-mbb-raw)
+
+[hoopR-mbb-data repository (source: ESPN)](https://github.com/sportsdataverse/hoopR-mbb-data)
+
+[hoopR-nba-raw repository (source: ESPN)](https://github.com/sportsdataverse/hoopR-nba-raw)
+
+[hoopR-nba-data repository (source: ESPN)](https://github.com/sportsdataverse/hoopR-nba-data)
+
+[hoopR-nba-stats-raw repository (source: NBA Stats)](https://github.com/sportsdataverse/hoopR-nba-stats-raw)
+
+[hoopR-nba-stats-data repository (source: NBA Stats)](https://github.com/sportsdataverse/hoopR-nba-stats-data)
+
+[ncaa-mbb-hoops-raw repository (source: stats.ncaa.org)](https://github.com/sportsdataverse/ncaa-mbb-hoops-raw)
+
+[ncaa-mbb-hoops-data repository (source: stats.ncaa.org)](https://github.com/sportsdataverse/ncaa-mbb-hoops-data)
+
+[hoopR-kp-data repository (source: KenPom, dormant)](https://github.com/sportsdataverse/hoopR-kp-data)
+
 ## Setup
 
 Requires the sibling `sdv-py` checkout at
