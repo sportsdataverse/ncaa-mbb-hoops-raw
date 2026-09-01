@@ -5,7 +5,7 @@ from __future__ import annotations
 import tempfile
 from pathlib import Path
 
-from ncaa_bundle import is_captured, read_bundle
+from ncaa_mbb_raw_scrape.ncaa_bundle import is_captured, read_bundle
 from ncaa_mbb_02_games_scrape import capture_contests, shard
 
 # Sibling checkout: .../sdv-dev/{hoopR-dev/ncaa-mbb-hoops-raw, sdv-py}.

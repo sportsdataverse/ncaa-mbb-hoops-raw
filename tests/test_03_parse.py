@@ -6,7 +6,7 @@ import json
 import tempfile
 from pathlib import Path
 
-from ncaa_bundle import read_bundle, write_bundle
+from ncaa_mbb_raw_scrape.ncaa_bundle import read_bundle, write_bundle
 from ncaa_mbb_03_games_parse import parse_and_write, parse_bundle, write_parsed
 
 _FIX = Path(__file__).resolve().parent / "fixtures" / "ncaa" / "bigballr" / "html"
@@ -100,7 +100,7 @@ def test_bundle_written_then_read_still_parses() -> None:
             urls=raw["urls"],
             captured_at=raw["captured_at"],
         )
-        from ncaa_bundle import bundle_path
+        from ncaa_mbb_raw_scrape.ncaa_bundle import bundle_path
 
         bundle = read_bundle(bundle_path(root, "mbb", raw["season"], raw["contest_id"]))
         parsed = parse_bundle(bundle)
