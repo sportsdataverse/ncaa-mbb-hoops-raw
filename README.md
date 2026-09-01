@@ -275,6 +275,58 @@ The season `-data` builder lives in the sibling repo
 HTTP from `main`, which is why the data tree must stay committed (see
 `.gitignore`).
 
+## Repository layout
+
+<!-- BEGIN GENERATED: layout -->
+
+```
+ncaa-mbb-hoops-raw/
+├── canary_out/
+├── docs/   # explainers, model reports and dataset docs
+├── logs/   # per-run logs (gitignored where large)
+├── mbb/
+│   ├── json/
+│   ├── raw/
+│   ├── rosters/
+│   ├── schedules/
+│   ├── team_rosters/
+│   ├── teams/
+│   └── xwalk/
+├── python/   # Python pipeline stages, numbered in build order
+│   ├── ncaa_mbb_raw_scrape/
+│   ├── ncaa_mbb_01_schedules_scrape.py
+│   ├── ncaa_mbb_02_games_scrape.py
+│   ├── ncaa_mbb_03_games_parse.py
+│   ├── ncaa_mbb_04_rosters_scrape.py
+│   ├── ncaa_mbb_05_datasets_build.py
+│   ├── ncaa_mbb_06_xwalk_build.py
+│   └── ncaa_mbb_98_canary_probe.py
+├── scripts/   # bash drivers (the daily/weekly entry points)
+│   ├── run_01_schedules.sh
+│   ├── run_02_games.sh
+│   ├── run_03_parse.sh
+│   ├── run_04_rosters.sh
+│   ├── run_05_datasets.sh
+│   ├── run_98_canary.sh
+│   ├── run_autocommit.sh
+│   ├── run_mbb_backfill.sh
+│   ├── run_mbb_backfill_range.sh
+│   └── run_reference_backfill.sh
+└── tests/   # test suite
+    ├── fixtures/
+    ├── test_01_schedules.py
+    ├── test_02_games.py
+    ├── test_03_parse.py
+    ├── test_05_datasets.py
+    ├── test_06_xwalk.py
+    ├── test_98_canary.py
+    ├── test_bundle.py
+    ├── test_identity.py
+    └── test_stage_numbering.py
+```
+
+<!-- END GENERATED: layout -->
+
 ## Reports & explainers
 
 <!-- BEGIN GENERATED: reports -->
