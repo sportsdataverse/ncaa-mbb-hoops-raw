@@ -1,0 +1,108 @@
+pending=5950 shard=18/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=19/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=9/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=8/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=22/24 assigned=247
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=23/24 assigned=247
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=7/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=13/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=5/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 05:32:35,325 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w13
+pending=5950 shard=14/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 05:32:35,325 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w14
+pending=5950 shard=21/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 05:32:35,328 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w5
+2026-08-03 05:32:35,327 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w18
+2026-08-03 05:32:35,331 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w19
+2026-08-03 05:32:35,327 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w9
+2026-08-03 05:32:35,325 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w8
+2026-08-03 05:32:35,325 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w22
+2026-08-03 05:32:35,330 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w23
+2026-08-03 05:32:35,326 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w7
+2026-08-03 05:32:35,331 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w21
+pending=5950 shard=10/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=6/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 05:32:35,357 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w10
+2026-08-03 05:32:35,363 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w6
+pending=5950 shard=17/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+captured=0 skipped=248 failed=0
+pending=5950 shard=15/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+captured=0 skipped=248 failed=0
+2026-08-03 05:32:35,386 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w17
+captured=0 skipped=248 failed=0
+captured=0 skipped=247 failed=0
+captured=0 skipped=248 failed=0
+2026-08-03 05:32:35,391 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w15
+captured=0 skipped=248 failed=0
+captured=0 skipped=248 failed=0
+captured=0 skipped=248 failed=0
+captured=0 skipped=248 failed=0
+captured=0 skipped=248 failed=0
+captured=0 skipped=248 failed=0
+captured=0 skipped=248 failed=0
+captured=0 skipped=248 failed=0
+pending=5950 shard=11/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=12/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=4/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 05:32:35,555 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w11
+pending=5950 shard=16/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+captured=0 skipped=248 failed=0
+2026-08-03 05:32:35,604 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w12
+2026-08-03 05:32:35,602 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w4
+2026-08-03 05:32:35,602 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w16
+captured=0 skipped=248 failed=0
+captured=0 skipped=248 failed=0
+captured=0 skipped=248 failed=0
+pending=5950 shard=20/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 05:32:35,930 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785749555w20
+captured=0 skipped=248 failed=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+2026-08-03 05:59:21,697 ERROR BAN-SUSPECT: hard-stopping capture at contest_id=241423: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/241423/play_by_play: Page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://stats.ncaa.org/contests/241423/play_by_play
+Call log:
+  - navigating to "https://stats.ncaa.org/contests/241423/play_by_play", waiting until "domcontentloaded"
+
+BAN-SUSPECT: capture halted at contest_id=241423: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/241423/play_by_play: Page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://stats.ncaa.org/contests/241423/play_by_play
+Call log:
+  - navigating to "https://stats.ncaa.org/contests/241423/play_by_play", waiting until "domcontentloaded"
+
+EXIT=1
+2026-08-03 05:59:52,874 ERROR BAN-SUSPECT: hard-stopping capture at contest_id=255058: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/255058/play_by_play: patchright: bm-verify not passed after 3 attempts (643-byte body)
+BAN-SUSPECT: capture halted at contest_id=255058: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/255058/play_by_play: patchright: bm-verify not passed after 3 attempts (643-byte body)
+EXIT=1

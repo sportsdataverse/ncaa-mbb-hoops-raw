@@ -1,0 +1,4 @@
+[15:09:49] NCAA MBB backfill: season=2023 workers=12
+[15:09:49] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2023_20260801_150948.log
+[15:09:49] === discover 2023 (season not in schedule_master yet) ===
+[15:17:06] === capture 2023: 12 worker(s), chunk=400 new bundles per worker ===

@@ -1,0 +1,40 @@
+pending=5950 shard=0/8 assigned=744
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:52:05,575 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495925w0
+pending=5950 shard=1/8 assigned=744
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:52:05,629 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495925w1
+captured=0 skipped=744 failed=0
+pending=5950 shard=3/8 assigned=744
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=6/8 assigned=743
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:52:05,684 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495925w6
+pending=5950 shard=4/8 assigned=744
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:52:05,684 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495925w3
+pending=5950 shard=2/8 assigned=744
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:52:05,708 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495925w2
+2026-08-11 20:52:05,695 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495925w4
+captured=0 skipped=744 failed=0
+captured=0 skipped=744 failed=0
+pending=5950 shard=5/8 assigned=744
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:52:05,753 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495925w5
+pending=5950 shard=7/8 assigned=743
+transport: canary vendor 'decodo_patchright'
+captured=0 skipped=744 failed=0
+2026-08-11 20:52:05,794 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495925w7
+captured=0 skipped=743 failed=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+2026-08-11 20:52:39,254 WARNING challenge not cleared for contest_id=255413 -- bundle not written
+captured=0 skipped=743 failed=1
+EXIT=0
+captured=22 skipped=722 failed=0
+EXIT=0
+EXIT=127

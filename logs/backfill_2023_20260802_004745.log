@@ -1,0 +1,9 @@
+[00:47:45] NCAA MBB backfill: season=2023 workers=24
+[00:47:45] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2023_20260802_004745.log
+[00:47:46] === skip discover (season 2023 already in schedule_master; delete mbb/schedule_master.parquet to force) ===
+[00:47:46] === capture 2023: 24 worker(s), chunk=400 new bundles per worker ===
+[00:48:42] === parse captured bundles -> mbb/json/ ===
+[00:48:54] DONE: captured_bundles=25054 parsed_json=25054 (capture rc=0)
+[00:48:54] next -> build the -data parquet:
+[00:48:54]   cd /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/../ncaa-mbb-hoops-data && python -m ncaa_mbb_data_build build --dataset all --season 2023
+EXIT=0

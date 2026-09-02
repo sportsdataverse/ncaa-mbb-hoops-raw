@@ -1,0 +1,56 @@
+2026-08-01 00:47:12,081 INFO vendor decodo_patchright: 1 prox(y/ies), sticky session re-minted -> session-cap1785559632
+2026-08-01 00:51:32,455 WARNING fetch failed for team_id=590512 (bm-verify / ban-suspect)
+2026-08-01 00:57:25,801 WARNING fetch failed for team_id=590533 (bm-verify / ban-suspect)
+2026-08-01 00:58:43,636 WARNING fetch failed for team_id=590533 (bm-verify / ban-suspect)
+2026-08-01 01:00:01,279 WARNING fetch failed for team_id=590533 (bm-verify / ban-suspect)
+2026-08-01 01:00:01,279 WARNING team_id=590533 skipped after 3 tries (1 consecutive team failures)
+2026-08-01 01:01:18,925 WARNING fetch failed for team_id=590535 (bm-verify / ban-suspect)
+2026-08-01 01:06:58,523 WARNING fetch failed for team_id=590596 (bm-verify / ban-suspect)
+2026-08-01 01:08:15,537 WARNING fetch failed for team_id=590596 (bm-verify / ban-suspect)
+2026-08-01 01:09:32,540 WARNING fetch failed for team_id=590596 (bm-verify / ban-suspect)
+2026-08-01 01:09:32,540 WARNING team_id=590596 skipped after 3 tries (1 consecutive team failures)
+2026-08-01 01:10:49,664 WARNING fetch failed for team_id=590598 (bm-verify / ban-suspect)
+2026-08-01 01:21:17,945 WARNING fetch failed for team_id=590627 (bm-verify / ban-suspect)
+2026-08-01 01:22:38,265 WARNING fetch failed for team_id=590627 (bm-verify / ban-suspect)
+2026-08-01 01:23:57,297 WARNING fetch failed for team_id=590627 (bm-verify / ban-suspect)
+2026-08-01 01:23:57,297 WARNING team_id=590627 skipped after 3 tries (1 consecutive team failures)
+2026-08-01 01:25:16,181 WARNING fetch failed for team_id=590630 (bm-verify / ban-suspect)
+2026-08-01 01:26:35,087 WARNING fetch failed for team_id=590630 (bm-verify / ban-suspect)
+2026-08-01 01:27:53,991 WARNING fetch failed for team_id=590630 (bm-verify / ban-suspect)
+2026-08-01 01:27:53,991 WARNING team_id=590630 skipped after 3 tries (2 consecutive team failures)
+2026-08-01 01:29:12,902 WARNING fetch failed for team_id=590626 (bm-verify / ban-suspect)
+2026-08-01 01:30:31,875 WARNING fetch failed for team_id=590626 (bm-verify / ban-suspect)
+2026-08-01 01:31:55,160 WARNING fetch failed for team_id=590626 (bm-verify / ban-suspect)
+2026-08-01 01:31:55,160 WARNING team_id=590626 skipped after 3 tries (3 consecutive team failures)
+2026-08-01 01:35:41,063 WARNING fetch failed for team_id=590638 (bm-verify / ban-suspect)
+2026-08-01 01:37:01,699 WARNING fetch failed for team_id=590638 (bm-verify / ban-suspect)
+2026-08-01 01:38:20,317 WARNING fetch failed for team_id=590638 (bm-verify / ban-suspect)
+2026-08-01 01:38:20,317 WARNING team_id=590638 skipped after 3 tries (1 consecutive team failures)
+2026-08-01 01:39:39,006 WARNING fetch failed for team_id=590640 (bm-verify / ban-suspect)
+2026-08-01 01:40:57,647 WARNING fetch failed for team_id=590640 (bm-verify / ban-suspect)
+2026-08-01 01:42:16,846 WARNING fetch failed for team_id=590640 (bm-verify / ban-suspect)
+2026-08-01 01:42:16,846 WARNING team_id=590640 skipped after 3 tries (2 consecutive team failures)
+2026-08-01 01:43:33,895 WARNING fetch failed for team_id=590812 (bm-verify / ban-suspect)
+2026-08-01 01:44:50,926 WARNING fetch failed for team_id=590812 (bm-verify / ban-suspect)
+2026-08-01 01:46:07,972 WARNING fetch failed for team_id=590812 (bm-verify / ban-suspect)
+2026-08-01 01:46:07,972 WARNING team_id=590812 skipped after 3 tries (3 consecutive team failures)
+2026-08-01 01:47:25,024 WARNING fetch failed for team_id=590800 (bm-verify / ban-suspect)
+2026-08-01 01:48:42,041 WARNING fetch failed for team_id=590800 (bm-verify / ban-suspect)
+2026-08-01 01:49:59,092 WARNING fetch failed for team_id=590800 (bm-verify / ban-suspect)
+2026-08-01 01:49:59,093 WARNING team_id=590800 skipped after 3 tries (4 consecutive team failures)
+2026-08-01 01:51:16,113 WARNING fetch failed for team_id=590785 (bm-verify / ban-suspect)
+2026-08-01 01:52:36,992 WARNING fetch failed for team_id=590785 (bm-verify / ban-suspect)
+2026-08-01 01:54:02,747 WARNING fetch failed for team_id=590785 (bm-verify / ban-suspect)
+2026-08-01 01:54:02,747 WARNING team_id=590785 skipped after 3 tries (5 consecutive team failures)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 259, in <module>
+    _main()
+    ~~~~~^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 254, in _main
+    result = discover_season(args.season, league="mbb", root=args.root)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 174, in discover_season
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: discovery aborted: 5 consecutive teams failed (ban-suspect); 2739 contest_ids gathered before abort
+EXIT=1

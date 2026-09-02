@@ -1,0 +1,13 @@
+bundles=6297 pending=2426 shard=0/1 assigned=2426
+2026-07-22 20:13:51,804 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:14:12,317 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:17:57,802 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:18:20,596 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:18:24,521 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:19:47,311 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:27:44,090 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:27:44,090 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:32:46,425 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:37:15,126 INFO 5 starters not found for period 3; using estimate
+parsed=2426 failed=0
+EXIT=0

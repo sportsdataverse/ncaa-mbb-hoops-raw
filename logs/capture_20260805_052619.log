@@ -1,0 +1,75 @@
+pending=5749 shard=15/24 assigned=239
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:25,034 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921985w15
+captured=0 skipped=239 failed=0
+pending=5749 shard=18/24 assigned=239
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:25,034 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921985w18
+pending=5749 shard=22/24 assigned=239
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:25,267 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921985w22
+captured=0 skipped=239 failed=0
+pending=5749 shard=20/24 assigned=239
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:25,475 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921985w20
+pending=5749 shard=10/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:25,821 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921985w10
+captured=0 skipped=240 failed=0
+pending=5749 shard=13/24 assigned=239
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:25,909 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921985w13
+pending=5749 shard=14/24 assigned=239
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:26,178 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921986w14
+captured=0 skipped=239 failed=0
+EXIT=0
+EXIT=0
+pending=5749 shard=19/24 assigned=239
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:26,370 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921986w19
+captured=0 skipped=239 failed=0
+pending=5749 shard=16/24 assigned=239
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:26,404 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921986w16
+pending=5749 shard=17/24 assigned=239
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:26,421 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921986w17
+captured=0 skipped=239 failed=0
+pending=5749 shard=23/24 assigned=239
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:26,474 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921986w23
+pending=5749 shard=21/24 assigned=239
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:26,533 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921986w21
+EXIT=0
+pending=5749 shard=12/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-05 05:26:27,043 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785921987w12
+EXIT=0
+captured=0 skipped=240 failed=0
+EXIT=0
+EXIT=0
+EXIT=0
+2026-08-05 05:27:00,168 WARNING challenge not cleared for contest_id=846570 -- bundle not written
+captured=0 skipped=238 failed=1
+EXIT=0
+2026-08-05 05:27:01,761 WARNING challenge not cleared for contest_id=844968 -- bundle not written
+2026-08-05 05:27:02,637 WARNING challenge not cleared for contest_id=846244 -- bundle not written
+2026-08-05 05:27:06,381 WARNING challenge not cleared for contest_id=859653 -- bundle not written
+captured=0 skipped=238 failed=1
+EXIT=0
+2026-08-05 05:27:07,330 WARNING challenge not cleared for contest_id=848864 -- bundle not written
+captured=0 skipped=238 failed=1
+EXIT=0
+2026-08-05 05:27:33,843 WARNING challenge not cleared for contest_id=858310 -- bundle not written
+2026-08-05 05:27:35,674 WARNING challenge not cleared for contest_id=859590 -- bundle not written
+captured=0 skipped=237 failed=2
+EXIT=0
+2026-08-05 05:27:40,512 WARNING challenge not cleared for contest_id=845755 -- bundle not written
+2026-08-05 05:28:06,190 WARNING challenge not cleared for contest_id=859575 -- bundle not written
+captured=0 skipped=236 failed=3
+EXIT=0
+2026-08-05 05:28:34,267 WARNING challenge not cleared for contest_id=857944 -- bundle not written
+captured=0 skipped=237 failed=2
+EXIT=0

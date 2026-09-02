@@ -1,0 +1,4 @@
+2026-08-01 16:16:11,805 INFO backfilled 364 rosters for season=2025 from team_rosters/ (no html available)
+2026-08-01 16:16:11,971 INFO rosters season parquet: 5795 rows from 364 teams (season=2025)
+datasets season=2025 league=mbb: {"rosters": 5795}
+EXIT=0

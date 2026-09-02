@@ -1,0 +1,509 @@
+[2026-07-31 23:38:17] campaign: seasons 2025..2010 (desc), vendor=decodo_patchright, chunk=1400, workers=1
+[2026-07-31 23:38:17] log -> logs/backfill_range_20260731_233817.log   (watch: tail -f logs/backfill_range_20260731_233817.log)
+[2026-07-31 23:38:17] === season 2025 ===
+[23:38:17] NCAA MBB backfill: season=2025 workers=1
+[23:38:17] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2025_20260731_233817.log
+[23:38:17] === discover 2025 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260731_233817.log  (watch: tail -f logs/discover_20260731_233817.log)
+2026-07-31 23:38:29,496 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:38:37,684 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:38:45,952 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:38:46,953 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.24:60099 (relaunching context)
+2026-07-31 23:38:57,903 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:39:06,105 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:39:14,333 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:39:15,334 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.26:60099 (relaunching context)
+2026-07-31 23:39:26,243 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:39:34,430 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:39:42,653 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:39:43,654 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.50:60099 (relaunching context)
+2026-07-31 23:39:54,618 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:40:02,823 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:40:11,057 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:40:12,058 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.51:60099 (relaunching context)
+2026-07-31 23:40:22,908 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:40:31,087 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:40:39,313 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:40:40,314 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.55:60099 (relaunching context)
+2026-07-31 23:40:51,235 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:40:59,428 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:41:07,658 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:41:08,659 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.72:60099 (relaunching context)
+2026-07-31 23:41:19,525 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:41:27,718 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:41:35,940 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:41:36,940 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.74:60099 (relaunching context)
+2026-07-31 23:41:47,836 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:41:56,043 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:42:04,277 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:42:05,277 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.80:60099 (relaunching context)
+2026-07-31 23:42:16,200 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:42:24,379 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:42:32,637 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:42:33,637 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.96:60099 (relaunching context)
+2026-07-31 23:42:44,532 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:42:52,727 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:43:00,952 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:43:01,953 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.98:60099 (relaunching context)
+2026-07-31 23:43:12,832 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:43:21,008 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:43:29,238 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:43:30,239 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.101:60099 (relaunching context)
+2026-07-31 23:43:41,147 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:43:49,351 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:43:57,584 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:43:58,585 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.123:60099 (relaunching context)
+2026-07-31 23:44:09,481 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:44:17,681 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:44:25,919 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:44:26,920 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.138:60099 (relaunching context)
+2026-07-31 23:44:37,827 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:44:46,019 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:44:54,249 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:44:55,249 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.153:60099 (relaunching context)
+2026-07-31 23:45:06,195 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:45:14,379 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:45:22,604 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:45:23,604 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.161:60099 (relaunching context)
+2026-07-31 23:45:34,495 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:45:42,684 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:45:50,915 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:45:51,916 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.169:60099 (relaunching context)
+2026-07-31 23:46:02,776 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:46:10,964 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:46:19,195 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:46:20,196 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.171:60099 (relaunching context)
+2026-07-31 23:46:31,067 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:46:39,254 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:46:47,475 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:46:48,476 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.175:60099 (relaunching context)
+2026-07-31 23:46:59,366 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:47:07,560 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:47:15,780 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:47:16,781 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.196:60099 (relaunching context)
+2026-07-31 23:47:27,641 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:47:35,831 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:47:44,062 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:47:45,063 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.210:60099 (relaunching context)
+2026-07-31 23:47:55,993 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:48:04,196 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:48:12,434 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:48:13,435 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.213:60099 (relaunching context)
+2026-07-31 23:48:24,377 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:48:32,573 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:48:40,812 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:48:41,813 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.224:60099 (relaunching context)
+2026-07-31 23:48:52,683 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:49:00,869 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:49:09,095 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:49:10,096 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.227:60099 (relaunching context)
+2026-07-31 23:49:21,008 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:49:29,214 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:49:37,449 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:49:38,450 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.238:60099 (relaunching context)
+2026-07-31 23:49:49,324 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:49:57,533 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:50:05,761 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:50:06,761 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.1:60099 (relaunching context)
+2026-07-31 23:50:17,820 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:50:25,975 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:50:34,185 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:50:35,186 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.3:60099 (relaunching context)
+2026-07-31 23:50:45,977 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:50:54,139 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:51:02,341 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:51:03,342 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.22:60099 (relaunching context)
+2026-07-31 23:51:14,076 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:51:22,249 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:51:30,443 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:51:31,443 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.26:60099 (relaunching context)
+2026-07-31 23:51:42,186 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:51:50,337 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:51:58,542 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:51:59,543 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.69:60099 (relaunching context)
+2026-07-31 23:52:10,282 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:52:18,441 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:52:26,641 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:52:27,641 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.85:60099 (relaunching context)
+2026-07-31 23:52:38,392 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:52:46,560 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:52:54,764 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:52:55,764 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.89:60099 (relaunching context)
+2026-07-31 23:53:06,500 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:53:14,651 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:53:22,853 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:53:23,854 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.96:60099 (relaunching context)
+2026-07-31 23:53:34,639 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:53:42,804 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:53:51,005 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:53:52,005 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.98:60099 (relaunching context)
+2026-07-31 23:54:02,768 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:54:10,923 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:54:19,120 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:54:20,120 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.101:60099 (relaunching context)
+2026-07-31 23:54:30,894 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:54:39,052 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:54:47,259 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:54:48,259 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.104:60099 (relaunching context)
+2026-07-31 23:54:59,057 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:55:07,218 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:55:15,415 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:55:16,416 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.106:60099 (relaunching context)
+2026-07-31 23:55:27,172 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:55:35,360 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:55:43,575 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:55:44,575 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.112:60099 (relaunching context)
+2026-07-31 23:55:55,329 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:56:03,482 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:56:11,687 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:56:12,688 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.117:60099 (relaunching context)
+2026-07-31 23:56:23,455 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:56:31,629 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:56:39,826 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:56:40,827 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.132:60099 (relaunching context)
+2026-07-31 23:56:51,588 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:56:59,741 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:57:07,951 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:57:08,952 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.158:60099 (relaunching context)
+2026-07-31 23:57:19,688 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:57:27,843 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:57:36,037 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:57:37,038 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.160:60099 (relaunching context)
+2026-07-31 23:57:47,809 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:57:55,980 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:58:04,179 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:58:05,180 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.169:60099 (relaunching context)
+2026-07-31 23:58:15,929 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:58:24,094 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:58:32,317 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:58:33,318 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.170:60099 (relaunching context)
+2026-07-31 23:58:44,075 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:58:52,237 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:59:00,434 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:59:01,435 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.183:60099 (relaunching context)
+2026-07-31 23:59:12,235 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:59:20,398 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:59:28,602 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:59:29,602 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.216:60099 (relaunching context)
+2026-07-31 23:59:40,361 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-07-31 23:59:48,532 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-07-31 23:59:56,737 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-07-31 23:59:57,738 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.221:60099 (relaunching context)
+2026-08-01 00:00:08,511 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:00:16,672 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:00:24,870 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:00:25,871 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.224:60099 (relaunching context)
+2026-08-01 00:00:36,670 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:00:44,831 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:00:53,033 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:00:54,033 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.252:60099 (relaunching context)
+2026-08-01 00:01:04,852 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:01:13,017 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:01:21,220 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:01:22,220 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.253:60099 (relaunching context)
+2026-08-01 00:01:33,049 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:01:41,210 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:01:49,421 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:01:50,421 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.2:60099 (relaunching context)
+2026-08-01 00:02:01,312 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:02:09,502 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:02:17,715 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:02:18,716 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.24:60099 (relaunching context)
+2026-08-01 00:02:29,657 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:02:37,860 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:02:46,103 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:02:46,104 ERROR NCAA discovery hard-stopped on team_id=590505 (ban-suspect / fetch failure)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 182, in <module>
+    _main()
+    ~~~~~^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 177, in _main
+    result = discover_season(args.season, league="mbb", root=args.root)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 124, in discover_season
+    contest_ids.update(_team_contest_ids(team_id, fn, league))
+                       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 51, in _team_contest_ids
+    html = fetch_fn(team_id)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 46, in <lambda>
+    return lambda team_id: fetcher.fetch_html(f"teams/{team_id}")
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 978, in fetch_html
+    text = self._get_with_rotation(url)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 926, in _get_with_rotation
+    raise RuntimeError(f"NCAA fetch failed after rotating proxies: {url}: {last_err}")
+RuntimeError: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/teams/590505: bm-verify not passed after 3 attempts (384-byte response): https://stats.ncaa.org/teams/590505
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\shutil.py", line 625, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\saiem\\AppData\\Local\\Temp\\ncaa_pw_rcarlr_e\\Default\\Cache\\Cache_Data\\data_0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\weakref.py", line 666, in _exitfunc
+    f()
+    ~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\tempfile.py", line 935, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\shutil.py", line 629, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\tempfile.py", line 905, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\saiem\\AppData\\Local\\Temp\\ncaa_pw_rcarlr_e\\Default\\Cache\\Cache_Data\\data_0'
+EXIT=1
+[00:02:46] discover FAILED -- stopping (fix creds/network, then re-run)
+[2026-08-01 00:02:46] season 2025: no schedule_master rows after discover -- check the discover log; moving on
+[2026-08-01 00:02:46] === season 2024 ===
+[00:02:47] NCAA MBB backfill: season=2024 workers=1
+[00:02:47] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2024_20260801_000247.log
+[00:02:47] === discover 2024 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260801_000247.log  (watch: tail -f logs/discover_20260801_000247.log)
+2026-08-01 00:02:58,793 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:03:06,991 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:03:15,228 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:03:16,228 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.24:60099 (relaunching context)
+2026-08-01 00:03:27,106 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:03:35,305 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:03:43,541 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:03:44,542 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.26:60099 (relaunching context)
+2026-08-01 00:03:55,422 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:04:03,640 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:04:11,874 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:04:12,875 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.50:60099 (relaunching context)
+2026-08-01 00:04:23,761 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:04:31,965 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:04:40,194 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:04:41,195 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.51:60099 (relaunching context)
+2026-08-01 00:04:52,102 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:05:00,292 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:05:08,516 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:05:09,517 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.55:60099 (relaunching context)
+2026-08-01 00:05:20,451 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:05:28,647 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:05:36,882 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:05:37,883 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.72:60099 (relaunching context)
+2026-08-01 00:05:48,811 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:05:57,054 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:06:05,270 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:06:06,271 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.74:60099 (relaunching context)
+2026-08-01 00:06:17,174 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:06:25,367 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:06:33,587 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:06:34,588 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.80:60099 (relaunching context)
+2026-08-01 00:06:45,478 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:06:53,687 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:07:01,923 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:07:02,923 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.96:60099 (relaunching context)
+2026-08-01 00:07:13,849 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:07:22,064 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:07:30,326 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:07:31,326 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.98:60099 (relaunching context)
+2026-08-01 00:07:42,207 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:07:50,394 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:07:58,618 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:07:59,619 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.101:60099 (relaunching context)
+2026-08-01 00:08:10,513 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:08:18,687 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:08:26,913 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:08:27,914 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.123:60099 (relaunching context)
+2026-08-01 00:08:38,796 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:08:46,988 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:08:55,208 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:08:56,208 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.138:60099 (relaunching context)
+2026-08-01 00:09:07,094 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:09:15,283 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:09:23,505 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:09:24,505 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.153:60099 (relaunching context)
+2026-08-01 00:09:35,408 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:09:43,604 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:09:51,836 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:09:52,837 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.161:60099 (relaunching context)
+2026-08-01 00:10:03,749 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:10:11,949 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:10:20,179 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:10:21,180 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.169:60099 (relaunching context)
+2026-08-01 00:10:32,053 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:10:40,258 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:10:48,483 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:10:49,483 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.171:60099 (relaunching context)
+2026-08-01 00:11:00,366 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:11:08,564 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:11:16,792 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:11:17,793 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.175:60099 (relaunching context)
+2026-08-01 00:11:28,679 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:11:36,878 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:11:45,094 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:11:46,095 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.196:60099 (relaunching context)
+2026-08-01 00:11:57,024 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:12:05,218 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:12:13,443 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:12:14,443 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.210:60099 (relaunching context)
+2026-08-01 00:12:25,356 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:12:33,555 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:12:41,787 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:12:42,788 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.213:60099 (relaunching context)
+2026-08-01 00:12:53,680 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:13:01,872 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:13:10,094 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:13:11,095 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.224:60099 (relaunching context)
+2026-08-01 00:13:22,092 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:13:30,278 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:13:38,503 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:13:39,504 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.227:60099 (relaunching context)
+2026-08-01 00:13:50,435 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:13:58,628 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:14:06,855 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:14:07,856 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.238:60099 (relaunching context)
+2026-08-01 00:14:18,772 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:14:26,963 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:14:35,192 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:14:36,193 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.1:60099 (relaunching context)
+2026-08-01 00:14:47,178 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+EXIT=127
+[00:14:53] discover FAILED -- stopping (fix creds/network, then re-run)
+[2026-08-01 00:14:53] season 2024: no schedule_master rows after discover -- check the discover log; moving on
+[2026-08-01 00:14:53] === season 2023 ===
+[00:14:54] NCAA MBB backfill: season=2023 workers=1
+[00:14:54] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2023_20260801_001454.log
+[00:14:54] === discover 2023 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260801_001454.log  (watch: tail -f logs/discover_20260801_001454.log)
+2026-08-01 00:15:06,252 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:15:14,456 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:15:22,689 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:15:23,690 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.24:60099 (relaunching context)
+2026-08-01 00:15:34,621 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:15:42,840 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:15:51,069 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:15:52,070 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.26:60099 (relaunching context)
+2026-08-01 00:16:03,030 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:16:11,207 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:16:19,425 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:16:20,425 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.50:60099 (relaunching context)
+2026-08-01 00:16:31,378 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:16:39,588 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:16:47,813 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:16:48,814 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.51:60099 (relaunching context)
+2026-08-01 00:16:59,723 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:17:07,906 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:17:16,133 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:17:17,134 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.55:60099 (relaunching context)
+2026-08-01 00:17:28,043 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:17:36,232 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:17:44,468 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:17:45,469 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.72:60099 (relaunching context)
+2026-08-01 00:17:56,335 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:18:04,511 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:18:12,742 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:18:13,742 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.74:60099 (relaunching context)
+2026-08-01 00:18:24,674 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:18:32,872 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:18:41,098 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:18:42,098 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.80:60099 (relaunching context)
+2026-08-01 00:18:53,089 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:19:01,279 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:19:09,514 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:19:10,515 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.96:60099 (relaunching context)
+2026-08-01 00:19:21,457 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:19:29,655 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:19:37,876 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:19:38,877 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.98:60099 (relaunching context)
+2026-08-01 00:19:49,784 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:19:57,985 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:20:06,218 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:20:07,219 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.101:60099 (relaunching context)
+2026-08-01 00:20:18,166 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:20:26,350 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:20:34,569 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:20:35,570 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.123:60099 (relaunching context)
+2026-08-01 00:20:46,495 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:20:54,737 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:21:02,959 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:21:03,960 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.138:60099 (relaunching context)
+2026-08-01 00:21:14,927 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:21:23,149 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:21:31,386 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:21:32,386 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.153:60099 (relaunching context)
+2026-08-01 00:21:43,277 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:21:51,474 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:21:59,711 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:22:00,712 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.161:60099 (relaunching context)
+2026-08-01 00:22:11,593 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:22:19,789 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:22:28,021 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:22:29,022 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.169:60099 (relaunching context)
+2026-08-01 00:22:39,922 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:22:48,100 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:22:56,328 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:22:57,328 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.171:60099 (relaunching context)
+2026-08-01 00:23:08,173 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:23:16,359 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:23:24,573 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:23:25,574 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.175:60099 (relaunching context)
+2026-08-01 00:23:36,461 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:23:44,653 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:23:52,886 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:23:53,886 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.196:60099 (relaunching context)
+2026-08-01 00:24:04,769 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:24:12,949 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:24:21,173 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:24:22,174 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.210:60099 (relaunching context)
+2026-08-01 00:24:33,092 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:24:41,291 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:24:49,530 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:24:50,530 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.213:60099 (relaunching context)
+2026-08-01 00:25:01,512 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:25:09,698 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:25:17,928 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:25:18,929 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.224:60099 (relaunching context)
+2026-08-01 00:25:29,808 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:25:37,995 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:25:46,223 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:25:47,224 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.227:60099 (relaunching context)
+2026-08-01 00:25:58,154 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:26:06,341 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:26:14,571 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:26:15,572 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.238:60099 (relaunching context)
+2026-08-01 00:26:26,445 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:26:34,634 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:26:42,868 INFO bm-verify not passed (384-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:26:43,868 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.1:60099 (relaunching context)
+2026-08-01 00:26:54,622 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:27:02,772 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:27:10,975 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:27:11,975 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.3:60099 (relaunching context)
+2026-08-01 00:27:22,806 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:27:30,964 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:27:39,157 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:27:40,157 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.22:60099 (relaunching context)
+2026-08-01 00:27:50,974 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:27:59,138 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:28:07,346 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:28:08,347 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.26:60099 (relaunching context)
+2026-08-01 00:28:19,128 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:28:27,293 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:28:35,489 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:28:36,489 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.69:60099 (relaunching context)
+2026-08-01 00:28:47,242 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:28:55,411 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:29:03,612 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:29:04,612 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.85:60099 (relaunching context)
+2026-08-01 00:29:15,412 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3
+2026-08-01 00:29:23,577 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 2/3
+2026-08-01 00:29:31,772 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 3/3
+2026-08-01 00:29:32,773 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.89:60099 (relaunching context)
+2026-08-01 00:29:43,527 INFO bm-verify not passed (382-byte response) -- re-solving, attempt 1/3

@@ -1,0 +1,13 @@
+pool: 50 proxies
+
+--- proxy 1/4: 23.239.174.2 [QUICKPACKET hosting=True United States] ---
+  result: FAIL status=403 len=413 head='<HTML><HEAD> <TITLE>Access Denied</TITLE> </HEAD><BODY> <H1>'
+
+--- proxy 2/4: 23.239.174.24 [QUICKPACKET hosting=True United States] ---
+  result: FAIL status=403 len=413 head='<HTML><HEAD> <TITLE>Access Denied</TITLE> </HEAD><BODY> <H1>'
+
+--- proxy 3/4: 23.239.174.26 [QUICKPACKET hosting=True United States] ---
+  result: FAIL status=403 len=413 head='<HTML><HEAD> <TITLE>Access Denied</TITLE> </HEAD><BODY> <H1>'
+
+--- proxy 4/4: 23.239.174.50 [QUICKPACKET hosting=True United States] ---
+  result: FAIL status=403 len=413 head='<HTML><HEAD> <TITLE>Access Denied</TITLE> </HEAD><BODY> <H1>'

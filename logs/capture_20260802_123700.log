@@ -1,0 +1,60 @@
+pending=6003 shard=11/24 assigned=250
+transport: canary vendor 'decodo_patchright'
+pending=6003 shard=12/24 assigned=250
+transport: canary vendor 'decodo_patchright'
+pending=6003 shard=14/24 assigned=250
+transport: canary vendor 'decodo_patchright'
+pending=6003 shard=15/24 assigned=250
+transport: canary vendor 'decodo_patchright'
+pending=6003 shard=17/24 assigned=250
+transport: canary vendor 'decodo_patchright'
+pending=6003 shard=16/24 assigned=250
+transport: canary vendor 'decodo_patchright'
+pending=6003 shard=13/24 assigned=250
+transport: canary vendor 'decodo_patchright'
+pending=6003 shard=22/24 assigned=250
+transport: canary vendor 'decodo_patchright'
+pending=6003 shard=18/24 assigned=250
+transport: canary vendor 'decodo_patchright'
+pending=6003 shard=19/24 assigned=250
+transport: canary vendor 'decodo_patchright'
+pending=6003 shard=20/24 assigned=250
+transport: canary vendor 'decodo_patchright'
+pending=6003 shard=21/24 assigned=250
+transport: canary vendor 'decodo_patchright'
+2026-08-02 12:37:06,739 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785688626w11
+2026-08-02 12:37:06,748 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785688626w12
+captured=0 skipped=250 failed=0
+captured=0 skipped=250 failed=0
+EXIT=0
+EXIT=0
+2026-08-02 12:37:09,836 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785688629w16
+captured=0 skipped=250 failed=0
+2026-08-02 12:37:10,673 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785688630w17
+captured=0 skipped=250 failed=0
+2026-08-02 12:37:10,896 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785688630w13
+captured=0 skipped=250 failed=0
+2026-08-02 12:37:11,541 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785688631w15
+2026-08-02 12:37:11,560 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785688631w14
+captured=0 skipped=250 failed=0
+captured=0 skipped=250 failed=0
+EXIT=0
+2026-08-02 12:37:21,083 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785688641w21
+captured=0 skipped=250 failed=0
+2026-08-02 12:37:21,628 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785688641w20
+captured=0 skipped=250 failed=0
+2026-08-02 12:37:22,709 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785688642w19
+captured=0 skipped=250 failed=0
+EXIT=0
+2026-08-02 12:37:23,517 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785688643w22
+captured=0 skipped=250 failed=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+2026-08-02 12:37:29,721 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785688649w18
+captured=0 skipped=250 failed=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0

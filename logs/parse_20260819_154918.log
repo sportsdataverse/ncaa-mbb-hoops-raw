@@ -1,0 +1,335 @@
+seasons=2022 bundles=5970 pending=5970 force=True shard=3/6 assigned=995
+2026-08-19 15:49:26,259 INFO ncaa_identity: contest_id=2139897 teams 2752/2752 matched, players 7584/7588 matched
+2026-08-19 15:49:33,218 INFO ncaa_identity: contest_id=2139927 teams 1536/3110 matched, players 4369/8586 matched
+2026-08-19 15:49:36,608 INFO ncaa_identity: contest_id=2139939 teams 1487/2904 matched, players 4038/7966 matched
+2026-08-19 15:49:42,350 INFO ncaa_identity: contest_id=2139963 teams 1288/2539 matched, players 3528/6960 matched
+2026-08-19 15:49:43,798 INFO ncaa_identity: contest_id=2139970 teams 2703/2703 matched, players 7055/7378 matched
+2026-08-19 15:49:47,885 INFO ncaa_identity: contest_id=2139994 teams 1434/2887 matched, players 4051/7979 matched
+2026-08-19 15:49:50,817 INFO ncaa_identity: contest_id=2140008 teams 3117/3117 matched, players 8396/8657 matched
+2026-08-19 15:49:55,396 INFO ncaa_identity: contest_id=2140044 teams 1451/2888 matched, players 3778/7935 matched
+2026-08-19 15:49:57,077 INFO ncaa_identity: contest_id=2140055 teams 1416/2806 matched, players 3811/7685 matched
+2026-08-19 15:49:58,588 INFO ncaa_identity: contest_id=2140063 teams 1200/2399 matched, players 3257/6539 matched
+2026-08-19 15:50:00,099 INFO ncaa_identity: contest_id=2140070 teams 1562/3046 matched, players 3653/8356 matched
+2026-08-19 15:50:01,123 INFO ncaa_identity: contest_id=2140079 teams 1164/2348 matched, players 3254/6401 matched
+2026-08-19 15:50:06,215 INFO ncaa_identity: contest_id=2140118 teams 3083/3083 matched, players 8017/8468 matched
+2026-08-19 15:50:07,529 INFO ncaa_identity: contest_id=2140127 teams 2884/2884 matched, players 7481/7925 matched
+2026-08-19 15:50:09,918 INFO ncaa_identity: contest_id=2140139 teams 1480/2910 matched, players 4000/7998 matched
+2026-08-19 15:50:12,224 INFO ncaa_identity: contest_id=2140159 teams 1166/2384 matched, players 3234/6487 matched
+2026-08-19 15:50:13,713 INFO ncaa_identity: contest_id=2140192 teams 1809/3524 matched, players 4911/9732 matched
+2026-08-19 15:50:16,273 WARNING ncaa_parse: family=shots contest_id=2140221 team=Morgan St. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:50:16,314 INFO ncaa_identity: contest_id=214022026-08-19 15:50:17,971 INFO ncaa_identity: contest_id=2026-08-19 15:50:28,417 INFO ncaa_identity: contest_id=2140310 teams 2100/2100 matched, players 5353/5729 matched
+2026-08-19 15:50:29,734 INFO ncaa_identity: contest_id=2140360 teams 1364/2788 matched, players 3795/7627 matched
+2026-08-19 15:50:30,958 INFO ncaa_identity: contest_id=2140427 teams 1395/2777 matched, players 3849/7631 matched
+2026-08-19 15:50:33,449 INFO ncaa_identity: contest_id=2140449 teams 1347/2560 matched, players 3369/6955 matched
+2026-08-19 15:50:37,374 WARNING ncaa_parse: family=shots contest_id=2140500 team=Longwood SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:50:37,406 INFO ncaa_identity: contest_id=2140500 teams 1260/2389 matched, players 3012/6726 matched
+2026-08-19 15:50:44,685 INFO ncaa_identity: contest_id=2140592 teams 3003/3003 matched, players 8256/8293 matched
+2026-08-19 15:50:55,543 INFO ncaa_identity: contest_id=2140899 teams 1443/2829 matched, players 3883/7719 matched
+2026-08-19 15:50:56,910 INFO ncaa_identity: contest_id=2140934 teams 1452/2709 matched, players 3836/7408 matched
+2026-08-19 15:51:02,785 INFO ncaa_identity: contest_id=2141019 teams 2471/2471 matched, players 6562/6703 matched
+2026-08-19 15:51:05,212 INFO ncaa_identity: contest_id=2141034 teams 1466/2986 matched, players 4162/8225 matched
+2026-08-19 15:51:06,603 INFO ncaa_identity: contest_id=2141041 teams 1476/2868 matched, players 3922/7815 matched
+2026-08-19 15:51:09,114 INFO ncaa_identity: contest_id=2141053 teams 1319/2552 matched, players 3430/6936 matched
+2026-08-19 15:51:11,691 INFO ncaa_identity: contest_id=2141070 teams 1551/3024 matched, players 4178/8276 matched
+2026-08-19 15:51:17,755 INFO ncaa_identity: contest_id=2141123 teams 1291/2579 matched, players 3604/7035 matched
+2026-08-19 15:51:18,833 INFO ncaa_identity: contest_id=2141129 teams 2295/2295 matched, players 5873/6262 matched
+2026-08-19 15:51:22,637 INFO ncaa_identity: contest_id=2141148 teams 912/1827 matched, players 2480/4987 matched
+2026-08-19 15:51:24,578 INFO ncaa_identity: contest_id=2141170 teams 1476/2920 matched, players 4095/8001 matched
+2026-08-19 15:51:28,238 INFO ncaa_identity: contest_id=2141203 teams 1350/2683 matched, players 3667/7344 matched
+2026-08-19 15:51:29,680 INFO ncaa_identity: contest_id=2141217 teams 2853/2853 matched, players 7059/7823 matched
+2026-08-19 15:51:30,870 INFO ncaa_identity: contest_id=2141232 teams 1207/2415 matched, players 3340/6528 matched
+2026-08-19 15:51:32,152 INFO ncaa_identity: contest_id=2141253 teams 1208/2391 matched, players 3250/6462 matched
+2026-08-19 15:51:37,176 INFO ncaa_identity: contest_id=2141301 teams 1443/2824 matched, players 3894/7714 matched
+2026-08-19 15:51:43,362 INFO ncaa_identity: contest_id=2141461 teams 2400/2475 matched, players 6786/6786 matched
+2026-08-19 15:51:44,774 INFO ncaa_identity: contest_id=2141467 teams 1360/2812 matched, players 3825/7717 matched
+2026-08-19 15:51:47,228 INFO ncaa_identity: contest_id=2141480 teams 2420/2420 matched, players 6500/6629 matched
+2026-08-19 15:51:50,907 INFO ncaa_identity: contest_id=2141510 teams 1223/2505 matched, players 3414/6883 matched
+2026-08-19 15:51:53,281 WARNING ncaa_parse: family=shots contest_id=2141549 team=Morehead St. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="C2026-08-19 15:51:53,697 INFO ncaa_identity: contest_id=2141554 teams 1221/2425 matched, players 3349/6638 matched
+2026-08-19 15:51:56,939 WARNING ncaa_parse: family=shots contest_id=2141577 team=Longwood SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html la2026-08-19 15:52:04,823 WARNING ncaa_parse: family=shots contest_id=2141736 team=Loyola Chicago SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:52:08,355 WARNING ncaa_parse: family=shots contest_id=2141767 team=Longwood SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-082026-08-19 15:52:11,567 INFO ncaa_identity: contest_id=2141859 teams 1286/2607 matched, players 3568/7097 ma2026-08-19 15:52:15,198 INFO ncaa_identity: contest_id=2142066 teams 2803/2803 matched, players 7061/7705 matched
+2026-08-19 15:52:36,738 INFO ncaa_identity: contest_id=2142273 teams 2510/2510 matched, players 6759/6892 matched
+2026-08-19 15:52:38,662 INFO ncaa_identity: contest_id=2142283 teams 2567/2567 matched, players 6661/7086 matched
+2026-08-19 15:52:40,055 INFO ncaa_identity: contest_id=2142295 teams 2800/2800 matched, players 7234/7672 matched
+2026-08-19 15:52:41,245 INFO ncaa_identity: contest_id=2142308 teams 2729/2729 matched, players 7441/7484 matched
+2026-08-19 15:52:42,404 INFO ncaa_identity: contest_id=2142315 teams 1533/2982 matched, players 4108/8251 matched
+2026-08-19 15:52:43,641 INFO ncaa_identity: contest_id=2142323 teams 1205/2306 matched, players 3123/6214 matched
+2026-08-19 15:52:44,515 WARNING ncaa_parse: family=shots contest_id=2142335 team=Liberty SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTE2026-08-19 15:52:48,498 INFO ncaa_identity: contest_id=2142463 teams 1223/2486 matched, players 3086/6742 matched
+2026-08-19 15:52:50,935 INFO ncaa_identity: contest_id=2142524 teams 2704/2704 matched, players 7350/7427 matched
+2026-08-19 15:52:51,854 INFO ncaa_identity: contest_id=2142604 teams 2212/2212 matched, players 5810/6084 matched
+2026-08-19 15:52:58,059 INFO ncaa_identity: contest_id=2142689 teams 1567/3089 matched, players 4370/8526 matched
+2026-08-19 15:52:59,295 INFO ncaa_identity: contest_id=2142700 teams 1331/2604 matched, players 3659/7138 matched
+2026-08-19 15:53:00,428 INFO ncaa_identity: contest_id=2142710 teams 1250/2535 matched, players 3481/6925 matched
+2026-08-19 15:53:03,880 INFO ncaa_identity: contest_id=2142742 teams 2678/2678 matched, players 6919/7345 matched
+2026-08-19 15:53:07,521 INFO ncaa_identity: contest_id=2142763 teams 1333/2606 matched, players 3528/7125 matched
+2026-08-19 15:53:11,318 INFO ncaa_identity: contest_id=2142851 teams 2638/2638 matched, players 7189/7205 matched
+2026-08-19 15:53:14,817 INFO ncaa_identity: contest_id=2142885 teams 1390/2770 matched, players 3446/7570 matched
+2026-08-19 15:53:17,675 INFO ncaa_identity: contest_id=2142904 teams 2319/2319 matched, players 6077/6331 matched
+2026-08-19 15:53:22,963 INFO ncaa_identity: contest_id=2142957 teams 1289/2573 matched, players 3566/7084 matched
+2026-08-19 15:53:24,701 INFO ncaa_identity: contest_id=2142969 teams 1384/2723 matched, players 3280/7458 matched
+2026-08-19 15:53:26,383 INFO ncaa_identity: contest_id=2143051 teams 1668/3251 matched, players 4456/8927 matched
+2026-08-19 15:53:28,500 INFO ncaa_identity: contest_id=2143088 teams 2367/2367 matched, players 5976/6495 matched
+2026-08-19 15:53:29,859 INFO ncaa_identity: contest_id=2143106 teams 1357/2756 matched, players 3341/7533 matched
+2026-08-19 15:53:32,201 WARNING ncaa_parse: f2026-08-19 15:53:33,633 INFO ncaa_identity: contest_id=2143225 teams 1225/2385 matched, players 3253/6526 matched
+2026-08-19 15:53:34,809 INFO ncaa_identity: contest_id=2143237 teams 1063/2129 matched, players 2935/5775 matched
+2026-08-19 15:53:35,925 INFO ncaa_identity: contest_id=2143248 teams 2679/2679 matched, players 6841/7335 matched
+2026-08-19 15:53:42,857 INFO 5 starters not found for period 3; using estimate
+2026-08-19 15:53:46,560 INFO ncaa_identity: contest_id=2143369 teams 2391/2391 matched, players 6018/6529 matched
+2026-08-19 15:53:49,354 INFO ncaa_identity: contest_id=2143402 teams 3183/3183 matched, players 8000/8747 matched
+2026-08-19 15:53:55,809 INFO ncaa_identity: contest_id=2143454 teams 2837/2837 matched, players 7091/7742 matched
+2026-08-19 15:53:58,425 INFO ncaa_identity: contest_id=2143467 teams 2738/2738 matched, players 7360/7484 matched
+2026-08-19 15:54:09,180 INFO ncaa_identity: contest_id=2143643 teams 1469/2906 matched, players 4013/8021 matched
+2026-08-19 15:54:14,499 INFO ncaa_identity: contest_id=2143684 teams 2677/2677 matched, players 7149/7338 matched
+2026-08-19 15:54:15,632 WARNING ncaa_parse: family=shots contest_id=2143692 team=Grambling SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:54:15,663 INFO ncaa_identity: contest_id=2143692 teams 1084/2150 matched, players 3004/6013 matched22026-08-19 15:54:22,078 INFO ncaa_identity: contest_id=2143806 teams 2577/2577 matched, players 6907/7060 matched
+2026-08-19 15:54:24,521 INFO ncaa_identity: contest_id=2143859 teams 2870/2870 matched, players 7431/7910 matched
+2026-08-19 15:54:26,744 INFO ncaa_identity: contest_id=2143873 teams 2618/2618 matched, players 7054/7055 matched
+2026-08-19 15:54:28,139 INFO ncaa_identity: contest_id=2143882 teams 1373/2731 matched, players 3792/7508 matched
+2026-08-19 15:54:39,858 INFO ncaa_identity: contest_id=2144168 teams 2343/2343 matched, players 5797/6392 matched
+2026-08-19 15:54:42,522 INFO ncaa_identity: contest_id=2144231 teams 1208/2448 matched, players 3342/6711 matched
+2026-08-19 15:54:49,264 INFO ncaa_identity: contest_id=2144295 teams 1400/2712 matched, players 3776/7404 matched
+2026-08-19 15:54:50,599 INFO ncaa_identity: contest_id=2144302 teams 1312/2526 matched, players 3544/6894 matched
+2026-08-19 15:54:54,117 INFO ncaa_identity: contest_id=2144330 teams 1454/2804 matched, players 3888/7651 matched
+2026-08-19 15:54:55,041 WARNING ncaa_parse: family=shots contest_id=2144346 team=Morehead St. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:54:55,076 INFO ncaa_identity: contest_id=2144346 teams 2216/2216 matched, players 5672/6271 matched
+2026-08-19 15:54:58,676 INFO ncaa_identity: contest_id=2144372 teams 1167/2281 matched, players 3166/6168 matched
+2026-08-19 15:55:01,848 INFO ncaa_identity: contest_id=2144404 teams 1552/3002 matched, players 4181/8201 matched
+2026-08-19 15:55:07,007 INFO ncaa_identity: contest_id=2144465 teams 2427/2427 matched, players 6236/6700 matched
+2026-08-19 15:55:08,399 INFO ncaa_identity: contest_id=2144471 teams 1306/2617 matched, players 3609/7177 matched
+2026-08-19 15:55:10,135 INFO ncaa_identity: contest_id=2144477 teams 2527/2527 matched, players 6574/6940 matched
+2026-08-19 15:55:13,482 INFO ncaa_identity: contest_id=2144501 teams 2673/2673 matched, players 6688/7363 matched
+2026-08-19 15:55:17,773 INFO ncaa_identity: contest_id=2144542 teams 2467/2467 matched, players 6223/6748 matched
+2026-08-19 15:55:21,654 WARNING ncaa_parse: family=shots contest_id=2144568 team=UMES SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:55:21,757 INFO ncaa_identity: contest_id=2144568 teams 1568/3112 matched, players 4078/8842 matched
+2026-08-19 15:55:26,025 INFO ncaa_identity: contest_id=2144651 teams 2419/2419 matched, players 6594/6598 matched
+2026-08-19 15:55:29,452 INFO ncaa_identity: contest_id=2144715 teams 1183/2366 matched, players 3257/6496 matched
+2026-08-19 15:55:36,654 INFO ncaa_identity: contest_id=2144778 teams 2657/2657 matched, players 6874/7257 matched
+2026-08-19 15:55:38,132 INFO ncaa_identity: contest_id=2144786 teams 1279/2605 matched, players 3501/7142 matched
+2026-08-19 15:55:39,139 WARNING ncaa_parse: family=shots contest_id=2144795 team=Sam Houston SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv=2026-08-19 15:55:42,431 INFO ncaa_identity: contest_id=2144783 teams 2555/2555 matched, players 6378/7018 matched
+2026-08-19 15:55:54,011 WARNING ncaa_parse: family=shots contest_id=2145015 team=UMES SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:55:54,050 INFO ncaa_identity: contest_id=2145015 teams 1389/2701 matched, players 3401/7631 matched
+2026-08-19 15:55:59,966 INFO ncaa_identity: contest_id=2145097 teams 2579/2579 matched, players 6602/7062 matched
+2026-08-19 15:56:00,908 INFO ncaa_identity: contest_id=2145103 teams 2405/2405 matched, players 6577/6594 matched
+2026-08-19 15:56:05,463 INFO ncaa_identity: contest_id=2145150 teams 2362/2362 matched, players 6284/6444 matched
+2026-08-19 15:56:06,731 INFO ncaa_identity: contest_id=2145159 teams 1317/2606 matched, players 3571/7070 matched
+2026-08-19 15:56:11,600 WARNING ncaa_parse: family=shots contest_id=2145271 team=Longwood SKIPPED (1 parse error(s)2026-08-19 15:56:13,736 INFO ncaa_identity: contest_id=2145226 teams 1172/2325 matched, players 3223/6317 matched
+2026-08-19 15:56:14,867 INFO ncaa_identity: contest_id=2145254 teams 1212/2412 matched, players 3310/6616 matched
+2026-08-19 15:56:16,215 INFO ncaa_identity: contest_id=2145266 teams 1446/2857 matched, players 3983/7807 matched
+2026-08-19 15:56:22,609 INFO ncaa_identity: contest_id=2145335 teams 1383/2779 matched, players 3769/7620 matched
+2026-08-19 15:56:33,137 INFO ncaa_identity: contest_id=2145515 teams 2457/2457 matched, players 6669/6752 matched
+2026-08-19 15:56:34,378 INFO ncaa_identity: contest_id=2145525 teams 2224/2224 matched, players 5758/6044 matched
+2026-08-19 15:56:35,654 INFO ncaa_identity: contest_id=2145532 teams 1164/2373 matched, players 3249/6435 matched
+2026-08-19 15:56:42,120 INFO ncaa_identity: contest_id=2145619 teams 1318/2551 matched, players 3557/6959 matched
+2026-08-19 15:56:43,109 INFO ncaa_identity: contest_id=2145629 teams 1404/2763 matched, players 3371/7629 matched
+2026-08-19 15:56:44,356 INFO ncaa_identity: contest_id=2145708 teams 1242/2461 matched, players 3382/6715 matched
+2026-08-19 15:56:46,617 INFO ncaa_identity: contest_id=2145750 teams 1360/2620 matched, players 3462/7158 matched
+2026-08-19 15:56:52,493 WARNING ncaa_parse: family=shots contest_id=2145824 team=Harvard SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:56:52,515 INFO ncaa_identity: contest_id=2145824 teams 2281/2281 matched, players 5961/6415 matched
+2026-08-19 15:56:55,837 INFO ncaa_identity: contest_id=2145894 teams 1213/2409 matched, players 3340/6609 matched
+2026-08-19 15:57:00,799 INFO ncaa_identity: contest_id=2145997 teams 2829/2829 matched, players 7631/7812 matched
+2026-08-19 15:57:03,314 INFO ncaa_identity: contest_id=2146017 teams 1458/2861 matched, players 3978/7839 matched
+2026-08-19 15:57:04,357 INFO ncaa_identity: contes2026-08-19 15:57:04,360 INFO ncaa_identity: contest_id=2146058 te2026-08-19 15:57:05,528 INFO ncaa_identity: contes2026-08-19 15:57:05,597 INFO ncaa_identity: contest_id=2146072 te2026-08-19 15:57:07,819 INFO ncaa_identity: contes2026-08-19 15:57:10,482 INFO ncaa_identity: contest_id=2146103 teams 2744/2744 matched, players 7400/7513 matched
+2026-08-19 15:57:13,570 INFO ncaa_identity: contest_id=2146130 teams 1148/2209 matched, players 3061/6030 matched
+2026-08-19 15:57:30,797 INFO ncaa_identity: contest_id=2146370 teams 1043/2160 matched, players 2940/5868 matched
+2026-08-19 15:57:32,191 INFO ncaa_identity: contest_id=2146390 teams 2190/2190 matched, players 5789/6023 matched
+2026-08-19 15:57:35,360 INFO ncaa_identity: contest_id=2146494 teams 1211/2374 matched, players 3264/6483 matched
+2026-08-19 15:57:38,673 INFO ncaa_identity: contest_id=2146555 teams 2520/2520 matched, players 6683/6876 matched
+2026-08-19 15:57:59,507 INFO ncaa_identity: contest_id=2146844 teams 3239/3239 matched, players 7623/8965 matched
+2026-08-19 15:58:05,670 INFO ncaa_identity: contest_id=2146966 teams 2434/2434 matched, players 6259/6655 matched
+2026-08-19 15:58:07,626 INFO ncaa_identity: contest_id=2147023 teams 2426/2426 matched, players 6409/6410 matched
+2026-08-19 15:58:08,610 INFO ncaa_identity: contest_id=2147039 teams 2405/2405 matched, players 6248/6587 matched
+2026-08-19 15:58:13,457 INFO ncaa_identity: contest_id=2147139 teams 2450/2450 matched, players 6716/6717 matched
+2026-08-19 15:58:21,547 WARNING ncaa_parse: family=shots contest_id=2147260 team=Hampton SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:58:21,563 INFO ncaa_identity: contest_id=2147260 teams 2113/2113 matched, players 4427/5911 matched
+2026-08-19 15:58:26,358 INFO ncaa_identity: contest_id=2147396 teams 2570/2570 matched, players 6671/7070 matched
+2026-08-19 15:58:31,203 WARNING ncaa_parse: family=shots contest_id=2147532 team=Harvard SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:58:34,357 INFO ncaa_identity: contest_id=2147590 teams 2631/2631 matched, players 6831/7226 matched
+2026-08-19 15:58:41,544 WARNING ncaa_parse: family=shots contest_id=2147642 team=Alabama A&M SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:58:41,563 INFO ncaa_identity: contest_id=2147642 teams 2683/2683 matched, players 7098/7608 matched
+2026-08-19 15:58:42,398 INFO ncaa_identity: contest_id=2147652 teams 2368/2368 matched, players 5917/6484 matched
+2026-08-19 15:58:43,221 WARNING ncaa_parse: family=shots contest_id=2147661 team=South Carolina St. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:58:43,247 INFO ncaa_identity: contest_id=2147661 teams 2457/2457 matched, players 5854/6952 matched
+2026-08-19 15:58:48,899 INFO ncaa_identity: contest_id=2147929 teams 2153/2153 matched, players 5406/5860 matched
+2026-08-19 15:58:59,169 WARNING ncaa_parse: family=shots contest_id=2148094 team=South Carolina St. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:58:59,200 INFO ncaa_identity: contest_id=2148094 teams 2814/2814 matched, players 6282/8018 matched
+2026-08-19 15:58:59,900 WARNING ncaa_parse: family=shots contest_id=2148112 team=N.C. Central SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/2026-08-19 15:59:03,018 INFO ncaa_identity: contest_id=2148086 teams 2513/2513 matched, players 6851/6907 matched
+2026-08-19 15:59:08,847 INFO ncaa_identity: contest_id=2148154 teams 2249/2249 matched, players 5938/6141 matched
+2026-08-19 15:59:15,752 INFO ncaa_identity: contest_id=2148265 teams 2719/2719 matched, players 6881/7474 matched
+2026-08-19 15:59:16,649 INFO ncaa_identity: contest_id=2148280 teams 2407/2407 matc2026-08-19 15:59:22,654 INFO ncaa_identity: contest_id=2148502 teams 2906/2906 matched, players 7365/8024 matched
+2026-08-19 15:59:28,659 INFO ncaa_identity: contest_id=2148669 teams 1315/2609 matched, players 3588/7135 matched
+2026-08-19 15:59:30,764 INFO ncaa_identity: contest_id=2148683 teams 2349/2349 matched, players 6266/6404 matched
+2026-08-19 15:59:32,681 INFO ncaa_identity: contest_id=2148698 teams 2325/2325 matched, players 6360/6391 matched
+2026-08-19 15:59:34,673 WARNING ncaa_parse: family=shots contest_id=2148715 team=Longwood SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 15:59:39,470 INFO ncaa_identity: contest_id=2148781 teams 1216/2388 matched, players 3280/6558 matched
+2026-08-19 15:59:40,411 INFO ncaa_identity: contest_id=2148814 teams 2561/2561 matched, players 6858/7049 matched
+2026-08-19 15:59:44,882 INFO ncaa_identity: contest_id=2149045 teams 2496/2496 matched, players 6495/6863 matched
+2026-08-19 15:59:51,364 INFO ncaa_identity: contest_id=2149122 teams 2308/2308 matched, players 6037/6300 matched
+2026-08-19 15:59:52,719 INFO ncaa_identity: contest_id=2149132 teams 2644/2644 matched, players 7177/7184 match20262026-08-19 15:59:58,514 INFO ncaa_identity: contest_id=2149196 teams 2776/2776 matched, players 7056/7655 matched
+2026-08-19 16:00:02,516 INFO ncaa_identity: contest_id=2149242 teams 2540/252026-08-19 16:00:03,688 INFO ncaa_ident2026-08-19 16:00:04,615 INFO ncaa_identity: contest_id=2149282 teams 2626/262026-08-19 16:00:17,877 INFO ncaa_identity: contest_id=2149615 teams 2390/2390 matched, players 6511/6529 matched
+2026-08-19 16:00:18,658 INFO ncaa_identity: contest_id=2149621 teams 1039/2059 matched, players 2827/5611 matched
+2026-08-19 16:00:22,733 INFO ncaa_identity: contest_id=2149714 teams 2358/2358 matched, players 6468/6474 matched
+2026-08-19 16:00:25,579 WARNING ncaa_parse: family=shots contest_id=2149736 team=Morgan St. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:00:25,610 INFO ncaa_identity: contest_id=2149736 teams 2500/2500 matched, players 5586/7106 matched
+2026-08-19 16:00:26,861 INFO ncaa_identity: contest_id=2149742 teams 2658/2658 matched, players 6931/7339 matched
+2026-08-19 16:00:28,939 INFO ncaa_identity: contest_id=2149757 teams 2384/2384 matched, players 6125/6584 matched
+2026-08-19 16:00:30,813 INFO ncaa_identity: contest_id=2149778 teams 2199/2199 matched, players 5898/6008 matched
+2026-08-19 16:00:36,196 INFO ncaa_identity: contest_id=2149854 teams 2517/2517 matched, players 6305/6930 matched
+2026-08-19 16:00:43,798 INFO ncaa_identity: contest_id=2150133 teams 2409/2409 matched, players 6113/6594 matched
+2026-08-19 16:00:49,737 WARNING ncaa_parse: family=shots contest_id=2150207 team=Florida A&M SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:00:49,761 INFO ncaa_identity: contest_id=2150207 teams 2308/2308 matched, players 5524/6458 matched
+2026-08-19 16:00:51,592 INFO ncaa_identity: contest_id=2150241 teams 2744/2744 matched, players 7171/7527 matched
+2026-08-19 16:00:59,567 INFO ncaa_identity: contest_id=2150344 teams 2750/2750 matched, players 7563/7575 matched
+2026-08-19 16:01:02,445 INFO ncaa_identity: contest_id=2150408 teams 2448/2448 matched, players 6567/6695 matched
+2026-08-19 16:01:03,521 INFO ncaa_identity: contest_id=2150422 teams 2355/2355 matched, players 6011/6489 matched
+2026-08-19 16:01:09,479 INFO ncaa_identity: contest_id=2150572 teams 2481/2481 matched, players 6616/6829 matched
+2026-08-19 16:01:13,569 INFO ncaa_identity: contest_id=2150601 teams 1298/2520 matched, players 3568/6933 matched
+2026-08-19 16:01:14,445 INFO ncaa_identity: contest_id=2150639 teams 2574/2574 matched, players 6885/7103 matched
+2026-08-19 16:01:16,438 INFO ncaa_identity: contest_id=2150674 teams 2346/2346 matched, players 6310/6462 matched
+2026-08-19 16:01:19,243 INFO ncaa_identity: contest_id=2150761 teams 2197/2197 matched, players 6010/6027 matched
+2026-08-19 16:01:22,164 INFO ncaa_identity: contest_id=2150783 teams 2615/2615 matched, players 6631/7172 matched
+2026-08-19 16:01:31,253 INFO ncaa_identity: contest_id=2150888 teams 2261/2261 matched, players 5640/6192 matched
+2026-08-19 16:01:32,350 INFO ncaa_identity: contest_id=2150969 teams 2874/2874 matched, players 7944/7947 matched
+2026-08-19 16:01:37,210 INFO ncaa_identity: contest_id=2151148 teams 1326/2571 matched, players 3293/7042 matched
+2026-08-19 16:01:38,343 INFO ncaa_identity: contest_id=2151164 teams 2954/2954 matched, players 7507/8124 matched
+2026-08-19 16:01:48,374 INFO ncaa_identity: contest_id=2151284 teams 2045/2045 matched, players 5528/5629 matched
+2026-08-19 16:01:49,317 INFO ncaa_identity: contest_id=2151290 teams 2387/2387 matched, players 5799/6575 matched
+2026-08-19 16:01:52,352 INFO ncaa_identity: contest_id=2151350 teams 2723/2723 matched, players 6989/7462 matched
+2026-08-19 16:01:56,479 INFO ncaa_identity: contest_id=2151388 teams 2613/2613 matched, players 6757/7194 matched
+2026-08-19 16:02:00,567 INFO ncaa_identity: contest_id=2151564 teams 1400/2807 matched, players 3861/7713 matched
+2026-08-19 16:02:05,673 INFO ncaa_identity: contest_id=2151599 teams 2424/2424 matched, players 6040/6628 matched
+2026-08-19 16:02:08,375 WARNING ncaa_parse: family=shots contest_id=2151620 team=Morehead St. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:02:10,291 INFO ncaa_identity: contest_id=2151665 teams 2272/2272 matched, players 6125/6238 matched
+2026-08-19 16:02:22,214 INFO ncaa_identity: contest_id=2151837 teams 2592/2592 matched, players 6546/7122 matched
+2026-08-19 16:02:28,441 INFO ncaa_identity: contest_id=2151922 teams 2535/2535 matched, players 6891/6893 matched
+2026-08-19 16:02:33,554 INFO ncaa_identity: contest_id=2152172 teams 2199/2199 matched, players 5926/5967 matched
+2026-08-19 16:02:43,693 INFO ncaa_identity: contest_id=2152308 teams 3195/3195 matched, players 7791/8781 matched
+2026-08-19 16:02:46,887 INFO ncaa_identity: contest_id=2152335 teams 2619/2619 matched, players 7037/7121 matched
+2026-08-19 16:02:49,859 INFO ncaa_identity: contest_id=2152378 teams 2563/2563 matched, players 6725/7049 matched
+2026-08-19 16:02:52,653 INFO ncaa_identity: contest_id=2152401 teams 2574/2574 matched, players 5942/7082 matched
+2026-08-19 16:03:06,949 INFO ncaa_identity: contest_id=2152682 teams 2181/2181 matched, players 5894/5952 matched
+2026-08-19 16:03:11,070 INFO ncaa_identity: contest_id=2152816 teams 1450/2811 matched, players 3532/7729 matched
+2026-08-19 16:03:12,035 INFO ncaa_identity: contest_id=2152822 teams 2251/2251 matched, players 5630/6147 matched
+2026-08-19 16:03:12,901 INFO ncaa_identity: contest_id=2152832 teams 2380/2380 matched, players 6275/6501 matched
+2026-08-19 16:03:14,004 INFO ncaa_identity: contest_id=2152839 teams 2429/2429 matched, players 6054/6688 matched
+2026-08-19 16:03:15,808 INFO ncaa_identity: contest_id=2152851 teams 2719/2719 matched, players 7472/7513 matched
+2026-08-19 16:03:17,557 INFO ncaa_identity: contest_id=2152868 teams 2313/2313 matched, players 5901/6311 matched
+2026-08-19 16:03:21,945 INFO ncaa_identity: contest_id=2152908 teams 2666/2666 matched, players 7268/7274 matched
+2026-08-19 16:03:27,787 INFO ncaa_identity: contest_id=2153154 teams 2439/2439 matched, players 6398/6399 matched
+2026-08-19 16:03:28,879 INFO ncaa_identity: contest_id=2153193 teams 2586/2586 matched, players 6761/7061 matched
+2026-08-19 16:03:29,905 INFO ncaa_identity: contest_id=2153214 teams 2817/2817 matched, players 7671/7730 matched
+2026-08-19 16:03:33,985 INFO ncaa_identity: contest_id=2153265 teams 2499/2499 matched, players 6011/6877 matched
+2026-08-19 16:03:38,288 WARNING ncaa_parse: family=shots contest_id=2153315 team=Morgan St. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:03:38,318 INFO ncaa_identity: contest_id=2153315 teams 2486/2486 matched, players 6184/6999 matched
+2026-08-19 16:03:40,004 INFO ncaa_identity: contest_id=2153336 teams 2312/2312 matched, players 5862/6340 matched
+2026-08-19 16:03:47,878 INFO ncaa_identity: contest_id=2153457 teams 2525/2525 matched, players 6383/6930 matched
+2026-08-19 16:03:52,451 INFO ncaa_identity: contest_id=2153533 teams 2963/2963 matched, players 7194/8227 matched
+2026-08-19 16:04:01,721 INFO ncaa_identity: contest_id=2153683 teams 2348/2348 matched, players 6189/6428 matched
+2026-08-19 16:04:03,015 INFO ncaa_identity: contest_id=2153691 teams 2479/2479 matched, players 6487/6765 matched
+2026-08-19 16:04:06,838 INFO ncaa_identity: contest_id=2153771 teams 2230/2230 matched, players 5554/6078 matched
+2026-08-19 16:04:10,887 INFO ncaa_identity: contest_id=2153844 teams 1331/2673 matched, players 3642/7296 matched
+2026-08-19 16:04:14,102 INFO ncaa_identity: contest_id=2153865 teams 2721/2721 matched, players 7095/7503 matched
+2026-08-19 16:04:19,664 INFO ncaa_identity: contest_id=2153901 teams 1566/3182 matched, players 4306/8749 matched
+2026-08-19 16:04:21,090 INFO ncaa_identity: contest_id=2153908 teams 2728/2728 matched, players 6580/7506 matched
+2026-08-19 16:04:22,008 INFO ncaa_identity: contest_id=2153914 teams 2062/2062 matched, players 5308/5606 matched
+2026-08-19 16:04:26,742 INFO ncaa_identity: contest_id=2153978 teams 2260/2260 matched, players 5713/6211 matched
+2026-08-19 16:04:29,325 INFO ncaa_identity: contest_id=2154103 teams 2454/2477 matched, players 6809/6809 matched
+2026-08-19 16:04:34,074 INFO ncaa_identity: contest_id=2154227 teams 2886/2886 matched, players 7259/7954 matched
+2026-08-19 16:04:43,402 WARNING ncaa_parse: family=shots contest_id=2154303 team=Florida A&M SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:04:452026-08-19 16:04:47,835 INFO ncaa_identity: contest_id=2154301 teams 2458/2458 matched, players 6720/6729 matched
+2026-08-19 16:04:49,981 INFO ncaa_identity: contest_id=2154315 teams 2363/2363 matched, players 2026-08-19 16:04:502026-08-19 16:04:51,898 INFO ncaa_identity: contest_id=2154329 teams 2181/2181 matched, players 2026-08-19 16:04:522026-08-19 16:04:53,032 INFO ncaa_identity: contest_id=2154338 teams 2732/2822 matched, players 2026-08-19 16:05:06,807 INFO ncaa_identity: contest_id=2154510 teams 2438/2438 matched, players 6143/6694 matched
+2026-08-19 16:05:09,070 INFO ncaa_identity: contest_id=2154524 teams 2315/2315 matched, players 6100/6329 matched
+2026-08-19 16:05:11,170 INFO ncaa_identity: contest_id=2154582 teams 2461/2461 matched, players 6749/6755 matched
+2026-08-19 16:05:18,542 INFO ncaa_identity: contest_id=2154641 teams 2785/2785 matched, players 7509/7720 matched
+2026-08-19 16:05:19,510 INFO ncaa_identity: contest_id=2154647 teams 2264/2264 matched, players 5952026-08-19 16:052026-08-19 16:05:20,293 INFO ncaa_identity: contest_id=2154653 teams 1943/1943 matched, players 4782026-08-19 16:05:30,778 INFO ncaa_identity: contest_id=2154679 teams 1424/2906 matched, players 3903/7984 matched
+2026-08-19 16:05:35,565 INFO ncaa_identity: contest_id=2154710 teams 2492/2570 matched, players 7018/7018 matched
+2026-08-19 16:05:40,377 INFO ncaa_identity: contest_id=2154826 teams 2393/2393 matched, players 5863/6607 matched
+2026-08-19 16:05:46,735 INFO ncaa_identity: contest_id=2154862 teams 2578/2578 matched, players 6964/7007 matched
+2026-08-19 16:06:09,775 INFO ncaa_identity: contest_id=2154991 teams 2568/2568 matched, players 6547/7070 matched
+2026-08-19 16:06:18,769 WARNING ncaa_parse: family=shots contest_id=2155040 team=Alcorn SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:06:18,795 INFO ncaa_identity: contest_id=2155040 teams 2558/2558 matched, players 6659/7278 matched
+2026-08-19 16:06:19,671 INFO ncaa_identity: contest_id=2155046 teams 2226/2226 matched, players 6001/6109 matched
+2026-08-19 16:06:20,759 WARNING ncaa_parse: family=shots contest_id=2155052 team=Harvard SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:06:31,638 INFO ncaa_identity: contest_id=2155320 teams 1317/2637 matched, players 3612/7224 matched
+2026-08-19 16:06:32,646 INFO ncaa_identity: contest_id=2156176 teams 1336/2750 matched, players 3696/7517 matched
+2026-08-19 16:06:36,023 INFO ncaa_identity: contest_id=2157297 teams 2502/2502 matched, players 6666/6884 matched
+2026-08-19 16:06:36,995 INFO ncaa_identity: contest_id=2157323 teams 1417/2710 matched, players 3481/7490 matched
+2026-08-19 16:06:38,999 INFO ncaa_identity: contest_id=2157706 teams 1290/2566 matched, players 3485/7085 matched
+2026-08-19 16:06:40,153 INFO ncaa_identity: contest_id=2158283 teams 1425/2681 matched, players 3732/7304 matched
+2026-08-19 16:06:44,079 INFO ncaa_identity: contest_id=2158752 teams 2750/2750 matched, players 7470/7596 matched
+2026-08-19 16:06:46,192 INFO ncaa_identity: contest_id=2158958 teams 2597/2597 matched, players 6759/7115 matched
+2026-08-19 16:06:50,892 INFO ncaa_identity: contest_id=2159296 teams 2484/2484 matched, players 6774/6787 matched
+2026-08-19 16:06:53,117 INFO ncaa_identity: contest_id=2160066 teams 1194/2344 matched, players 585/1095 matched
+2026-08-19 16:06:55,224 INFO ncaa_identity: contest_id=2160475 teams 1266/2609 matched, players 3565/7153 matched
+2026-08-19 16:06:56,172 INFO ncaa_identity: contest_id=2160758 teams 1301/2484 matched, players 3437/6778 matched
+2026-08-19 16:06:57,524 INFO ncaa_identity: contest_id=2160949 teams 1145/2289 matched, players 3128/6260 matched
+2026-08-19 16:06:58,543 INFO ncaa_identity: contest_id=2161032 teams 1193/2333 matched, players 3236/6379 matched
+2026-08-19 16:06:59,648 INFO ncaa_identity: contest_id=2161066 teams 1198/2350 matched, players 3282/6420 matched
+2026-08-19 16:07:00,981 INFO ncaa_identity: contest_id=2161106 teams 1337/2659 matched, players 3638/7294 matched
+2026-08-19 16:07:01,961 INFO ncaa_identity: contest_id=2163419 teams 2389/2389 matched, players 6118/6291 matched
+2026-08-19 16:07:03,400 INFO ncaa_identity: contest_id=2163426 teams 2007/2007 matched, players 5107/5487 matched
+2026-08-19 16:07:06,169 INFO ncaa_identity: contest_id=2163539 teams 1424/2879 matched, players 3972/7893 matched
+2026-08-19 16:07:07,315 INFO ncaa_identity: contest_id=2163643 teams 2464/2464 matched, players 6337/6762 matched
+2026-08-19 16:07:08,611 WARNING ncaa_parse: family=shots contest_id=2163667 team=Longwood SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:07:08,638 INFO ncaa_identity: contest_id=2163667 teams 1468/2834 matched, players 4103/8019 matched
+2026-08-19 16:07:09,599 INFO ncaa_identity: contest_id=2163770 teams 2429/2429 matched, players 5831/6579 matched
+2026-08-19 16:07:11,735 WARNING ncaa_parse: family=shots contest_id=2164112 team=South Carolina St. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:07:11,767 INFO ncaa_identity: contest_id=2164112 teams 1368/2785 matched, players 3118/7862 matched
+2026-08-19 16:07:13,874 INFO ncaa_identity: contest_id=2255331 teams 1310/2575 matched, players 3548/7087 matched
+2026-08-19 16:07:16,227 INFO ncaa_identity: contest_id=2259749 teams 2376/2376 matched, players 6450/6550 matched
+2026-08-19 16:07:18,587 INFO ncaa_identity: contest_id=2259784 teams 986/1882 matched, players 2649/5144 matched
+2026-08-19 16:07:19,707 INFO ncaa_identity: contest_id=2259799 teams 2431/2431 matched, players 6400/6661 matched
+2026-08-19 16:07:34,854 INFO ncaa_identity: contest_id=2260469 teams 2419/2419 matched, players 6542/6579 matched
+2026-08-19 16:07:36,754 WARNING ncaa_parse: family=shots contest_id=2260678 team=Norfolk St. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:07:36,782026-08-19 16:07:42,262 INFO ncaa_identity: contest_id=2260754 teams 2786/2786 matched, players 7650/7651 matched
+2026-08-19 16:07:44,942 WARNING ncaa_parse: family=shots cont2026-08-19 16:07:48,613 INFO ncaa_identity: contest_id=2261415 teams 2439/2439 matched, players 6469/6662 matched
+2026-08-19 16:07:53,527 WARNING ncaa_parse: family=shots contest_id=2261473 team=Yale SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:07:59,772 INFO ncaa_identity: contest_id=2261564 teams 2616/2616 matched, players 6990/7193 matched
+2026-08-19 16:08:09,850 WARNING ncaa_parse: family=shots contest_id=2262790 team=Boston U. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta2026-08-19 16:08:14,788 INFO ncaa_identity: contest_id=2262735 teams 2344/2344 matched, players 6429/6432 matched
+2026-08-19 16:08:19,911 INFO 2026-08-19 16:08:22,717 WARNING ncaa_parse: family=shots contest_id=2263230 team=UNCW 2026-08-19 16:08:27,203 INFO ncaa_identity: contest_id=2263065 teams 1852/1852 matched, players 4571/5042 matched
+2026-08-19 16:08:31,091 WARNING ncaa_parse: family=shots contest_id=2263209 team=Boston U. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:08:31,111 INFO ncaa_identity: contest_id=2263209 teams 2186/2186 matched, players 6135/6147 matched
+2026-08-19 16:08:32,029 INFO ncaa_identity: contest_id=2263257 teams 2807/2807 matched, players 7226/7742 matched
+parsed=995 failed=0
+ matched, players 5218/5748 matched
+2026-08-19 16:08:21,942 WARNING ncaa_parse: family=shots contest_id=2262973 team=Troy SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:08:21,975 INFO ncaa_identity: contest_id=2262973 teams 2660/2660 matched, players 7484/7491 matched
+2026-08-19 16:08:23,024 INFO ncaa_identity: contest_id=2263080 teams 2645/2645 matched, players 7177/7255 matched
+2026-08-19 16:08:27,163 WARNING ncaa_parse: family=shots contest_id=2263228 team=UNCW SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:08:27,192 INFO ncaa_identity: contest_id=2263228 teams 2886/2886 matched, players 7762/8134 matched
+parsed=995 failed=0
+: contest_id=2260045 teams 2578/2578 matched, players 6954/6972 matched
+2026-08-19 16:07:24,307 INFO ncaa_identity: contest_id=2260061 teams 2290/2290 matched, players 5922/6280 matched
+2026-08-19 16:07:27,868 INFO ncaa_identity: contest_id=2260165 teams 2763/2763 matched, players 7584/7591 matched
+2026-08-19 16:07:30,108 INFO ncaa_identity: contest_id=2260473 teams 2257/2257 matched, players 5803/6151 matched
+2026-08-19 16:07:35,730 WARNING ncaa_parse: family=shots contest_id=2260823 team=Norfolk St. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:07:42,709 INFO ncaa_identity: contest_id=2261156 teams 2613/2613 matched, players 6545/7192 matched
+2026-08-19 16:07:43,716 INFO ncaa_identity: contest_id=2261169 teams 2707/2707 matched, players 6993/7454 matched
+2026-08-19 16:07:50,106 INFO ncaa_identity: contest_id=2261416 teams 2560/2560 matched, players 6678/7013 matched
+2026-08-19 16:07:54,031 INFO ncaa_identity: contest_id=2261466 teams 2469/2469 matched, players 6775/6776 matched
+2026-08-19 16:07:58,826 INFO ncaa_identity: contest_id=2261541 teams 2369/2369 matched, players 6205/6207 matched
+2026-08-19 16:08:09,661 INFO ncaa_identity: contest_id=2262784 teams 2549/2549 matched, players 6721/7003 matched
+2026-08-19 16:08:14,315 INFO ncaa_identity: contest_id=2262831 teams 2336/2336 matched, players 5791/6359 matched
+2026-08-19 16:08:18,654 INFO ncaa_identity: contest_id=2263054 teams 2843/2843 matched, players 7755/7763 matched
+2026-08-19 16:08:23,050 INFO ncaa_identity: contest_id=2263193 teams 2519/2519 matched, players 6903/6908 matched
+2026-08-19 16:08:23,754 WARNING ncaa_parse: family=shots contest_id=2263231 team=UNC Asheville SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:08:25,646 INFO ncaa_identity: contest_id=2264108 teams 2507/2507 matched, players 6169/6874 matched
+parsed=995 failed=0
+s found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:07:36,594 INFO ncaa_identity: contest_id=2260679 teams 2273/2273 matched, players 5894/6397 matched
+2026-08-19 16:07:39,660 INFO ncaa_identity: contest_id=2260818 teams 2599/2599 matched, players 6569/7133 matched
+2026-08-19 16:07:40,666 WARNING ncaa_parse: family=shots contest_id=2260828 team=N.C. Central SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:07:40,693 INFO ncaa_identity: contest_id=2260828 teams 2523/2523 matched, players 6882/7089 matched
+2026-08-19 16:07:44,698 INFO ncaa_identity: contest_id=2261069 teams 2282026-08-19 16:07:52,330 INFO ncaa_identity: contest_id=2261411 teams 2280/2280 matched, players 5885/6209 matched
+2026-08-19 16:07:53,201 INFO ncaa_identity: contest_id=2261417 teams 2413/2413 matched, players 6608/6610 matched
+2026-08-19 16:07:54,217 INFO ncaa_identity:2026-08-19 16:07:54,315 INFO ncaa_identity: contest_id=2261425 teams 2002026-08-19 16:07:55,056 INFO ncaa_identity:2026-08-19 16:07:55,323 INFO ncaa_identity: contest_id=2261440 teams 2322026-08-19 16:07:58,392 INFO ncaa_identity: contest_id=2261477 teams 2653/2653 matched, players 7231/7293 matched
+2026-08-19 16:08:09,598 INFO ncaa_identity: contest_id=2262747 teams 2969/2969 matched, players 7797/8161 matched
+2026-08-19 16:08:10,813 INFO ncaa_identity: contest_id=2262756 teams 2904/2904 matched, players 7874/7981 matched
+2026-08-19 16:08:14,484 INFO ncaa_identity: contest_id=2262786 teams 2601/2601 matched, players 6829/6830 matched
+2026-08-19 16:08:18,996 INFO ncaa_identity: contest_id=2262832 teams 2769/2769 matched, players 7614/7631 matched
+2026-08-19 16:08:21,859 WARNING ncaa_parse: family=shots contest_id=2262971 team=Northern Colo. SKIPPED (1 parse error(s)): No shot events found [<!DOCTYPE html> <html lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:08:23,856 INFO ncaa_identity: contest_id=2263113 teams 2675/2675 matched, players 7279/7287 matched
+2026-08-19 16:08:26,662 WARNING ncaa_parse: family=shots contest_id=2263207 team=Abilene Christian SKIPPED (1 parse error(s)): No shot events found [<!DO2026-08-19 16:08:27,154 WARNING ncaa_parse: family=shots contest_id=2263229 team=Northern Colo. SKIPPED (1 parse error(s)): No shot events 2026-08-19 16:08:27,532 WARNING ncaa_parse: family=shots contest_id=2263232 team=Abilene Christian SKIPPED (1 parse error(s)): No shot events found [<parsed=995 failed=0
+lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:08:27,571 INFO ncaa_identity: contest_id=2263232 teams 2580/2580 matched, players 7253/7255 matched
+parsed=995 failed=0
+EXIT=0

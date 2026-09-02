@@ -1,0 +1,41 @@
+pending=5950 shard=0/23 assigned=259
+transport: canary vendor 'decodo_patchright'
+2026-08-11 21:32:25,281 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786498345w0
+captured=0 skipped=259 failed=0
+pending=5950 shard=1/23 assigned=259
+transport: canary vendor 'decodo_patchright'
+2026-08-11 21:32:25,787 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786498345w1
+captured=0 skipped=259 failed=0
+pending=5950 shard=5/23 assigned=259
+transport: canary vendor 'decodo_patchright'
+2026-08-11 21:32:26,266 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786498346w5
+captured=0 skipped=259 failed=0
+pending=5950 shard=4/23 assigned=259
+transport: canary vendor 'decodo_patchright'
+2026-08-11 21:32:26,279 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786498346w4
+captured=0 skipped=259 failed=0
+pending=5950 shard=3/23 assigned=259
+transport: canary vendor 'decodo_patchright'
+2026-08-11 21:32:27,773 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786498347w3
+captured=0 skipped=259 failed=0
+pending=5950 shard=2/23 assigned=259
+transport: canary vendor 'decodo_patchright'
+2026-08-11 21:32:27,932 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786498347w2
+captured=0 skipped=259 failed=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+pending=5950 shard=7/23 assigned=259
+transport: canary vendor 'decodo_patchright'
+2026-08-11 21:32:29,155 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786498349w7
+pending=5950 shard=6/23 assigned=259
+transport: canary vendor 'decodo_patchright'
+captured=0 skipped=259 failed=0
+2026-08-11 21:32:29,184 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786498349w6
+EXIT=0
+2026-08-11 21:33:05,682 WARNING challenge not cleared for contest_id=255413 -- bundle not written
+captured=0 skipped=258 failed=1
+EXIT=0

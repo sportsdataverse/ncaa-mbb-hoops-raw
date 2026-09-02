@@ -1,0 +1,4 @@
+usage: ncaa_canary.py [-h] [--config CONFIG] [--games GAMES] [--delay DELAY]
+                      [--out OUT]
+ncaa_canary.py: error: unrecognized arguments: --vendors decodo_patchright
+EXIT=2

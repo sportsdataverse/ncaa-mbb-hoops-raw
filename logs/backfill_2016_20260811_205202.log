@@ -1,0 +1,4 @@
+[20:52:02] NCAA MBB backfill: season=2016 workers=8
+[20:52:02] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2016_20260811_205202.log
+[20:52:02] === skip discover (season 2016 already in schedule_master; delete mbb/schedule_master.parquet to force) ===
+[20:52:02] === capture 2016: 8 worker(s), chunk=400 new bundles per worker ===

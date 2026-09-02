@@ -1,0 +1,5 @@
+log -> logs/parse_20260819_173737.log  (watch: tail -f logs/parse_20260819_173737.log)
+4 matched, players 272/732 matched
+2026-08-19 17:47:50,316 INFO ncaa_identity: contest_id=1123222 teams 2340/2340 matched, players 433/990 matched
+parsed=952 failed=0
+EXIT=0

@@ -1,0 +1,4 @@
+pending=6300 shard=1/2 assigned=3150
+transport: canary vendor 'decodo_us_b'
+2026-07-22 08:06:27,322 INFO vendor decodo_us_b: 5 prox(y/ies), sticky session re-minted -> session-cap1784721987
+EXIT=127

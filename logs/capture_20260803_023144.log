@@ -1,0 +1,570 @@
+pending=5950 shard=12/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:31:54,686 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738714w12
+pending=5950 shard=13/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:31:55,937 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738715w13
+pending=5950 shard=21/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:31:56,306 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738716w21
+pending=5950 shard=8/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:31:57,161 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738717w8
+pending=5950 shard=4/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:31:57,408 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738717w4
+pending=5950 shard=11/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:31:58,291 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738718w11
+pending=5950 shard=2/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:31:58,413 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738718w2
+pending=5950 shard=10/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:31:59,329 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738719w10
+pending=5950 shard=23/24 assigned=247
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:31:59,465 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738719w23
+pending=5950 shard=19/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:31:59,736 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738719w19
+pending=5950 shard=17/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:32:02,905 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738722w17
+pending=5950 shard=15/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:32:03,759 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738723w15
+pending=5950 shard=16/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:32:04,938 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738724w16
+pending=5950 shard=5/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:32:06,087 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738726w5
+pending=5950 shard=14/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:32:06,160 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738726w14
+pending=5950 shard=9/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:32:07,100 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738727w9
+pending=5950 shard=3/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=7/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:32:07,956 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738727w3
+2026-08-03 02:32:08,216 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738728w7
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0
+2026-08-03 04:36:49,825 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,826 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,824 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,824 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,823 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,823 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,825 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,824 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,820 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,823 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,822 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,826 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,822 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,822 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,823 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,820 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,952 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:36:49,953 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:36:50,116 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:36:50,117 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:36:50,699 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:36:50,700 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:36:50,718 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:36:50,718 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_sel2026-08-03 04:36:50,714 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:36:50,714 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+f_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:09,187 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:09,188 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:10,299 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:10,301 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:10,481 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:10,482 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:12,093 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:12,094 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:12,337 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:12,338 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:12,402 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:12,403 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:12,759 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:12,760 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:12,905 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:12,906 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:12,974 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:12,976 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:13,151 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:13,152 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:13,179 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:13,180 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+captured=248 skipped=0 failed=0
+EXIT=0
+EXIT=0
+captured=247 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0
+captured=248 skipped=0 failed=0
+EXIT=0

@@ -1,0 +1,4 @@
+[23:38:17] NCAA MBB backfill: season=2025 workers=1
+[23:38:17] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2025_20260731_233817.log
+[23:38:17] === discover 2025 (season not in schedule_master yet) ===
+[00:02:46] discover FAILED -- stopping (fix creds/network, then re-run)

@@ -1,0 +1,8 @@
+bundles=18677 pending=1287 shard=2/12 assigned=108
+parsed=107 failed=0
+
+79 INFO 5 starters not found for period 3; using estimateparsed=107 failed=0
+49 INFO 5 starters not found for period 3; using estimate
+parsed=108 failed=0
+
+EXIT=0

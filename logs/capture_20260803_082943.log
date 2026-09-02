@@ -1,0 +1,62 @@
+pending=5950 shard=13/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=23/24 assigned=247
+transport: canary vendor 'decodo_patchright'
+2026-08-03 08:29:49,628 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785760189w13
+pending=5950 shard=14/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 08:29:49,657 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785760189w14
+captured=0 skipped=248 failed=0
+2026-08-03 08:29:49,660 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785760189w23
+captured=0 skipped=247 failed=0
+captured=0 skipped=248 failed=0
+pending=5950 shard=22/24 assigned=247
+transport: canary vendor 'decodo_patchright'
+2026-08-03 08:29:49,752 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785760189w22
+pending=5950 shard=17/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 08:29:49,785 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785760189w17
+captured=0 skipped=248 failed=0
+pending=5950 shard=15/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=21/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 08:29:49,864 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785760189w21
+2026-08-03 08:29:49,873 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785760189w15
+captured=0 skipped=248 failed=0
+captured=0 skipped=248 failed=0
+pending=5950 shard=11/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 08:29:49,920 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785760189w11
+captured=0 skipped=248 failed=0
+pending=5950 shard=18/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 08:29:50,079 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785760190w18
+pending=5950 shard=20/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+pending=5950 shard=16/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 08:29:50,094 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785760190w16
+pending=5950 shard=19/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 08:29:50,097 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785760190w20
+captured=0 skipped=248 failed=0
+2026-08-03 08:29:50,097 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785760190w19
+captured=0 skipped=248 failed=0
+captured=0 skipped=248 failed=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+2026-08-03 08:55:27,144 ERROR BAN-SUSPECT: hard-stopping capture at contest_id=255058: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/255058/play_by_play: patchright: bm-verify not passed after 3 attempts (643-byte body)
+BAN-SUSPECT: capture halted at contest_id=255058: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/255058/play_by_play: patchright: bm-verify not passed after 3 attempts (643-byte body)
+EXIT=1
+2026-08-03 08:56:09,109 ERROR BAN-SUSPECT: hard-stopping capture at contest_id=241423: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/241423/play_by_play: patchright: bm-verify not passed after 3 attempts (643-byte body)
+BAN-SUSPECT: capture halted at contest_id=241423: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/241423/play_by_play: patchright: bm-verify not passed after 3 attempts (643-byte body)
+EXIT=1

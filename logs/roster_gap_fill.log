@@ -1,0 +1,66 @@
+2026-08-01 22:36:21,881 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638181w2
+2026-08-01 22:36:21,924 INFO ESPN crosswalk joined: 364/364 teams matched (season=2025)
+2026-08-01 22:36:21,942 INFO team_id=590762 (Air Force): 22 players
+2026-08-01 22:36:21,977 INFO team_id=590520 (Arkansas St.): 15 players
+2026-08-01 22:36:22,019 INFO team_id=590530 (Boston College): 15 players
+2026-08-01 22:36:22,045 INFO team_id=590543 (Cal St. Fullerton): 15 players
+2026-08-01 22:36:22,086 INFO team_id=590596 (Cincinnati): 16 players
+2026-08-01 22:36:22,130 INFO team_id=590607 (Dartmouth): 15 players
+2026-08-01 22:36:22,180 INFO team_id=590618 (ETSU): 15 players
+2026-08-01 22:36:22,245 INFO team_id=590627 (Fla. Atlantic): 15 players
+2026-08-01 22:36:22,283 INFO team_id=590639 (Georgia): 15 players
+2026-08-01 22:36:22,329 INFO team_id=590645 (Holy Cross): 15 players
+2026-08-01 22:36:22,362 INFO team_id=590473 (Iowa): 16 players
+2026-08-01 22:36:22,422 INFO team_id=590486 (LIU): 15 players
+2026-08-01 22:36:22,487 INFO team_id=590804 (Long Beach St.): 15 players
+2026-08-01 22:36:22,539 INFO team_id=590557 (Maryland): 15 players
+2026-08-01 22:36:22,600 INFO team_id=590787 (Milwaukee): 17 players
+2026-08-01 22:36:22,662 INFO team_id=590576 (Murray St.): 15 players
+2026-08-01 22:36:22,705 INFO team_id=590655 (New Orleans): 14 players
+2026-08-01 22:36:22,776 INFO team_id=590667 (Northern Colo.): 15 players
+2026-08-01 22:36:22,831 INFO team_id=590583 (Omaha): 16 players
+2026-08-01 22:36:22,874 INFO team_id=590494 (Presbyterian): 14 players
+2026-08-01 22:36:22,921 INFO team_id=590699 (Robert Morris): 15 players
+2026-08-01 22:36:22,973 INFO team_id=590707 (Sam Houston): 15 players
+2026-08-01 22:36:23,014 INFO team_id=590723 (South Ca2026-08-01 22:36:23,045 I2026-08-01 22:36:23,047 INFO team_id=590702 (St. B2026-08-012026-08-01 22:22026-08-01 22:36:23,221 INFO team_id=590744 (Tennessee St.): 16 players
+2026-08-01 22:36:23,262 INFO team_id=590760 (Tulane): 16 players
+2026-08-01 22:36:23,304 INFO team_id=590651 (UIC): 15 players
+2026-08-01 22:36:23,345 INFO team_id=590753 (UT Arlington): 16 p2026-08-2026-08-01 22:36:23,413 INFO team_id=590768 (Vanderbilt): 18 players
+2026-08-01 22:36:23,463 INFO team_id=590779 (Western Caro.): 16 players
+2026-08-01 22:36:23,509 INFO team_id=590827 (Yale): 15 players
+rosters season=2025 shard=2/12: written=31 skipped_existing=0 failed=0
+0
+2026-08-01 22:36:31,881 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638191w7
+2026-08-01 22:36:31,908 INFO ESPN crosswalk joined: 365/365 teams matched (season=2026)
+2026-08-01 22:36:31,923 INFO team_id=609619 (Alcorn): 12 players
+2026-08-01 22:36:31,955 INFO team_id=609628 (Ball St.): 14 players
+2026-08-01 22:36:31,982 INFO team_id=609640 (Bryant): 19 players
+2026-08-01 22:36:32,020 INFO team_id=609532 (Central Ark.): 17 players
+2026-08-01 22:36:32,061 INFO team_id=609548 (Colgate): 16 players
+2026-08-01 22:36:32,101 INFO team_id=609715 (Delaware St.): 15 players
+2026-08-01 22:36:32,139 INFO team_id=609725 (Eastern Mich.): 14 players
+2026-08-01 22:36:32,187 INFO team_id=609735 (Fordham): 16 players
+2026-08-01 22:36:32,224 INFO team_id=609552 (Grambling): 14 players
+2026-08-01 22:36:32,260 INFO team_id=609601 (IU Indy): 15 players
+2026-08-01 22:36:32,291 INFO team_id=609579 (Jacksonville St.): 15 play2026-2026-08-01 22:36:32,322 INFO team_id=609586 (Lafayette): 15 pla2026-02026-08-01 22:36:32,367 INFO team_id=609593 (Louisville): 16 players
+2026-08-01 22:36:32,402 INFO team_id=609665 (Mercer): 16 players
+2026-08-01 22:36:32,443 INFO team_id=609675 (Missouri): 14 players
+2026-08-01 22:36:32,479 INFO team_id=609792 (NIU): 16 players
+2026-08-01 22:36:32,501 INFO team_id=609773 (Norfolk St.): 15 players
+2026-08-01 22:36:32,536 INFO team_id=609797 (Northwestern St.): 14 players
+2026-08-01 22:36:32,560 INFO team_id=609813 (Oregon St.): 15 players
+2026-08-01 22:36:32,595 INFO team_id=609836 (Purdue): 16 players
+2026-08-01 22:36:32,621 INFO team_id=609471 (SIUE): 15 players
+2026-08-01 22:36:32,662 INFO team_id=609870 (San Diego St.): 15 players
+2026-08-01 22:36:32,691 INFO team_id=609905 (South Fla.): 15 players
+2026-08-01 22:36:32,718 INFO team_id=609479 (Stanford): 17 players
+2026-08-01 22:36:32,856 INFO team_id=609489 (Texas A&M): 15 players
+2026-08-01 22:36:32,889 INFO team_id=609690 (UC Davis): 14 players
+2026-08-01 22:36:32,921 INFO team_id=609662 (UMES): 15 players
+2026-08-01 22:36:32,947 INFO team_id=609496 (UTSA): 15 players
+2026-08-01 22:36:32,977 INFO team_id=609512 (Virginia Tech): 14 players
+2026-08-01 22:36:33,010 INFO team_id=609522 (Wichita St.): 15 players
+rosters season=2026 shard=7/12: written=30 skipped_existing=0 failed=0
+ritten=30 skipped_existing=0 failed=0
+ season=2026 shard=2/12: written=31 skipped_existing=0 failed=0
+iled=0

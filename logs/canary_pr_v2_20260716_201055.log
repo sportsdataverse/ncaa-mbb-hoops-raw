@@ -1,0 +1,38 @@
+# NCAA proxy canary -- 20260716_201058
+
+10 MBB contests x 2 pages (play_by_play + individual_stats). PASS = >=90% clean games.
+
+
+  probing decodo_patchright (proxy_patchright) ...
+    [decodo_patchright] game  1/10 play_by_play     error           0B  81.9s
+    [decodo_patchright] game  1/10 individual_stats clean      219147B  44.0s
+    [decodo_patchright] game  2/10 play_by_play     clean      144149B  11.0s
+    [decodo_patchright] game  2/10 individual_stats clean      228647B  11.2s
+    [decodo_patchright] game  3/10 play_by_play     clean      127680B  11.1s
+    [decodo_patchright] game  3/10 individual_stats clean      197849B  11.1s
+    [decodo_patchright] game  4/10 play_by_play     clean      132507B  11.0s
+    [decodo_patchright] game  4/10 individual_stats clean      205026B  11.1s
+    [decodo_patchright] game  5/10 play_by_play     clean      113021B  11.1s
+    [decodo_patchright] game  5/10 individual_stats clean      197809B  11.0s
+    [decodo_patchright] game  6/10 play_by_play     clean      123098B  11.0s
+    [decodo_patchright] game  6/10 individual_stats clean      190867B  11.1s
+    [decodo_patchright] game  7/10 play_by_play     clean      126061B  11.3s
+    [decodo_patchright] game  7/10 individual_stats clean      197897B  11.1s
+    [decodo_patchright] game  8/10 play_by_play     clean      120866B  10.9s
+    [decodo_patchright] game  8/10 individual_stats clean      183636B  11.1s
+    [decodo_patchright] game  9/10 play_by_play     clean      127367B  10.9s
+    [decodo_patchright] game  9/10 individual_stats clean      169472B  11.0s
+    [decodo_patchright] game 10/10 play_by_play     clean      116295B  10.9s
+    [decodo_patchright] game 10/10 individual_stats clean      190834B  11.0s
+  -> decodo_patchright  (proxy_patchright) -- **PASS**
+  netnut: SKIPPED (no proxies configured (placeholder/empty))
+  zyte: SKIPPED (no api_key configured (placeholder/empty))
+  brightdata_webunlocker: SKIPPED (no proxy endpoint configured (placeholder/empty))
+
+=== canary summary ===
+  decodo_patchright  (proxy_patchright) -- **PASS**
+  netnut: skipped
+  zyte: skipped
+  brightdata_webunlocker: skipped
+
+full scorecard -> canary_out\canary_20260716_201058.md

@@ -1,0 +1,4 @@
+pending=3 shard=0/1 assigned=3
+transport: canary vendor '__bogus_vendor__'
+vendor '__bogus_vendor__' not in C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\canary_vendors.toml (have: ['brightdata_webunlocker', 'decodo_patchright', 'decodo_us_a', 'decodo_us_b', 'decodo_us_w1', 'decodo_us_w2', 'decodo_us_w3', 'decodo_us_w4', 'netnut', 'zyte'])
+EXIT=1

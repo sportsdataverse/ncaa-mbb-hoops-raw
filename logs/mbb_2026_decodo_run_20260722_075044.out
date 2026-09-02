@@ -1,0 +1,9 @@
+canary-vendor transport requested -- skipping ProxyBonanza cred check
+log -> logs/capture_20260722_075044.log  (watch: tail -f logs/capture_20260722_075044.log)
+pending=6300 shard=0/1 assigned=6300
+transport: canary vendor 'decodo_patchright'
+2026-07-22 07:50:46,998 INFO vendor decodo_patchright: 1 prox(y/ies), sticky session re-minted -> session-cap1784721046
+2026-07-22 07:51:23,694 WARNING challenge not cleared for contest_id=6460633 -- bundle not written
+2026-07-22 08:00:00,275 ERROR BAN-SUSPECT: hard-stopping capture at contest_id=6464778: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/6464778/box_score?period_no=1: patchright: bm-verify not passed after 3 attempts (411-byte body)
+BAN-SUSPECT: capture halted at contest_id=6464778: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/6464778/box_score?period_no=1: patchright: bm-verify not passed after 3 attempts (411-byte body)
+EXIT=1

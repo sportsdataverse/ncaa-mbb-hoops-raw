@@ -1,0 +1,8 @@
+pending=6296 shard=0/1 assigned=6296
+transport: canary vendor 'decodo_patchright'
+2026-08-01 07:43:09,936 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785584589w0
+2026-08-01 07:43:43,580 WARNING challenge not cleared for contest_id=6460633 -- bundle not written
+2026-08-01 07:44:12,730 WARNING challenge not cleared for contest_id=6481323 -- bundle not written
+2026-08-01 07:44:43,028 WARNING challenge not cleared for contest_id=6484874 -- bundle not written
+captured=0 skipped=6293 failed=3
+EXIT=0

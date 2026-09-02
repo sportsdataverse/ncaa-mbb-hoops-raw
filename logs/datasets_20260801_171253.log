@@ -1,0 +1,9 @@
+2026-08-01 17:12:55,675 INFO ESPN crosswalk joined: 362/362 teams matched (season=2024)
+2026-08-01 17:13:02,642 INFO rebuilt 362 schedules frames for season=2024 from committed html
+2026-08-01 17:13:02,898 INFO schedules season parquet: 11974 rows from 362 teams (season=2024)
+2026-08-01 17:13:03,457 INFO backfilled 362 rosters for season=2024 from team_rosters/ (no html available)
+2026-08-01 17:13:07,546 INFO rebuilt 724 rosters frames for season=2024 from committed html
+2026-08-01 17:13:07,695 INFO rosters season parquet: 5670 rows from 362 teams (season=2024)
+2026-08-01 17:13:07,701 INFO teams season=2024 league=mbb: 362 teams
+datasets season=2024 league=mbb: {"schedules": 11974, "rosters": 5670, "teams": 362}
+EXIT=0

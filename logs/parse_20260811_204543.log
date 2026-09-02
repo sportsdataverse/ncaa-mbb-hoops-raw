@@ -1,0 +1,17 @@
+seasons=all bundles=99344 pending=104 force=False shard=8/12 assigned=8
+2026-08-11 20:46:06,615 INFO ncaa_identity: contest_id=192005 teams 2353/2353 matched, players 5705/6664 matched
+parsed=9 failed=0
+6,836 INFO ncaa_identity: contest_id=192632 teams 2416/2416 matched, players 6575/6818 matchedparsed=9 failed=0
+
+843 INFO ncaa_identity: contest_id=191172 teams 2717/2717 matched, players 7585/7645 matched
+parsed=9 failed=0
+,020 INFO ncaa_identity: contest_id=192132 teams 1048/2117 matched, players 3012/5970 matched
+parsed=9 failed=0
+,011 INFO ncaa_identity: contest_id=192319 teams 2088/2088 matched, players 5653/5887 matched
+parsed=9 failed=0
+,697 INFO ncaa_identity: contest_id=192689 teams 1553/1553 matched, players 359/397 matched
+parsed=9 failed=0
+
+,043 INFO ncaa_identity: contest_id=192608 teams 2436/2436 matched, players 5834/6901 matched
+parsed=8 failed=0
+EXIT=0

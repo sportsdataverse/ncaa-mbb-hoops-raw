@@ -1,0 +1,72 @@
+pending=12539 shard=9/12 assigned=1045
+transport: canary vendor 'decodo_patchright'
+pending=12539 shard=11/12 assigned=1044
+transport: canary vendor 'decodo_patchright'
+pending=12539 shard=3/12 assigned=1045
+transport: canary vendor 'decodo_patchright'
+pending=12539 shard=8/12 assigned=1045
+transport: canary vendor 'decodo_patchright'
+pending=12539 shard=10/12 assigned=1045
+transport: canary vendor 'decodo_patchright'
+pending=12539 shard=5/12 assigned=1045
+transport: canary vendor 'decodo_patchright'
+pending=12539 shard=6/12 assigned=1045
+transport: canary vendor 'decodo_patchright'
+pending=12539 shard=1/12 assigned=1045
+transport: canary vendor 'decodo_patchright'
+pending=12539 shard=7/12 assigned=1045
+transport: canary vendor 'decodo_patchright'
+pending=12539 shard=4/12 assigned=1045
+transport: canary vendor 'decodo_patchright'
+pending=12539 shard=2/12 assigned=1045
+transport: canary vendor 'decodo_patchright'
+pending=12539 shard=0/12 assigned=1045
+transport: canary vendor 'decodo_patchright'
+2026-08-01 09:45:30,098 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591930w4
+2026-08-01 09:45:30,118 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591930w1
+2026-08-01 09:45:30,284 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591930w9
+2026-08-01 09:45:30,301 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591930w3
+2026-08-01 09:45:30,300 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591930w7
+2026-08-01 09:45:30,309 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591930w2
+2026-08-01 09:45:30,319 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591930w6
+2026-08-01 09:45:30,326 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591930w0
+2026-08-01 09:45:30,338 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591930w11
+2026-08-01 09:45:30,348 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591930w5
+2026-08-01 09:45:30,355 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591930w10
+2026-08-01 09:45:30,365 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591930w8
+2026-08-01 13:11:17,561 INFO chunk complete: 400 new bundles captured (--max-contests) -- stopping cleanly; re-run to continue
+captured=400 skipped=0 failed=0
+EXIT=0
+2026-08-01 13:13:22,784 INFO chunk complete: 400 new bundles captured (--max-contests) -- stopping cleanly; re-run to continue
+captured=400 skipped=0 failed=0
+EXIT=0
+2026-08-01 13:13:26,876 INFO chunk complete: 400 new bundles captured (--max-contests) -- stopping cleanly; re-run to continue
+captured=400 skipped=0 failed=0
+2026-08-01 13:13:27,158 INFO chunk complete: 400 new bundles captured (--max-contests) -- stopping cleanly; re-run to continue
+captured=400 skipped=0 failed=0
+EXIT=0
+EXIT=0
+2026-08-01 13:14:01,771 INFO chunk complete: 400 new bundles captured (--max-contests) -- stopping cleanly; re-run to continue
+captured=400 skipped=0 failed=0
+EXIT=0
+2026-08-01 13:14:44,760 INFO chunk complete: 400 new bundles captured (--max-contests) -- stopping cleanly; re-run to continue
+captured=400 skipped=0 failed=0
+EXIT=0
+2026-08-01 13:14:59,641 INFO chunk complete: 400 new bundles captured (--max-contests) -- stopping cleanly; re-run to continue
+captured=400 skipped=0 failed=0
+EXIT=0
+2026-08-01 13:15:35,039 INFO chunk complete: 400 new bundles captured (--max-contests) -- stopping cleanly; re-run to continue
+captured=400 skipped=0 failed=0
+2026-08-01 13:15:35,496 INFO chunk complete: 400 new bundles captured (--max-contests) -- stopping cleanly; re-run to continue
+captured=400 skipped=0 failed=0
+EXIT=0
+EXIT=0
+2026-08-01 13:15:42,197 INFO chunk complete: 400 new bundles captured (--max-contests) -- stopping cleanly; re-run to continue
+captured=400 skipped=0 failed=0
+EXIT=0
+2026-08-01 13:15:57,071 INFO chunk complete: 400 new bundles captured (--max-contests) -- stopping cleanly; re-run to continue
+captured=400 skipped=0 failed=0
+EXIT=0
+2026-08-01 13:16:28,311 INFO chunk complete: 400 new bundles captured (--max-contests) -- stopping cleanly; re-run to continue
+captured=400 skipped=0 failed=0
+EXIT=0

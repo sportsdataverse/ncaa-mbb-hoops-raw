@@ -1,0 +1,9 @@
+2026-08-01 18:05:35,474 INFO ESPN crosswalk joined: 351/351 teams matched (season=2019)
+2026-08-01 18:05:41,557 INFO rebuilt 351 schedules frames for season=2019 from committed html
+2026-08-01 18:05:41,724 INFO schedules season parquet: 11589 rows from 351 teams (season=2019)
+2026-08-01 18:05:42,140 INFO backfilled 351 rosters for season=2019 from team_rosters/ (no html available)
+2026-08-01 18:05:45,754 INFO rebuilt 702 rosters frames for season=2019 from committed html
+2026-08-01 18:05:45,918 INFO rosters season parquet: 5361 rows from 351 teams (season=2019)
+2026-08-01 18:05:45,925 INFO teams season=2019 league=mbb: 351 teams
+datasets season=2019 league=mbb: {"schedules": 11589, "rosters": 5361, "teams": 351}
+EXIT=0

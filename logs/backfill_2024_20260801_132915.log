@@ -1,0 +1,11 @@
+[13:29:15] NCAA MBB backfill: season=2024 workers=12
+[13:29:15] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2024_20260801_132915.log
+[13:29:15] === skip discover (season 2024 already in schedule_master; delete mbb/schedule_master.parquet to force) ===
+[13:29:16] === capture 2024: 12 worker(s), chunk=400 new bundles per worker ===
+[14:26:18] capture stopped (rc=127) -- a ban/soft-ban hard-stop or Ctrl-C (see the capture log).
+[14:26:18]   This is RESUMABLE: cool down (a ban clears in minutes-hours), then re-run this
+[14:26:18]   script -- already-captured contests are skipped.
+[14:26:18] === parse captured bundles -> mbb/json/ ===
+[14:29:00] DONE: captured_bundles=18677 parsed_json=18677 (capture rc=127)
+[14:29:00] capture INCOMPLETE (rc=127) -- re-run this script to continue before building.
+EXIT=127

@@ -1,0 +1,10 @@
+2026-08-01 19:21:15,665 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785626475w3
+2026-08-01 19:22:13,641 INFO ESPN crosswalk joined: 345/345 teams matched (season=2012)
+discovered 675 contest_ids for season=2012 shard=6/16 (master NOT written -- merge pass pending)
+
+=== merge pass (reads all shard checkpoints, writes schedule_master) ===
+2026-08-01 19:26:16,725 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785626776w0
+2026-08-01 19:26:16,751 INFO resuming discovery: 345/345 team pages already checkpointed
+2026-08-01 19:26:16,776 INFO ESPN crosswalk joined: 345/345 teams matched (season=2012)
+discovered 5775 contest_ids for season=2012 shard=0/1
+EXIT=0

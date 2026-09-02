@@ -1,0 +1,16 @@
+pending=5950 shard=22/24 assigned=247
+transport: canary vendor 'decodo_patchright'
+2026-08-03 13:15:45,293 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785777345w22
+pending=5950 shard=23/24 assigned=247
+transport: canary vendor 'decodo_patchright'
+2026-08-03 13:15:45,317 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785777345w23
+pending=5950 shard=21/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 13:15:45,319 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785777345w21
+captured=0 skipped=248 failed=0
+captured=0 skipped=247 failed=0
+EXIT=0
+EXIT=0
+2026-08-03 13:43:25,401 ERROR BAN-SUSPECT: hard-stopping capture at contest_id=241423: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/241423/play_by_play: patchright: bm-verify not passed after 3 attempts (643-byte body)
+BAN-SUSPECT: capture halted at contest_id=241423: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/241423/play_by_play: patchright: bm-verify not passed after 3 attempts (643-byte body)
+EXIT=1

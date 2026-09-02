@@ -1,0 +1,12 @@
+bundles=17390 pending=4800 shard=9/12 assigned=400
+pparsed=400 failed=0
+[TeamId(name='Lafayette')]v[TeamId(name='Bucknell')] Flip parsed=400 failed=0
+74 INFO 5 starters not found for period 3; using estimate
+parsed=400 failed=0
+17 INFO 5 starters not found for period 3; using estimate
+parsed=400 faparsed=400 failed=0
+2:59,277 INFO 5 starters not found for period 4; using estimate
+2026parsed=400 failed=0
+NFO 5 starters not found for period 4; using estimate
+parsed=400 failed=0
+EXIT=0
