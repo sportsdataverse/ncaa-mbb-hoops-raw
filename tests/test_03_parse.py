@@ -6,8 +6,8 @@ import json
 import tempfile
 from pathlib import Path
 
-from ncaa_mbb_raw_scrape.ncaa_bundle import read_bundle, write_bundle
 from ncaa_mbb_03_games_parse import parse_and_write, parse_bundle, write_parsed
+from ncaa_mbb_raw_scrape.ncaa_bundle import read_bundle, write_bundle
 
 _FIX = Path(__file__).resolve().parent / "fixtures" / "ncaa" / "bigballr" / "html"
 

@@ -5,8 +5,8 @@ from __future__ import annotations
 import tempfile
 from pathlib import Path
 
-from ncaa_mbb_raw_scrape.ncaa_bundle import is_captured, read_bundle
 from ncaa_mbb_02_games_scrape import capture_contests, shard
+from ncaa_mbb_raw_scrape.ncaa_bundle import is_captured, read_bundle
 
 # Sibling checkout: .../sdv-dev/{hoopR-dev/ncaa-mbb-hoops-raw, sdv-py}.
 FIXTURE_DIR = Path(__file__).resolve().parent / "fixtures" / "ncaa" / "bigballr" / "html"
