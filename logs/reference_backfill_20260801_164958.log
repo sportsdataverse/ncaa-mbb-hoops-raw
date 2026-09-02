@@ -1,0 +1,4 @@
+[2026-08-01 16:49:58] reference backfill: mbb seasons 2019..2019, workers=2, push=0
+[2026-08-01 16:49:58] watch: tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/reference_backfill_20260801_164958.log
+[2026-08-01 16:49:58] === 2019: schedules ===
+log -> logs/discover_20260801_164958.log  (watch: tail -f logs/discover_20260801_164958.log)

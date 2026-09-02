@@ -1,0 +1,5 @@
+pending=6300 shard=2/4 assigned=1575
+transport: canary vendor 'decodo_us_w3'
+2026-07-22 14:32:50,472 INFO vendor decodo_us_w3: 2 prox(y/ies), sticky session re-minted -> session-cap1784745170
+captured=609 skipped=966 failed=0
+EXIT=0

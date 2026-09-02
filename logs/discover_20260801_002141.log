@@ -1,0 +1,22 @@
+2026-08-01 00:21:43,479 INFO vendor decodo_patchright: 1 prox(y/ies), sticky session re-minted -> session-cap1785558103
+2026-08-01 00:23:03,809 ERROR NCAA discovery hard-stopped on team_id=541982 (ban-suspect / fetch failure)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 216, in <module>
+    _main()
+    ~~~~~^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 211, in _main
+    result = discover_season(args.season, league="mbb", root=args.root)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 145, in discover_season
+    contest_ids.update(_team_contest_ids(team_id, fn, league))
+                       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 67, in _team_contest_ids
+    html = fetch_fn(team_id)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 58, in <lambda>
+    return lambda team_id: fetcher.fetch_html(f"teams/{team_id}")
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 978, in fetch_html
+    text = self._get_with_rotation(url)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 926, in _get_with_rotation
+    raise RuntimeError(f"NCAA fetch failed after rotating proxies: {url}: {last_err}")
+RuntimeError: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/teams/541982: patchright: bm-verify not passed after 3 attempts (384-byte body)
+EXIT=1

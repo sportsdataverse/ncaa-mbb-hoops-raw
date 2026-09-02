@@ -1,0 +1,77 @@
+pending=5950 shard=18/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:31:59,431 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738719w18
+pending=5950 shard=22/24 assigned=247
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:32:02,685 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738722w22
+pending=5950 shard=20/24 assigned=248
+transport: canary vendor 'decodo_patchright'
+2026-08-03 02:32:05,713 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785738725w20
+2026-08-03 03:12:10,089 ERROR BAN-SUSPECT: hard-stopping capture at contest_id=241423: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/241423/play_by_play: patchright: bm-verify not passed after 3 attempts (643-byte body)
+BAN-SUSPECT: capture halted at contest_id=241423: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/241423/play_by_play: patchright: bm-verify not passed after 3 attempts (643-byte body)
+EXIT=1
+2026-08-03 04:36:49,824 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:36:49,824 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 792, in _loop_self_reading
+    f.result()  # may raise
+    ~~~~~~~~^^
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 463, in finish_socket_func
+    return ov.getresult()
+           ~~~~~~~~~~~~^^
+ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+2026-08-03 04:37:09,242 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:09,243 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:13,149 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-08-03 04:37:13,150 ERROR Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+  File "C:\Users\saiem\AppData\Roaming\uv\python\cpython-3.13.2-windows-x86_64-none\Lib\asyncio\windows_events.py", line 488, in recv
+    ov.WSARecv(conn.fileno(), nbytes, flags)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+captured=248 skipped=0 failed=0
+EXIT=0
+2026-08-03 04:53:38,768 ERROR BAN-SUSPECT: hard-stopping capture at contest_id=255058: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/255058/play_by_play: patchright: bm-verify not passed after 3 attempts (643-byte body)
+BAN-SUSPECT: capture halted at contest_id=255058: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/255058/play_by_play: patchright: bm-verify not passed after 3 attempts (643-byte body)
+EXIT=1

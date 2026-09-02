@@ -1,0 +1,57 @@
+canary-vendor transport requested -- skipping ProxyBonanza cred check
+log -> logs/capture_20260722_142948.log  (watch: tail -f logs/capture_20260722_142948.log)
+pending=6300 shard=0/4 assigned=1575
+transport: canary vendor 'decodo_us_w1'
+2026-07-22 14:29:50,368 INFO vendor decodo_us_w1: 3 prox(y/ies), sticky session re-minted -> session-cap1784744990
+2026-07-22 14:30:25,535 WARNING challenge not cleared for contest_id=6460633 -- bundle not written
+canary-vendor transport requested -- skipping ProxyBonanza cred check
+log -> logs/capture_20260722_143118.log  (watch: tail -f logs/capture_20260722_143118.log)
+pending=6300 shard=1/4 assigned=1575
+transport: canary vendor 'decodo_us_w2'
+2026-07-22 14:31:20,627 INFO vendor decodo_us_w2: 3 prox(y/ies), sticky session re-minted -> session-cap1784745080
+canary-vendor transport requested -- skipping ProxyBonanza cred check
+log -> logs/capture_20260722_143248.log  (watch: tail -f logs/capture_20260722_143248.log)
+pending=6300 shard=2/4 assigned=1575
+transport: canary vendor 'decodo_us_w3'
+2026-07-22 14:32:50,472 INFO vendor decodo_us_w3: 2 prox(y/ies), sticky session re-minted -> session-cap1784745170
+canary-vendor transport requested -- skipping ProxyBonanza cred check
+log -> logs/capture_20260722_143418.log  (watch: tail -f logs/capture_20260722_143418.log)
+pending=6300 shard=3/4 assigned=1575
+transport: canary vendor 'decodo_us_w4'
+2026-07-22 14:34:20,421 INFO vendor decodo_us_w4: 2 prox(y/ies), sticky session re-minted -> session-cap1784745260
+2026-07-22 17:46:01,997 WARNING challenge not cleared for contest_id=6481323 -- bundle not written
+2026-07-22 18:32:55,221 WARNING challenge not cleared for contest_id=6484874 -- bundle not written
+captured=608 skipped=966 failed=1
+EXIT=0
+captured=604 skipped=970 failed=1
+EXIT=0
+captured=605 skipped=969 failed=1
+EXIT=0
+captured=609 skipped=966 failed=0
+EXIT=0
+all 4 workers exited
+canary-vendor transport requested -- skipping ProxyBonanza cred check
+log -> logs/capture_20260722_200908.log  (watch: tail -f logs/capture_20260722_200908.log)
+pending=6300 shard=0/1 assigned=6300
+transport: canary vendor 'decodo_us_w1'
+2026-07-22 20:09:12,142 INFO vendor decodo_us_w1: 3 prox(y/ies), sticky session re-minted -> session-cap1784765352
+2026-07-22 20:09:46,478 WARNING challenge not cleared for contest_id=6460633 -- bundle not written
+2026-07-22 20:10:17,238 WARNING challenge not cleared for contest_id=6481323 -- bundle not written
+2026-07-22 20:10:49,297 WARNING challenge not cleared for contest_id=6484874 -- bundle not written
+captured=0 skipped=6297 failed=3
+EXIT=0
+log -> logs/parse_20260722_201050.log  (watch: tail -f logs/parse_20260722_201050.log)
+bundles=6297 pending=2426 shard=0/1 assigned=2426
+2026-07-22 20:13:51,804 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:14:12,317 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:17:57,802 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:18:20,596 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:18:24,521 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:19:47,311 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:27:44,090 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:27:44,090 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:32:46,425 INFO 5 starters not found for period 3; using estimate
+2026-07-22 20:37:15,126 INFO 5 starters not found for period 3; using estimate
+parsed=2426 failed=0
+EXIT=0
+CHAIN_DONE

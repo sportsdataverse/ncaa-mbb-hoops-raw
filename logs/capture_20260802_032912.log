@@ -1,0 +1,56 @@
+pending=4286 shard=1/24 assigned=179
+transport: canary vendor 'decodo_patchright'
+pending=4286 shard=4/24 assigned=179
+transport: canary vendor 'decodo_patchright'
+pending=4286 shard=7/24 assigned=179
+transport: canary vendor 'decodo_patchright'
+pending=4286 shard=0/24 assigned=179
+transport: canary vendor 'decodo_patchright'
+pending=4286 shard=5/24 assigned=179
+transport: canary vendor 'decodo_patchright'
+pending=4286 shard=3/24 assigned=179
+transport: canary vendor 'decodo_patchright'
+pending=4286 shard=2/24 assigned=179
+transport: canary vendor 'decodo_patchright'
+pending=4286 shard=8/24 assigned=179
+transport: canary vendor 'decodo_patchright'
+pending=4286 shard=9/24 assigned=179
+transport: canary vendor 'decodo_patchright'
+pending=4286 shard=6/24 assigned=179
+transport: canary vendor 'decodo_patchright'
+2026-08-02 03:29:17,694 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785655757w1
+2026-08-02 03:29:18,186 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785655758w5
+2026-08-02 03:29:18,212 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785655758w7
+2026-08-02 03:29:18,916 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785655758w8
+2026-08-02 03:29:20,358 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785655760w6
+2026-08-02 03:29:20,402 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785655760w3
+2026-08-02 03:29:20,419 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785655760w2
+2026-08-02 03:29:20,461 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785655760w0
+2026-08-02 03:29:20,551 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785655760w9
+2026-08-02 03:29:20,538 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785655760w4
+2026-08-02 03:30:02,410 WARNING challenge not cleared for contest_id=1982633 -- bundle not written
+2026-08-02 03:45:54,272 WARNING challenge not cleared for contest_id=1983889 -- bundle not written
+2026-08-02 03:57:44,758 WARNING challenge not cleared for contest_id=1985365 -- bundle not written
+2026-08-02 04:16:57,263 WARNING challenge not cleared for contest_id=1988183 -- bundle not written
+2026-08-02 04:22:01,476 WARNING challenge not cleared for contest_id=1990251 -- bundle not written
+2026-08-02 04:49:18,447 WARNING challenge not cleared for contest_id=1995877 -- bundle not written
+captured=179 skipped=0 failed=0
+EXIT=0
+captured=178 skipped=0 failed=1
+EXIT=0
+captured=179 skipped=0 failed=0
+EXIT=0
+captured=179 skipped=0 failed=0
+EXIT=0
+captured=179 skipped=0 failed=0
+EXIT=0
+captured=177 skipped=0 failed=2
+EXIT=0
+captured=178 skipped=0 failed=1
+EXIT=0
+captured=178 skipped=0 failed=1
+EXIT=0
+captured=179 skipped=0 failed=0
+EXIT=0
+captured=178 skipped=0 failed=1
+EXIT=0

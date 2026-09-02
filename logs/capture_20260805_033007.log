@@ -1,0 +1,15 @@
+pending=5749 shard=1/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-05 03:30:13,769 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785915013w1
+captured=0 skipped=240 failed=0
+pending=5749 shard=0/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-05 03:30:13,840 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785915013w0
+captured=0 skipped=240 failed=0
+pending=5749 shard=5/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-05 03:30:15,030 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785915015w5
+captured=0 skipped=240 failed=0
+EXIT=0
+EXIT=0
+EXIT=0

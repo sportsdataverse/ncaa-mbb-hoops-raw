@@ -1,0 +1,4 @@
+pending=6300 shard=0/1 assigned=6300
+2026-07-16 14:57:52,925 ERROR BAN-SUSPECT: hard-stopping capture at contest_id=6460633: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/6460633/play_by_play: status=403 BAN-SUSPECT:access denied
+BAN-SUSPECT: capture halted at contest_id=6460633: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/contests/6460633/play_by_play: status=403 BAN-SUSPECT:access denied
+EXIT=1

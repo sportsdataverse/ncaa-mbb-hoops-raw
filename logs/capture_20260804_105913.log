@@ -1,0 +1,46 @@
+pending=5775 shard=15/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-04 10:59:19,860 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785855559w15
+pending=5775 shard=18/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-04 10:59:20,757 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785855560w18
+pending=5775 shard=16/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-04 10:59:20,762 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785855560w16
+pending=5775 shard=17/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-04 10:59:20,836 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785855560w17
+pending=5775 shard=22/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+pending=5775 shard=23/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-04 10:59:21,227 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785855561w22
+2026-08-04 10:59:21,227 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785855561w23
+pending=5775 shard=20/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-04 10:59:21,503 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785855561w20
+pending=5775 shard=19/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-04 10:59:21,572 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785855561w19
+pending=5775 shard=21/24 assigned=240
+transport: canary vendor 'decodo_patchright'
+2026-08-04 10:59:21,812 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785855561w21
+2026-08-04 11:33:29,340 WARNING challenge not cleared for contest_id=824724 -- bundle not written
+captured=240 skipped=0 failed=0
+EXIT=0
+captured=240 skipped=0 failed=0
+EXIT=0
+captured=240 skipped=0 failed=0
+EXIT=0
+captured=240 skipped=0 failed=0
+EXIT=0
+captured=239 skipped=0 failed=1
+EXIT=0
+captured=240 skipped=0 failed=0
+EXIT=0
+captured=240 skipped=0 failed=0
+EXIT=0
+captured=240 skipped=0 failed=0
+EXIT=0
+captured=240 skipped=0 failed=0
+EXIT=0

@@ -1,0 +1,9 @@
+# NCAA proxy canary -- 20260716_192601
+
+3 MBB contests x 2 pages (play_by_play + individual_stats). PASS = >=90% clean games.
+
+
+  probing decodo (proxy_browser) ...
+    [decodo] game  1/3 play_by_play     challenge       0B  54.9s
+    [decodo] game  1/3 individual_stats challenge       0B  52.8s
+    [decodo] game  2/3 play_by_play     challenge       0B  52.8s

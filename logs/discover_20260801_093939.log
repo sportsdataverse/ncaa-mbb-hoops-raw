@@ -1,0 +1,9 @@
+2026-08-01 09:39:43,322 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591583w2
+2026-08-01 09:39:43,326 INFO resuming discovery: 2/30 team pages already checkpointed
+discovered 958 contest_ids for season=2024 shard=4/12 (master NOT written -- merge pass pending)
+
+=== merge pass (reads all shard checkpoints, writes schedule_master) ===
+2026-08-01 09:45:26,019 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591926w0
+2026-08-01 09:45:26,041 INFO resuming discovery: 362/362 team pages already checkpointed
+discovered 6243 contest_ids for season=2024 shard=0/1
+EXIT=0

@@ -1,0 +1,9 @@
+[2026-08-01 09:33:46] campaign: seasons 2024..2010 (desc), vendor=decodo_patchright, chunk=400, workers=12
+[2026-08-01 09:33:46] log -> logs/backfill_range_20260801_093346.log   (watch: tail -f logs/backfill_range_20260801_093346.log)
+[2026-08-01 09:33:47] === season 2024 ===
+[09:33:47] NCAA MBB backfill: season=2024 workers=12
+[09:33:47] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2024_20260801_093347.log
+[09:33:47] === discover 2024 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260801_093347.log  (watch: tail -f logs/discover_20260801_093347.log)
+2026-08-01 09:33:49,550 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785591229w0

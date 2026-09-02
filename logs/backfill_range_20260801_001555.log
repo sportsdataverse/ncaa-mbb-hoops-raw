@@ -1,0 +1,189 @@
+[2026-08-01 00:15:55] campaign: seasons 2025..2010 (desc), vendor=decodo_patchright, chunk=1400, workers=1
+[2026-08-01 00:15:55] log -> logs/backfill_range_20260801_001555.log   (watch: tail -f logs/backfill_range_20260801_001555.log)
+[2026-08-01 00:15:55] === season 2025 ===
+[00:15:55] NCAA MBB backfill: season=2025 workers=1
+[00:15:55] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2025_20260801_001555.log
+[00:15:55] === discover 2025 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260801_001555.log  (watch: tail -f logs/discover_20260801_001555.log)
+2026-08-01 00:15:58,079 INFO vendor decodo_patchright: 1 prox(y/ies), sticky session re-minted -> session-cap1785557758
+2026-08-01 00:17:18,486 ERROR NCAA discovery hard-stopped on team_id=590505 (ban-suspect / fetch failure)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 216, in <module>
+    _main()
+    ~~~~~^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 211, in _main
+    result = discover_season(args.season, league="mbb", root=args.root)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 145, in discover_season
+    contest_ids.update(_team_contest_ids(team_id, fn, league))
+                       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 67, in _team_contest_ids
+    html = fetch_fn(team_id)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 58, in <lambda>
+    return lambda team_id: fetcher.fetch_html(f"teams/{team_id}")
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 978, in fetch_html
+    text = self._get_with_rotation(url)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 926, in _get_with_rotation
+    raise RuntimeError(f"NCAA fetch failed after rotating proxies: {url}: {last_err}")
+RuntimeError: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/teams/590505: patchright: bm-verify not passed after 3 attempts (384-byte body)
+EXIT=1
+[00:17:19] discover FAILED -- stopping (fix creds/network, then re-run)
+[2026-08-01 00:17:19] season 2025: no schedule_master rows after discover -- check the discover log; moving on
+[2026-08-01 00:17:19] === season 2024 ===
+[00:17:19] NCAA MBB backfill: season=2024 workers=1
+[00:17:19] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2024_20260801_001719.log
+[00:17:19] === discover 2024 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260801_001720.log  (watch: tail -f logs/discover_20260801_001720.log)
+2026-08-01 00:17:22,148 INFO vendor decodo_patchright: 1 prox(y/ies), sticky session re-minted -> session-cap1785557842
+2026-08-01 00:21:40,130 ERROR NCAA discovery hard-stopped on team_id=560667 (ban-suspect / fetch failure)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 216, in <module>
+    _main()
+    ~~~~~^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 211, in _main
+    result = discover_season(args.season, league="mbb", root=args.root)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 145, in discover_season
+    contest_ids.update(_team_contest_ids(team_id, fn, league))
+                       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 67, in _team_contest_ids
+    html = fetch_fn(team_id)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 58, in <lambda>
+    return lambda team_id: fetcher.fetch_html(f"teams/{team_id}")
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 978, in fetch_html
+    text = self._get_with_rotation(url)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 926, in _get_with_rotation
+    raise RuntimeError(f"NCAA fetch failed after rotating proxies: {url}: {last_err}")
+RuntimeError: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/teams/560667: patchright: bm-verify not passed after 3 attempts (15-byte body)
+EXIT=1
+[00:21:40] discover FAILED -- stopping (fix creds/network, then re-run)
+[2026-08-01 00:21:40] season 2024: no schedule_master rows after discover -- check the discover log; moving on
+[2026-08-01 00:21:40] === season 2023 ===
+[00:21:41] NCAA MBB backfill: season=2023 workers=1
+[00:21:41] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2023_20260801_002141.log
+[00:21:41] === discover 2023 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260801_002141.log  (watch: tail -f logs/discover_20260801_002141.log)
+2026-08-01 00:21:43,479 INFO vendor decodo_patchright: 1 prox(y/ies), sticky session re-minted -> session-cap1785558103
+2026-08-01 00:23:03,809 ERROR NCAA discovery hard-stopped on team_id=541982 (ban-suspect / fetch failure)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 216, in <module>
+    _main()
+    ~~~~~^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 211, in _main
+    result = discover_season(args.season, league="mbb", root=args.root)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 145, in discover_season
+    contest_ids.update(_team_contest_ids(team_id, fn, league))
+                       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 67, in _team_contest_ids
+    html = fetch_fn(team_id)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 58, in <lambda>
+    return lambda team_id: fetcher.fetch_html(f"teams/{team_id}")
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 978, in fetch_html
+    text = self._get_with_rotation(url)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 926, in _get_with_rotation
+    raise RuntimeError(f"NCAA fetch failed after rotating proxies: {url}: {last_err}")
+RuntimeError: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/teams/541982: patchright: bm-verify not passed after 3 attempts (384-byte body)
+EXIT=1
+[00:23:04] discover FAILED -- stopping (fix creds/network, then re-run)
+[2026-08-01 00:23:04] season 2023: no schedule_master rows after discover -- check the discover log; moving on
+[2026-08-01 00:23:04] === season 2022 ===
+[00:23:04] NCAA MBB backfill: season=2022 workers=1
+[00:23:04] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2022_20260801_002304.log
+[00:23:05] === discover 2022 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260801_002305.log  (watch: tail -f logs/discover_20260801_002305.log)
+2026-08-01 00:23:07,273 INFO vendor decodo_patchright: 1 prox(y/ies), sticky session re-minted -> session-cap1785558187
+2026-08-01 00:25:32,383 ERROR NCAA discovery hard-stopped on team_id=527488 (ban-suspect / fetch failure)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 216, in <module>
+    _main()
+    ~~~~~^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 211, in _main
+    result = discover_season(args.season, league="mbb", root=args.root)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 145, in discover_season
+    contest_ids.update(_team_contest_ids(team_id, fn, league))
+                       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 67, in _team_contest_ids
+    html = fetch_fn(team_id)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 58, in <lambda>
+    return lambda team_id: fetcher.fetch_html(f"teams/{team_id}")
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 978, in fetch_html
+    text = self._get_with_rotation(url)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 926, in _get_with_rotation
+    raise RuntimeError(f"NCAA fetch failed after rotating proxies: {url}: {last_err}")
+RuntimeError: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/teams/527488: patchright: bm-verify not passed after 3 attempts (384-byte body)
+EXIT=1
+[00:25:32] discover FAILED -- stopping (fix creds/network, then re-run)
+[2026-08-01 00:25:33] season 2022: no schedule_master rows after discover -- check the discover log; moving on
+[2026-08-01 00:25:33] === season 2021 ===
+[00:25:33] NCAA MBB backfill: season=2021 workers=1
+[00:25:33] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2021_20260801_002533.log
+[00:25:33] === discover 2021 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260801_002533.log  (watch: tail -f logs/discover_20260801_002533.log)
+2026-08-01 00:25:35,761 INFO vendor decodo_patchright: 1 prox(y/ies), sticky session re-minted -> session-cap1785558335
+2026-08-01 00:27:01,846 ERROR NCAA discovery hard-stopped on team_id=505566 (ban-suspect / fetch failure)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 216, in <module>
+    _main()
+    ~~~~~^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 211, in _main
+    result = discover_season(args.season, league="mbb", root=args.root)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 145, in discover_season
+    contest_ids.update(_team_contest_ids(team_id, fn, league))
+                       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 67, in _team_contest_ids
+    html = fetch_fn(team_id)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 58, in <lambda>
+    return lambda team_id: fetcher.fetch_html(f"teams/{team_id}")
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 978, in fetch_html
+    text = self._get_with_rotation(url)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 926, in _get_with_rotation
+    raise RuntimeError(f"NCAA fetch failed after rotating proxies: {url}: {last_err}")
+RuntimeError: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/teams/505566: patchright: bm-verify not passed after 3 attempts (2336-byte body)
+EXIT=1
+[00:27:02] discover FAILED -- stopping (fix creds/network, then re-run)
+[2026-08-01 00:27:02] season 2021: no schedule_master rows after discover -- check the discover log; moving on
+[2026-08-01 00:27:02] === season 2020 ===
+[00:27:02] NCAA MBB backfill: season=2020 workers=1
+[00:27:02] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2020_20260801_002702.log
+[00:27:03] === discover 2020 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260801_002703.log  (watch: tail -f logs/discover_20260801_002703.log)
+2026-08-01 00:27:05,240 INFO vendor decodo_patchright: 1 prox(y/ies), sticky session re-minted -> session-cap1785558425
+2026-08-01 00:28:26,528 ERROR NCAA discovery hard-stopped on team_id=486746 (ban-suspect / fetch failure)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 216, in <module>
+    _main()
+    ~~~~~^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 211, in _main
+    result = discover_season(args.season, league="mbb", root=args.root)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 145, in discover_season
+    contest_ids.update(_team_contest_ids(team_id, fn, league))
+                       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 67, in _team_contest_ids
+    html = fetch_fn(team_id)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 58, in <lambda>
+    return lambda team_id: fetcher.fetch_html(f"teams/{team_id}")
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 978, in fetch_html
+    text = self._get_with_rotation(url)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\sdv-py\sportsdataverse\mbb\mbb_ncaa_fetch.py", line 926, in _get_with_rotation
+    raise RuntimeError(f"NCAA fetch failed after rotating proxies: {url}: {last_err}")
+RuntimeError: NCAA fetch failed after rotating proxies: https://stats.ncaa.org/teams/486746: patchright: bm-verify not passed after 3 attempts (382-byte body)
+EXIT=1
+[00:28:27] discover FAILED -- stopping (fix creds/network, then re-run)
+[2026-08-01 00:28:27] season 2020: no schedule_master rows after discover -- check the discover log; moving on
+[2026-08-01 00:28:27] === season 2019 ===
+[00:28:27] NCAA MBB backfill: season=2019 workers=1
+[00:28:27] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2019_20260801_002827.log
+[00:28:27] === discover 2019 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260801_002827.log  (watch: tail -f logs/discover_20260801_002827.log)
+2026-08-01 00:28:30,181 INFO vendor decodo_patchright: 1 prox(y/ies), sticky session re-minted -> session-cap1785558510

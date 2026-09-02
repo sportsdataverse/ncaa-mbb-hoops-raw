@@ -1,0 +1,117 @@
+[2026-08-01 00:47:09] campaign: seasons 2025..2010 (desc), vendor=decodo_patchright, chunk=1400, workers=1
+[2026-08-01 00:47:09] log -> logs/backfill_range_20260801_004709.log   (watch: tail -f logs/backfill_range_20260801_004709.log)
+[2026-08-01 00:47:09] === season 2025 ===
+[00:47:09] NCAA MBB backfill: season=2025 workers=1
+[00:47:09] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2025_20260801_004709.log
+[00:47:09] === discover 2025 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260801_004710.log  (watch: tail -f logs/discover_20260801_004710.log)
+2026-08-01 00:47:12,081 INFO vendor decodo_patchright: 1 prox(y/ies), sticky session re-minted -> session-cap1785559632
+2026-08-01 00:51:32,455 WARNING fetch failed for team_id=590512 (bm-verify / ban-suspect)
+2026-08-01 00:57:25,801 WARNING fetch failed for team_id=590533 (bm-verify / ban-suspect)
+2026-08-01 00:58:43,636 WARNING fetch failed for team_id=590533 (bm-verify / ban-suspect)
+2026-08-01 01:00:01,279 WARNING fetch failed for team_id=590533 (bm-verify / ban-suspect)
+2026-08-01 01:00:01,279 WARNING team_id=590533 skipped after 3 tries (1 consecutive team failures)
+2026-08-01 01:01:18,925 WARNING fetch failed for team_id=590535 (bm-verify / ban-suspect)
+2026-08-01 01:06:58,523 WARNING fetch failed for team_id=590596 (bm-verify / ban-suspect)
+2026-08-01 01:08:15,537 WARNING fetch failed for team_id=590596 (bm-verify / ban-suspect)
+2026-08-01 01:09:32,540 WARNING fetch failed for team_id=590596 (bm-verify / ban-suspect)
+2026-08-01 01:09:32,540 WARNING team_id=590596 skipped after 3 tries (1 consecutive team failures)
+2026-08-01 01:10:49,664 WARNING fetch failed for team_id=590598 (bm-verify / ban-suspect)
+2026-08-01 01:21:17,945 WARNING fetch failed for team_id=590627 (bm-verify / ban-suspect)
+2026-08-01 01:22:38,265 WARNING fetch failed for team_id=590627 (bm-verify / ban-suspect)
+2026-08-01 01:23:57,297 WARNING fetch failed for team_id=590627 (bm-verify / ban-suspect)
+2026-08-01 01:23:57,297 WARNING team_id=590627 skipped after 3 tries (1 consecutive team failures)
+2026-08-01 01:25:16,181 WARNING fetch failed for team_id=590630 (bm-verify / ban-suspect)
+2026-08-01 01:26:35,087 WARNING fetch failed for team_id=590630 (bm-verify / ban-suspect)
+2026-08-01 01:27:53,991 WARNING fetch failed for team_id=590630 (bm-verify / ban-suspect)
+2026-08-01 01:27:53,991 WARNING team_id=590630 skipped after 3 tries (2 consecutive team failures)
+2026-08-01 01:29:12,902 WARNING fetch failed for team_id=590626 (bm-verify / ban-suspect)
+2026-08-01 01:30:31,875 WARNING fetch failed for team_id=590626 (bm-verify / ban-suspect)
+2026-08-01 01:31:55,160 WARNING fetch failed for team_id=590626 (bm-verify / ban-suspect)
+2026-08-01 01:31:55,160 WARNING team_id=590626 skipped after 3 tries (3 consecutive team failures)
+2026-08-01 01:35:41,063 WARNING fetch failed for team_id=590638 (bm-verify / ban-suspect)
+2026-08-01 01:37:01,699 WARNING fetch failed for team_id=590638 (bm-verify / ban-suspect)
+2026-08-01 01:38:20,317 WARNING fetch failed for team_id=590638 (bm-verify / ban-suspect)
+2026-08-01 01:38:20,317 WARNING team_id=590638 skipped after 3 tries (1 consecutive team failures)
+2026-08-01 01:39:39,006 WARNING fetch failed for team_id=590640 (bm-verify / ban-suspect)
+2026-08-01 01:40:57,647 WARNING fetch failed for team_id=590640 (bm-verify / ban-suspect)
+2026-08-01 01:42:16,846 WARNING fetch failed for team_id=590640 (bm-verify / ban-suspect)
+2026-08-01 01:42:16,846 WARNING team_id=590640 skipped after 3 tries (2 consecutive team failures)
+2026-08-01 01:43:33,895 WARNING fetch failed for team_id=590812 (bm-verify / ban-suspect)
+2026-08-01 01:44:50,926 WARNING fetch failed for team_id=590812 (bm-verify / ban-suspect)
+2026-08-01 01:46:07,972 WARNING fetch failed for team_id=590812 (bm-verify / ban-suspect)
+2026-08-01 01:46:07,972 WARNING team_id=590812 skipped after 3 tries (3 consecutive team failures)
+2026-08-01 01:47:25,024 WARNING fetch failed for team_id=590800 (bm-verify / ban-suspect)
+2026-08-01 01:48:42,041 WARNING fetch failed for team_id=590800 (bm-verify / ban-suspect)
+2026-08-01 01:49:59,092 WARNING fetch failed for team_id=590800 (bm-verify / ban-suspect)
+2026-08-01 01:49:59,093 WARNING team_id=590800 skipped after 3 tries (4 consecutive team failures)
+2026-08-01 01:51:16,113 WARNING fetch failed for team_id=590785 (bm-verify / ban-suspect)
+2026-08-01 01:52:36,992 WARNING fetch failed for team_id=590785 (bm-verify / ban-suspect)
+2026-08-01 01:54:02,747 WARNING fetch failed for team_id=590785 (bm-verify / ban-suspect)
+2026-08-01 01:54:02,747 WARNING team_id=590785 skipped after 3 tries (5 consecutive team failures)
+Traceback (most recent call last):
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 259, in <module>
+    _main()
+    ~~~~~^^
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 254, in _main
+    result = discover_season(args.season, league="mbb", root=args.root)
+  File "C:\Users\saiem\Documents\GitHub-Data\sdv-dev\hoopR-dev\ncaa-mbb-hoops-raw\python\ncaa_discover.py", line 174, in discover_season
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: discovery aborted: 5 consecutive teams failed (ban-suspect); 2739 contest_ids gathered before abort
+EXIT=1
+[01:54:03] discover FAILED -- stopping (fix creds/network, then re-run)
+[2026-08-01 01:54:03] season 2025: no schedule_master rows after discover (round 1) -- cooling 1800s then retrying discover
+[02:24:03] NCAA MBB backfill: season=2025 workers=1
+[02:24:03] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2025_20260801_022403.log
+[02:24:04] === discover 2025 (season not in schedule_master yet) ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/discover_20260801_022404.log  (watch: tail -f logs/discover_20260801_022404.log)
+2026-08-01 02:24:08,765 INFO vendor decodo_patchright: 20 prox(y/ies), sticky session re-minted -> session-cap1785565448
+discovered 6293 contest_ids for season=2025
+EXIT=0
+./scripts/run_mbb_backfill.sh: line 59: syntax error near unexpected token `}'
+./scripts/run_mbb_backfill.sh: line 59: `}'
+[2026-08-01 03:18:29] season 2025: chunk 2 hard-stopped (rc=2), 6293 remaining -- cooling 1800s
+[03:48:29] NCAA MBB backfill: season=2025 workers=1
+[03:48:29] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2025_20260801_034829.log
+[03:48:30] === skip discover (season 2025 already in schedule_master; delete mbb/schedule_master.parquet to force) ===
+[03:48:30] === capture 2025: 1 worker(s), chunk=1400 new bundles per worker ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/capture_20260801_034830.log  (watch: tail -f logs/capture_20260801_034830.log)
+pending=6296 shard=0/1 assigned=6296
+transport: canary vendor 'decodo_patchright'
+2026-08-01 03:48:32,675 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785570512w0
+2026-08-01 06:49:21,847 WARNING challenge not cleared for contest_id=6460633 -- bundle not written
+2026-08-01 06:49:48,733 WARNING challenge not cleared for contest_id=6481323 -- bundle not written
+2026-08-01 06:50:15,890 WARNING challenge not cleared for contest_id=6484874 -- bundle not written
+captured=344 skipped=5949 failed=3
+EXIT=0
+[06:50:16] === parse captured bundles -> mbb/json/ ===
+log -> logs/parse_20260801_065017.log  (watch: tail -f logs/parse_20260801_065017.log)
+bundles=12590 pending=6172 shard=0/1 assigned=6172
+2026-08-01 06:56:08,806 INFO 5 starters not found for period 3; using estimate
+2026-08-01 06:57:47,229 INFO 5 starters not found for period 3; using estimate
+2026-08-01 06:58:38,212 INFO 5 starters not found for period 3; using estimate
+[p1_s_e_e] [WARNING] [TeamId(name='Lehigh')]v[TeamId(name='Marist')] Flip court for periods: [[2]] because [total_shots={1: 57, 2: 62} long_shots={1: 2, 2: 56}]
+2026-08-01 07:06:57,025 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:16:06,408 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:16:44,539 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:17:48,255 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:20:33,371 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:23:11,936 INFO 5 starters not found for period 4; using estimate
+[07:23:44] DONE: captured_bundles=12590 parsed_json=9478 (capture rc=0)
+[07:23:44] next -> build the -data parquet:
+[07:23:44]   cd /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/../ncaa-mbb-hoops-data && python -m ncaa_mbb_data_build build --dataset all --season 2025
+EXIT=0
+2026-08-01 07:24:18,222 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:24:18,222 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:27:59,008 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:27:59,008 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:28:37,461 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:34:13,276 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:41:05,834 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:41:49,717 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:42:09,032 INFO 5 starters not found for period 3; using estimate

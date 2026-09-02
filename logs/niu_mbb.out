@@ -1,0 +1,5 @@
+log -> logs/parse_20260819_154918.log  (watch: tail -f logs/parse_20260819_154918.log)
+lang="en"> <head> <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/> <meta charset="utf-8"/> <meta...
+2026-08-19 16:08:27,571 INFO ncaa_identity: contest_id=2263232 teams 2580/2580 matched, players 7253/7255 matched
+parsed=995 failed=0
+EXIT=0

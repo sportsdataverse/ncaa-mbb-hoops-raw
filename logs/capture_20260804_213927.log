@@ -1,0 +1,47 @@
+pending=5775 shard=2/24 assigned=241
+transport: canary vendor 'decodo_patchright'
+2026-08-04 21:39:32,152 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785893972w2
+captured=0 skipped=241 failed=0
+pending=5775 shard=0/24 assigned=241
+transport: canary vendor 'decodo_patchright'
+2026-08-04 21:39:32,745 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785893972w0
+captured=0 skipped=241 failed=0
+pending=5775 shard=3/24 assigned=241
+transport: canary vendor 'decodo_patchright'
+2026-08-04 21:39:33,624 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785893973w3
+captured=0 skipped=241 failed=0
+pending=5775 shard=1/24 assigned=241
+transport: canary vendor 'decodo_patchright'
+2026-08-04 21:39:33,666 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785893973w1
+pending=5775 shard=8/24 assigned=241
+transport: canary vendor 'decodo_patchright'
+EXIT=0
+2026-08-04 21:39:33,781 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785893973w8
+EXIT=0
+EXIT=0
+pending=5775 shard=9/24 assigned=241
+transport: canary vendor 'decodo_patchright'
+2026-08-04 21:39:34,614 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785893974w9
+captured=0 skipped=241 failed=0
+pending=5775 shard=6/24 assigned=241
+transport: canary vendor 'decodo_patchright'
+2026-08-04 21:39:34,695 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785893974w6
+captured=0 skipped=241 failed=0
+pending=5775 shard=5/24 assigned=241
+transport: canary vendor 'decodo_patchright'
+2026-08-04 21:39:35,418 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785893975w5
+captured=0 skipped=241 failed=0
+pending=5775 shard=4/24 assigned=241
+transport: canary vendor 'decodo_patchright'
+2026-08-04 21:39:35,545 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785893975w4
+captured=0 skipped=241 failed=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+2026-08-04 21:40:09,552 WARNING challenge not cleared for contest_id=825520 -- bundle not written
+captured=0 skipped=240 failed=1
+EXIT=0
+2026-08-04 21:40:10,271 WARNING challenge not cleared for contest_id=826397 -- bundle not written
+captured=0 skipped=240 failed=1
+EXIT=0

@@ -1,0 +1,178 @@
+log -> logs/canary_20260811_191842.log  (watch: tail -f logs/canary_20260811_191842.log)
+# NCAA proxy canary -- 20260811_191847
+
+10 MBB contests x 2 pages (play_by_play + individual_stats). PASS = >=90% clean games.
+
+
+  probing decodo_patchright (proxy_patchright) ...
+    [decodo_patchright] game  1/10 play_by_play     clean      135728B  14.0s
+    [decodo_patchright] game  1/10 individual_stats clean      219136B  10.3s
+    [decodo_patchright] game  2/10 play_by_play     clean      144138B  10.1s
+    [decodo_patchright] game  2/10 individual_stats clean      228636B  10.3s
+    [decodo_patchright] game  3/10 play_by_play     clean      127669B  10.4s
+    [decodo_patchright] game  3/10 individual_stats clean      197838B  10.3s
+    [decodo_patchright] game  4/10 play_by_play     clean      132516B  10.6s
+    [decodo_patchright] game  4/10 individual_stats clean      205016B  11.2s
+    [decodo_patchright] game  5/10 play_by_play     clean      113011B  10.6s
+    [decodo_patchright] game  5/10 individual_stats clean      197798B  10.5s
+    [decodo_patchright] game  6/10 play_by_play     clean      123087B  10.8s
+    [decodo_patchright] game  6/10 individual_stats clean      190856B  10.5s
+    [decodo_patchright] game  7/10 play_by_play     clean      126050B  10.8s
+    [decodo_patchright] game  7/10 individual_stats clean      197886B  10.7s
+    [decodo_patchright] game  8/10 play_by_play     clean      120855B  11.1s
+    [decodo_patchright] game  8/10 individual_stats clean      183625B  10.5s
+    [decodo_patchright] game  9/10 play_by_play     clean      127356B  10.6s
+    [decodo_patchright] game  9/10 individual_stats clean      169461B  10.5s
+    [decodo_patchright] game 10/10 play_by_play     clean      116284B  10.7s
+    [decodo_patchright] game 10/10 individual_stats clean      190823B  10.5s
+  -> decodo_patchright  (proxy_patchright) -- **PASS**
+  netnut: SKIPPED (no proxies configured (placeholder/empty))
+  zyte: SKIPPED (no api_key configured (placeholder/empty))
+  brightdata_webunlocker: SKIPPED (no proxy endpoint configured (placeholder/empty))
+  probing decodo_us_a (proxy_patchright) ...
+    [decodo_us_a] game  1/10 play_by_play     clean      135728B  13.6s
+    [decodo_us_a] game  1/10 individual_stats clean      219136B  10.4s
+    [decodo_us_a] game  2/10 play_by_play     clean      144138B  10.3s
+    [decodo_us_a] game  2/10 individual_stats clean      228636B  10.4s
+    [decodo_us_a] game  3/10 play_by_play     clean      127669B  10.2s
+    [decodo_us_a] game  3/10 individual_stats clean      197838B  10.3s
+    [decodo_us_a] game  4/10 play_by_play     clean      132516B  10.2s
+    [decodo_us_a] game  4/10 individual_stats clean      205016B  10.8s
+    [decodo_us_a] game  5/10 play_by_play     clean      113010B  10.1s
+    [decodo_us_a] game  5/10 individual_stats clean      197798B  10.4s
+    [decodo_us_a] game  6/10 play_by_play     clean      123087B  10.1s
+    [decodo_us_a] game  6/10 individual_stats clean      190856B  10.3s
+    [decodo_us_a] game  7/10 play_by_play     clean      126050B  10.1s
+    [decodo_us_a] game  7/10 individual_stats clean      197886B  10.2s
+    [decodo_us_a] game  8/10 play_by_play     clean      120855B  10.1s
+    [decodo_us_a] game  8/10 individual_stats clean      183625B  10.3s
+    [decodo_us_a] game  9/10 play_by_play     clean      127356B  10.3s
+    [decodo_us_a] game  9/10 individual_stats clean      169461B  10.2s
+    [decodo_us_a] game 10/10 play_by_play     clean      116284B  10.1s
+    [decodo_us_a] game 10/10 individual_stats clean      190823B  10.2s
+  -> decodo_us_a  (proxy_patchright) -- **PASS**
+  probing decodo_us_b (proxy_patchright) ...
+    [decodo_us_b] game  1/10 play_by_play     clean      135730B  46.8s
+    [decodo_us_b] game  1/10 individual_stats clean      219138B  10.8s
+    [decodo_us_b] game  2/10 play_by_play     clean      144140B  10.4s
+    [decodo_us_b] game  2/10 individual_stats clean      228638B  10.6s
+    [decodo_us_b] game  3/10 play_by_play     clean      127671B  10.3s
+    [decodo_us_b] game  3/10 individual_stats clean      197840B  10.6s
+    [decodo_us_b] game  4/10 play_by_play     clean      132518B  10.4s
+    [decodo_us_b] game  4/10 individual_stats clean      205017B  11.0s
+    [decodo_us_b] game  5/10 play_by_play     clean      113012B  10.3s
+    [decodo_us_b] game  5/10 individual_stats clean      197800B  10.6s
+    [decodo_us_b] game  6/10 play_by_play     clean      123089B  10.4s
+    [decodo_us_b] game  6/10 individual_stats clean      190858B  10.8s
+    [decodo_us_b] game  7/10 play_by_play     clean      126052B  10.5s
+    [decodo_us_b] game  7/10 individual_stats clean      197888B  11.0s
+    [decodo_us_b] game  8/10 play_by_play     clean      120857B  10.4s
+    [decodo_us_b] game  8/10 individual_stats clean      183627B  10.5s
+    [decodo_us_b] game  9/10 play_by_play     clean      127358B  10.3s
+    [decodo_us_b] game  9/10 individual_stats clean      169463B  10.5s
+    [decodo_us_b] game 10/10 play_by_play     clean      116286B  10.7s
+    [decodo_us_b] game 10/10 individual_stats clean      190825B  10.8s
+  -> decodo_us_b  (proxy_patchright) -- **PASS**
+  probing decodo_us_w1 (proxy_patchright) ...
+    [decodo_us_w1] game  1/10 play_by_play     clean      135729B  12.8s
+    [decodo_us_w1] game  1/10 individual_stats clean      219137B  10.2s
+    [decodo_us_w1] game  2/10 play_by_play     clean      144139B  10.1s
+    [decodo_us_w1] game  2/10 individual_stats clean      228637B  10.3s
+    [decodo_us_w1] game  3/10 play_by_play     clean      127670B  10.0s
+    [decodo_us_w1] game  3/10 individual_stats clean      197839B  10.4s
+    [decodo_us_w1] game  4/10 play_by_play     clean      132517B  10.1s
+    [decodo_us_w1] game  4/10 individual_stats clean      205016B  10.9s
+    [decodo_us_w1] game  5/10 play_by_play     clean      113011B  10.2s
+    [decodo_us_w1] game  5/10 individual_stats clean      197798B  10.4s
+    [decodo_us_w1] game  6/10 play_by_play     clean      123087B  10.1s
+    [decodo_us_w1] game  6/10 individual_stats clean      190856B  10.2s
+    [decodo_us_w1] game  7/10 play_by_play     clean      126050B  10.1s
+    [decodo_us_w1] game  7/10 individual_stats clean      197886B  10.2s
+    [decodo_us_w1] game  8/10 play_by_play     clean      120855B  10.7s
+    [decodo_us_w1] game  8/10 individual_stats clean      183625B  10.2s
+    [decodo_us_w1] game  9/10 play_by_play     clean      127356B  10.1s
+    [decodo_us_w1] game  9/10 individual_stats clean      169461B  10.1s
+    [decodo_us_w1] game 10/10 play_by_play     clean      116284B  10.1s
+    [decodo_us_w1] game 10/10 individual_stats clean      190823B  10.2s
+  -> decodo_us_w1  (proxy_patchright) -- **PASS**
+  probing decodo_us_w2 (proxy_patchright) ...
+    [decodo_us_w2] game  1/10 play_by_play     clean      135729B  12.7s
+    [decodo_us_w2] game  1/10 individual_stats clean      219137B  10.8s
+    [decodo_us_w2] game  2/10 play_by_play     clean      144139B  10.4s
+    [decodo_us_w2] game  2/10 individual_stats clean      228637B  10.7s
+    [decodo_us_w2] game  3/10 play_by_play     clean      127670B  10.5s
+    [decodo_us_w2] game  3/10 individual_stats clean      197839B  10.6s
+    [decodo_us_w2] game  4/10 play_by_play     clean      132517B  10.4s
+    [decodo_us_w2] game  4/10 individual_stats clean      205016B  11.0s
+    [decodo_us_w2] game  5/10 play_by_play     clean      113011B  10.6s
+    [decodo_us_w2] game  5/10 individual_stats clean      197799B  10.6s
+    [decodo_us_w2] game  6/10 play_by_play     clean      123088B  10.7s
+    [decodo_us_w2] game  6/10 individual_stats clean      190857B  10.7s
+    [decodo_us_w2] game  7/10 play_by_play     clean      126051B  10.6s
+    [decodo_us_w2] game  7/10 individual_stats clean      197887B  10.7s
+    [decodo_us_w2] game  8/10 play_by_play     clean      120856B  10.7s
+    [decodo_us_w2] game  8/10 individual_stats clean      183626B  10.6s
+    [decodo_us_w2] game  9/10 play_by_play     clean      127357B  10.4s
+    [decodo_us_w2] game  9/10 individual_stats clean      169462B  10.6s
+    [decodo_us_w2] game 10/10 play_by_play     clean      116285B  10.8s
+    [decodo_us_w2] game 10/10 individual_stats clean      190824B  10.6s
+  -> decodo_us_w2  (proxy_patchright) -- **PASS**
+  probing decodo_us_w3 (proxy_patchright) ...
+    [decodo_us_w3] game  1/10 play_by_play     clean      135730B  13.4s
+    [decodo_us_w3] game  1/10 individual_stats clean      219138B  10.6s
+    [decodo_us_w3] game  2/10 play_by_play     clean      144140B  10.5s
+    [decodo_us_w3] game  2/10 individual_stats clean      228638B  11.0s
+    [decodo_us_w3] game  3/10 play_by_play     clean      127671B  10.5s
+    [decodo_us_w3] game  3/10 individual_stats clean      197840B  10.5s
+    [decodo_us_w3] game  4/10 play_by_play     clean      132518B  10.5s
+    [decodo_us_w3] game  4/10 individual_stats clean      205018B  11.0s
+    [decodo_us_w3] game  5/10 play_by_play     clean      113012B  10.3s
+    [decodo_us_w3] game  5/10 individual_stats clean      197800B  10.4s
+    [decodo_us_w3] game  6/10 play_by_play     clean      123089B  10.4s
+    [decodo_us_w3] game  6/10 individual_stats clean      190858B  10.4s
+    [decodo_us_w3] game  7/10 play_by_play     clean      126052B  10.4s
+    [decodo_us_w3] game  7/10 individual_stats clean      197888B  10.6s
+    [decodo_us_w3] game  8/10 play_by_play     clean      120857B  10.3s
+    [decodo_us_w3] game  8/10 individual_stats clean      183627B  10.5s
+    [decodo_us_w3] game  9/10 play_by_play     clean      127358B  10.4s
+    [decodo_us_w3] game  9/10 individual_stats clean      169463B  10.5s
+    [decodo_us_w3] game 10/10 play_by_play     clean      116286B  10.3s
+    [decodo_us_w3] game 10/10 individual_stats clean      190825B  10.5s
+  -> decodo_us_w3  (proxy_patchright) -- **PASS**
+  probing decodo_us_w4 (proxy_patchright) ...
+    [decodo_us_w4] game  1/10 play_by_play     clean      135729B  17.1s
+    [decodo_us_w4] game  1/10 individual_stats clean      219137B  10.9s
+    [decodo_us_w4] game  2/10 play_by_play     clean      144139B  10.7s
+    [decodo_us_w4] game  2/10 individual_stats clean      228637B  10.8s
+    [decodo_us_w4] game  3/10 play_by_play     clean      127670B  10.5s
+    [decodo_us_w4] game  3/10 individual_stats clean      197839B  10.8s
+    [decodo_us_w4] game  4/10 play_by_play     clean      132517B  10.7s
+    [decodo_us_w4] game  4/10 individual_stats clean      205016B  12.1s
+    [decodo_us_w4] game  5/10 play_by_play     clean      113011B  11.1s
+    [decodo_us_w4] game  5/10 individual_stats clean      197799B  11.3s
+    [decodo_us_w4] game  6/10 play_by_play     clean      123088B  11.0s
+    [decodo_us_w4] game  6/10 individual_stats clean      190857B  11.1s
+    [decodo_us_w4] game  7/10 play_by_play     clean      126051B  10.9s
+    [decodo_us_w4] game  7/10 individual_stats clean      197887B  11.0s
+    [decodo_us_w4] game  8/10 play_by_play     clean      120856B  10.9s
+    [decodo_us_w4] game  8/10 individual_stats clean      183626B  11.3s
+    [decodo_us_w4] game  9/10 play_by_play     clean      127357B  11.1s
+    [decodo_us_w4] game  9/10 individual_stats clean      169462B  11.2s
+    [decodo_us_w4] game 10/10 play_by_play     clean      116285B  11.0s
+    [decodo_us_w4] game 10/10 individual_stats clean      190824B  11.1s
+  -> decodo_us_w4  (proxy_patchright) -- **PASS**
+
+=== canary summary ===
+  decodo_patchright  (proxy_patchright) -- **PASS**
+  netnut: skipped
+  zyte: skipped
+  brightdata_webunlocker: skipped
+  decodo_us_a  (proxy_patchright) -- **PASS**
+  decodo_us_b  (proxy_patchright) -- **PASS**
+  decodo_us_w1  (proxy_patchright) -- **PASS**
+  decodo_us_w2  (proxy_patchright) -- **PASS**
+  decodo_us_w3  (proxy_patchright) -- **PASS**
+  decodo_us_w4  (proxy_patchright) -- **PASS**
+
+full scorecard -> canary_out\canary_20260811_191847.md
+EXIT=0

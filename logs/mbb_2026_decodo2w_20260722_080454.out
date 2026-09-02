@@ -1,0 +1,25 @@
+canary-vendor transport requested -- skipping ProxyBonanza cred check
+log -> logs/capture_20260722_080455.log  (watch: tail -f logs/capture_20260722_080455.log)
+pending=6300 shard=0/2 assigned=3150
+transport: canary vendor 'decodo_us_a'
+2026-07-22 08:04:57,391 INFO vendor decodo_us_a: 5 prox(y/ies), sticky session re-minted -> session-cap1784721897
+2026-07-22 08:05:29,892 WARNING challenge not cleared for contest_id=6460633 -- bundle not written
+canary-vendor transport requested -- skipping ProxyBonanza cred check
+log -> logs/capture_20260722_080625.log  (watch: tail -f logs/capture_20260722_080625.log)
+pending=6300 shard=1/2 assigned=3150
+transport: canary vendor 'decodo_us_b'
+2026-07-22 08:06:27,322 INFO vendor decodo_us_b: 5 prox(y/ies), sticky session re-minted -> session-cap1784721987
+EXIT=127
+EXIT=127
+workers done: ra=127 rb=127
+log -> logs/parse_20260722_142925.log  (watch: tail -f logs/parse_20260722_142925.log)
+bundles=3871 pending=1414 shard=0/1 assigned=1414
+2026-07-22 14:30:47,492 INFO 5 starters not found for period 3; using estimate
+[p1_s_e_e] [WARNING] [TeamId(name='NC State')]v[TeamId(name='UAB')] Flip court for periods: [[2]] because [total_shots={1: 69, 2: 63} long_shots={2: 63}]
+2026-07-22 14:36:11,043 INFO 5 starters not found for period 4; using estimate
+2026-07-22 14:39:37,750 INFO 5 starters not found for period 3; using estimate
+2026-07-22 14:42:14,151 INFO 5 starters not found for period 4; using estimate
+2026-07-22 14:45:43,006 INFO 5 starters not found for period 3; using estimate
+parsed=1414 failed=0
+EXIT=0
+CHAIN_EXIT ra=127 rb=127

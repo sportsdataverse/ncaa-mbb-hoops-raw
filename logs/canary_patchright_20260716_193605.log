@@ -1,0 +1,22 @@
+# NCAA proxy canary -- 20260716_193609
+
+2 MBB contests x 2 pages (play_by_play + individual_stats). PASS = >=90% clean games.
+
+
+  probing decodo_patchright (proxy_patchright) ...
+    [decodo_patchright] game  1/2 play_by_play     challenge       0B  57.1s
+    [decodo_patchright] game  1/2 individual_stats challenge       0B  53.7s
+    [decodo_patchright] game  2/2 play_by_play     challenge       0B  53.4s
+    [decodo_patchright] game  2/2 individual_stats challenge       0B  53.7s
+  -> decodo_patchright  (proxy_patchright) -- **FAIL**
+  netnut: SKIPPED (no proxies configured (placeholder/empty))
+  zyte: SKIPPED (no api_key configured (placeholder/empty))
+  brightdata_webunlocker: SKIPPED (no proxy endpoint configured (placeholder/empty))
+
+=== canary summary ===
+  decodo_patchright  (proxy_patchright) -- **FAIL**
+  netnut: skipped
+  zyte: skipped
+  brightdata_webunlocker: skipped
+
+full scorecard -> canary_out\canary_20260716_193609.md

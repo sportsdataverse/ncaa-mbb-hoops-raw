@@ -1,0 +1,125 @@
+pending=6300 shard=0/1 assigned=6300
+2026-07-16 16:48:07,701 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:48:15,971 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:48:16,972 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.24:60099 (relaunching)
+2026-07-16 16:48:26,188 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:48:34,437 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:48:35,437 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.26:60099 (relaunching)
+2026-07-16 16:48:44,653 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:48:52,905 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:48:53,906 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.50:60099 (relaunching)
+2026-07-16 16:49:03,256 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:49:11,507 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:49:12,508 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.51:60099 (relaunching)
+2026-07-16 16:49:21,882 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:49:30,138 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:49:31,139 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.55:60099 (relaunching)
+2026-07-16 16:49:40,420 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:49:48,678 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:49:49,678 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.72:60099 (relaunching)
+2026-07-16 16:49:58,998 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:50:07,251 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:50:08,252 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.74:60099 (relaunching)
+2026-07-16 16:50:17,517 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:50:25,762 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:50:26,763 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.80:60099 (relaunching)
+2026-07-16 16:50:36,118 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:50:44,394 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:50:45,395 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.96:60099 (relaunching)
+2026-07-16 16:50:54,666 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:51:02,906 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:51:03,907 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.98:60099 (relaunching)
+2026-07-16 16:51:13,218 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:51:21,472 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:51:22,473 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.101:60099 (relaunching)
+2026-07-16 16:51:31,724 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:51:40,001 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:51:41,001 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.123:60099 (relaunching)
+2026-07-16 16:51:50,679 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:51:58,943 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:51:59,943 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.138:60099 (relaunching)
+2026-07-16 16:52:09,224 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:52:17,484 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:52:18,484 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.153:60099 (relaunching)
+2026-07-16 16:52:27,729 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:52:35,977 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:52:36,978 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.161:60099 (relaunching)
+2026-07-16 16:52:46,213 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:52:54,460 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:52:55,461 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.169:60099 (relaunching)
+2026-07-16 16:53:04,644 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:53:12,892 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:53:13,893 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.171:60099 (relaunching)
+2026-07-16 16:53:23,114 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:53:31,368 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:53:32,369 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.175:60099 (relaunching)
+2026-07-16 16:53:41,655 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:53:49,915 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:53:50,915 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.196:60099 (relaunching)
+2026-07-16 16:54:00,164 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:54:08,409 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:54:09,410 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.210:60099 (relaunching)
+2026-07-16 16:54:18,672 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:54:26,939 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:54:27,940 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.213:60099 (relaunching)
+2026-07-16 16:54:37,374 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:54:45,634 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:54:46,634 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.224:60099 (relaunching)
+2026-07-16 16:54:55,901 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:55:04,174 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:55:05,175 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.227:60099 (relaunching)
+2026-07-16 16:55:14,414 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:55:22,669 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:55:23,670 INFO browser proxy rotated -> http://<redacted>:<redacted>@23.239.174.238:60099 (relaunching)
+2026-07-16 16:55:32,898 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:55:41,161 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:55:42,162 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.1:60099 (relaunching)
+2026-07-16 16:55:51,187 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:55:59,393 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:56:00,394 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.3:60099 (relaunching)
+2026-07-16 16:56:09,376 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:56:17,559 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:56:18,560 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.22:60099 (relaunching)
+2026-07-16 16:56:27,609 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:56:35,838 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:56:36,839 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.26:60099 (relaunching)
+2026-07-16 16:56:45,814 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:56:53,954 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:56:54,955 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.69:60099 (relaunching)
+2026-07-16 16:57:03,955 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:57:12,140 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:57:13,141 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.85:60099 (relaunching)
+2026-07-16 16:57:22,068 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:57:30,250 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:57:31,251 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.89:60099 (relaunching)
+2026-07-16 16:57:40,238 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:57:48,441 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:57:49,441 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.96:60099 (relaunching)
+2026-07-16 16:57:58,398 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:58:06,581 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:58:07,582 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.98:60099 (relaunching)
+2026-07-16 16:58:16,671 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:58:24,853 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:58:25,854 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.101:60099 (relaunching)
+2026-07-16 16:58:34,769 INFO bm-verify not passed (411-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:58:42,952 INFO bm-verify not passed (411-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:58:43,952 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.104:60099 (relaunching)
+2026-07-16 16:58:52,879 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:59:01,088 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:59:02,089 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.106:60099 (relaunching)
+2026-07-16 16:59:11,094 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:59:19,254 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:59:20,255 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.112:60099 (relaunching)
+2026-07-16 16:59:29,231 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:59:37,441 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:59:38,441 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.117:60099 (relaunching)
+2026-07-16 16:59:48,131 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 16:59:56,324 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 16:59:57,325 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.132:60099 (relaunching)
+2026-07-16 17:00:06,304 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 17:00:14,481 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 17:00:15,482 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.158:60099 (relaunching)
+2026-07-16 17:00:24,451 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2
+2026-07-16 17:00:32,890 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 2/2
+2026-07-16 17:00:33,891 INFO browser proxy rotated -> http://<redacted>:<redacted>@154.81.58.160:60099 (relaunching)
+2026-07-16 17:00:42,873 INFO bm-verify not passed (413-byte response) -- re-solving, attempt 1/2

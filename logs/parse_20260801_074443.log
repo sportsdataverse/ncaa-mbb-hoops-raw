@@ -1,0 +1,46 @@
+bundles=12590 pending=1505 shard=2/12 assigned=126
+bundles=12590 pending=1505 shard=3/12 assigned=126
+bundles=12590 pending=1505 shard=5/12 assigned=125
+bundles=12590 pending=1505 shard=9/12 assigned=125
+bundles=12590 pending=1505 shard=0/12 assigned=126
+bundles=12590 pending=1505 shard=7/12 assigned=125
+bundles=12590 pending=1505 shard=6/12 assigned=125
+bundles=12590 pending=1505 shard=1/12 assigned=126
+bundles=12590 pending=1505 shard=4/12 assigned=126
+bundles=12590 pending=1505 shard=10/12 assigned=125
+bundles=12590 pending=1505 shard=11/12 assigned=125
+bundles=12590 pending=1505 shard=8/12 assigned=125
+2026-08-01 07:44:49,739 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:44:55,973 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:45:09,215 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:45:11,427 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:45:17,080 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:45:24,575 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:45:59,982 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:46:13,490 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:46:29,864 INFO 5 starters not found for period 3; using estimate
+parsed=125 failed=0
+EXIT=0
+2026-08-01 07:46:47,593 INFO 5 starters not found for period 4; using estimate
+parsed=125 failed=0
+EXIT=0
+parsed=126 failed=0
+EXIT=0
+parsed=126 failed=0
+EXIT=0
+parsed=125 failed=0
+EXIT=0
+parsed=126 failed=0
+parsed=125 failed=0
+EXIT=0
+EXIT=0
+parsed=125 failed=0
+parsed=126 failed=0
+parsed=125 failed=0
+parsed=126 failed=0
+EXIT=0
+parsed=125 failed=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0

@@ -1,0 +1,85 @@
+log -> logs/datasets_20260801_155322.log  (watch: tail -f logs/datasets_20260801_155322.log)
+2026-08-01 15:53:24,931 INFO ESPN crosswalk joined: 345/345 teams matched (season=2010)
+2026-08-01 15:53:24,935 INFO teams season=2010 league=mbb: 345 teams
+datasets season=2010 league=mbb: {"teams": 345}
+EXIT=0
+log -> logs/datasets_20260801_155325.log  (watch: tail -f logs/datasets_20260801_155325.log)
+2026-08-01 15:53:28,118 INFO ESPN crosswalk joined: 344/344 teams matched (season=2011)
+2026-08-01 15:53:28,124 INFO teams season=2011 league=mbb: 344 teams
+datasets season=2011 league=mbb: {"teams": 344}
+EXIT=0
+log -> logs/datasets_20260801_155328.log  (watch: tail -f logs/datasets_20260801_155328.log)
+2026-08-01 15:53:30,921 INFO ESPN crosswalk joined: 345/345 teams matched (season=2012)
+2026-08-01 15:53:30,927 INFO teams season=2012 league=mbb: 345 teams
+datasets season=2012 league=mbb: {"teams": 345}
+EXIT=0
+log -> logs/datasets_20260801_155331.log  (watch: tail -f logs/datasets_20260801_155331.log)
+2026-08-01 15:53:34,167 INFO ESPN crosswalk joined: 347/347 teams matched (season=2013)
+2026-08-01 15:53:34,172 INFO teams season=2013 league=mbb: 347 teams
+datasets season=2013 league=mbb: {"teams": 347}
+EXIT=0
+log -> logs/datasets_20260801_155334.log  (watch: tail -f logs/datasets_20260801_155334.log)
+2026-08-01 15:53:36,988 INFO ESPN crosswalk joined: 351/351 teams matched (season=2014)
+2026-08-01 15:53:36,993 INFO teams season=2014 league=mbb: 351 teams
+datasets season=2014 league=mbb: {"teams": 351}
+EXIT=0
+log -> logs/datasets_20260801_155337.log  (watch: tail -f logs/datasets_20260801_155337.log)
+2026-08-01 15:53:40,165 INFO ESPN crosswalk joined: 351/351 teams matched (season=2015)
+2026-08-01 15:53:40,170 INFO teams season=2015 league=mbb: 351 teams
+datasets season=2015 league=mbb: {"teams": 351}
+EXIT=0
+log -> logs/datasets_20260801_155340.log  (watch: tail -f logs/datasets_20260801_155340.log)
+2026-08-01 15:53:43,214 INFO ESPN crosswalk joined: 351/351 teams matched (season=2016)
+2026-08-01 15:53:43,219 INFO teams season=2016 league=mbb: 351 teams
+datasets season=2016 league=mbb: {"teams": 351}
+EXIT=0
+log -> logs/datasets_20260801_155343.log  (watch: tail -f logs/datasets_20260801_155343.log)
+2026-08-01 15:53:46,186 INFO ESPN crosswalk joined: 351/351 teams matched (season=2017)
+2026-08-01 15:53:46,191 INFO teams season=2017 league=mbb: 351 teams
+datasets season=2017 league=mbb: {"teams": 351}
+EXIT=0
+log -> logs/datasets_20260801_155346.log  (watch: tail -f logs/datasets_20260801_155346.log)
+2026-08-01 15:53:49,632 INFO ESPN crosswalk joined: 351/351 teams matched (season=2018)
+2026-08-01 15:53:49,903 INFO teams season=2018 league=mbb: 351 teams
+datasets season=2018 league=mbb: {"teams": 351}
+EXIT=0
+log -> logs/datasets_20260801_155350.log  (watch: tail -f logs/datasets_20260801_155350.log)
+2026-08-01 15:53:52,794 INFO ESPN crosswalk joined: 351/351 teams matched (season=2019)
+2026-08-01 15:53:52,799 INFO teams season=2019 league=mbb: 351 teams
+datasets season=2019 league=mbb: {"teams": 351}
+EXIT=0
+log -> logs/datasets_20260801_155353.log  (watch: tail -f logs/datasets_20260801_155353.log)
+2026-08-01 15:53:55,615 INFO ESPN crosswalk joined: 350/350 teams matched (season=2020)
+2026-08-01 15:53:55,620 INFO teams season=2020 league=mbb: 350 teams
+datasets season=2020 league=mbb: {"teams": 350}
+EXIT=0
+log -> logs/datasets_20260801_155356.log  (watch: tail -f logs/datasets_20260801_155356.log)
+2026-08-01 15:53:58,208 INFO ESPN crosswalk joined: 357/357 teams matched (season=2021)
+2026-08-01 15:53:58,213 INFO teams season=2021 league=mbb: 357 teams
+datasets season=2021 league=mbb: {"teams": 357}
+EXIT=0
+log -> logs/datasets_20260801_155358.log  (watch: tail -f logs/datasets_20260801_155358.log)
+2026-08-01 15:54:00,653 INFO ESPN crosswalk joined: 358/358 teams matched (season=2022)
+2026-08-01 15:54:00,658 INFO teams season=2022 league=mbb: 358 teams
+datasets season=2022 league=mbb: {"teams": 358}
+EXIT=0
+log -> logs/datasets_20260801_155401.log  (watch: tail -f logs/datasets_20260801_155401.log)
+2026-08-01 15:54:02,999 INFO ESPN crosswalk joined: 363/363 teams matched (season=2023)
+2026-08-01 15:54:03,004 INFO teams season=2023 league=mbb: 363 teams
+datasets season=2023 league=mbb: {"teams": 363}
+EXIT=0
+log -> logs/datasets_20260801_155403.log  (watch: tail -f logs/datasets_20260801_155403.log)
+2026-08-01 15:54:05,433 INFO ESPN crosswalk joined: 362/362 teams matched (season=2024)
+2026-08-01 15:54:05,437 INFO teams season=2024 league=mbb: 362 teams
+datasets season=2024 league=mbb: {"teams": 362}
+EXIT=0
+log -> logs/datasets_20260801_155405.log  (watch: tail -f logs/datasets_20260801_155405.log)
+2026-08-01 15:54:08,025 INFO ESPN crosswalk joined: 364/364 teams matched (season=2025)
+2026-08-01 15:54:08,029 INFO teams season=2025 league=mbb: 364 teams
+datasets season=2025 league=mbb: {"teams": 364}
+EXIT=0
+log -> logs/datasets_20260801_155408.log  (watch: tail -f logs/datasets_20260801_155408.log)
+2026-08-01 15:54:10,370 INFO ESPN crosswalk joined: 365/365 teams matched (season=2026)
+2026-08-01 15:54:10,375 INFO teams season=2026 league=mbb: 365 teams
+datasets season=2026 league=mbb: {"teams": 365}
+EXIT=0

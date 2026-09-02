@@ -1,0 +1,41 @@
+pending=5972 shard=1/8 assigned=747
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:51:13,463 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495873w1
+pending=5972 shard=7/8 assigned=746
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:51:13,463 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495873w7
+pending=5972 shard=6/8 assigned=746
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:51:13,464 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495873w6
+pending=5972 shard=0/8 assigned=747
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:51:13,476 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495873w0
+pending=5972 shard=5/8 assigned=746
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:51:13,481 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495873w5
+captured=0 skipped=746 failed=0
+pending=5972 shard=4/8 assigned=746
+transport: canary vendor 'decodo_patchright'
+captured=0 skipped=747 failed=0
+captured=0 skipped=747 failed=0
+2026-08-11 20:51:13,501 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495873w4
+pending=5972 shard=2/8 assigned=747
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:51:13,515 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495873w2
+captured=0 skipped=746 failed=0
+captured=0 skipped=746 failed=0
+pending=5972 shard=3/8 assigned=747
+transport: canary vendor 'decodo_patchright'
+2026-08-11 20:51:13,522 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1786495873w3
+captured=0 skipped=747 failed=0
+captured=0 skipped=747 failed=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+EXIT=0
+2026-08-11 20:51:50,447 WARNING challenge not cleared for contest_id=191814 -- bundle not written
+captured=0 skipped=745 failed=1
+EXIT=0

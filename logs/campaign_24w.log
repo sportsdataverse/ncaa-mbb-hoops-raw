@@ -1,0 +1,187 @@
+[2026-08-01 22:45:22] campaign: seasons 2023..2010 (desc), vendor=decodo_patchright, chunk=400, workers=24
+[2026-08-01 22:45:22] log -> logs/backfill_range_20260801_224522.log   (watch: tail -f logs/backfill_range_20260801_224522.log)
+[2026-08-01 22:45:22] === season 2023 ===
+[22:45:22] NCAA MBB backfill: season=2023 workers=24
+[22:45:22] watch this run:  tail -f /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/logs/backfill_2023_20260801_224522.log
+[22:45:23] === skip discover (season 2023 already in schedule_master; delete mbb/schedule_master.parquet to force) ===
+[22:45:23] === capture 2023: 24 worker(s), chunk=400 new bundles per worker ===
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/capture_20260801_224523.log  (watch: tail -f logs/capture_20260801_224523.log)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/capture_20260801_224524.log  (watch: tail -f logs/capture_20260801_224524.log)
+proxy creds loaded from /c/Users/saiem/.Renviron (values hidden)
+log -> logs/capture_20260801_224524.log  (watch: tail -f logs/capture_20260801_224524.log)
+log -> logs/capture_20260801_224524.log  (watch: tail -f logs/capture_20260801_224524.log)
+log -> logs/capture_20260801_224524.log  (watch: tail -f logs/capture_20260801_224524.log)
+log -> logs/capture_20260801_224524.log  (watch: tail -f logs/capture_20260801_224524.log)
+log -> logs/capture_20260801_224524.log  (watch: tail -f logs/capture_20260801_224524.log)
+log -> logs/capture_20260801_224524.log  (watch: tail -f logs/capture_20260801_224524.log)
+pending=6222 shard=2/24 assigned=260
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=0/24 assigned=260
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=3/24 assigned=260
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=8/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=13/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=1/24 assigned=260
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=12/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=9/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=11/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=4/24 assigned=260
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=21/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=10/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=16/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=7/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=17/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=15/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=14/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=22/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=5/24 assigned=260
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=6/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=19/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=18/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=20/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+pending=6222 shard=23/24 assigned=259
+transport: canary vendor 'decodo_patchright'
+2026-08-01 22:45:29,739 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638729w1
+2026-08-01 22:45:30,201 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638730w2
+2026-08-01 22:45:30,213 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638730w13
+2026-08-01 22:45:30,810 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638730w0
+2026-08-01 22:45:31,619 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638731w11
+2026-08-01 22:45:32,111 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638732w9
+2026-08-01 22:45:32,120 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638732w15
+2026-08-01 22:45:32,178 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638732w3
+2026-08-01 22:45:32,342 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638732w8
+2026-08-01 22:45:32,434 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638732w4
+2026-08-01 22:45:32,958 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638732w14
+2026-08-01 22:45:33,010 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638733w21
+2026-08-01 22:45:33,253 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638733w22
+2026-08-01 22:45:33,232 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638733w16
+2026-08-01 22:45:33,294 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638733w12
+2026-08-01 22:45:33,523 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638733w19
+2026-08-01 22:45:33,665 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638733w5
+2026-08-01 22:45:34,112 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638734w6
+2026-08-01 22:45:34,190 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638734w23
+2026-08-01 22:45:34,181 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638734w20
+2026-08-01 22:45:34,259 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638734w10
+2026-08-01 22:45:34,271 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638734w17
+2026-08-01 22:45:34,514 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638734w18
+2026-08-01 22:45:34,588 INFO vendor decodo_patchright: 50 prox(y/ies), sticky session re-minted -> session-cap1785638734w7
+2026-08-01 22:46:08,437 WARNING challenge not cleared for contest_id=2336004 -- bundle not written
+captured=167 skipped=92 failed=0
+EXIT=0
+captured=168 skipped=91 failed=0
+captured=169 skipped=90 failed=0
+EXIT=0
+EXIT=0
+captured=169 skipped=90 failed=0
+EXIT=0
+captured=169 skipped=90 failed=0
+captured=168 skipped=92 failed=0
+EXIT=0
+EXIT=0
+captured=168 skipped=91 failed=0
+EXIT=0
+captured=168 skipped=92 failed=0
+captured=170 skipped=90 failed=0
+EXIT=0
+EXIT=0
+captured=169 skipped=90 failed=0
+EXIT=0
+captured=169 skipped=90 failed=0
+EXIT=0
+captured=169 skipped=91 failed=0
+EXIT=0
+captured=169 skipped=90 failed=0
+EXIT=0
+captured=170 skipped=89 failed=0
+EXIT=0
+captured=172 skipped=88 failed=0
+EXIT=0
+captured=169 skipped=89 failed=1
+EXIT=0
+captured=169 skipped=90 failed=0
+EXIT=0
+captured=171 skipped=88 failed=0
+EXIT=0
+captured=172 skipped=88 failed=0
+EXIT=0
+captured=168 skipped=91 failed=0
+EXIT=0
+captured=171 skipped=88 failed=0
+EXIT=0
+captured=170 skipped=89 failed=0
+captured=168 skipped=91 failed=0
+EXIT=0
+EXIT=0
+captured=170 skipped=89 failed=0
+EXIT=0
+[00:37:33] === parse captured bundles -> mbb/json/ ===
+log -> logs/parse_20260802_003733.log  (watch: tail -f logs/parse_20260802_003733.log)
+2026-08-02 00:44:34,003 INFO ncaa_identity: contest_id=2422483 teams 2396/2396 matched, players 5556/6600 matched
+2026-08-02 00:44:50,869 INFO ncaa_identity: contest_id=2424404 teams 2458/2458 matched, players 6539/6697 matched
+parsed=260 failed=0
+EXIT=0
+[00:45:00] DONE: captured_bundles=25054 parsed_json=25054 (capture rc=0)
+[00:45:00] next -> build the -data parquet:
+[00:45:00]   cd /c/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/ncaa-mbb-hoops-raw/../ncaa-mbb-hoops-data && python -m ncaa_mbb_data_build build --dataset all --season 2023
+EXIT=0
+[2026-08-02 00:45:00] season 2023: chunk 1 done, 1 remaining -- cooling 300s (fresh sticky session next)

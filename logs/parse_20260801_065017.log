@@ -1,0 +1,20 @@
+bundles=12590 pending=6172 shard=0/1 assigned=6172
+2026-08-01 06:56:08,806 INFO 5 starters not found for period 3; using estimate
+2026-08-01 06:57:47,229 INFO 5 starters not found for period 3; using estimate
+2026-08-01 06:58:38,212 INFO 5 starters not found for period 3; using estimate
+[p1_s_e_e] [WARNING] [TeamId(name='Lehigh')]v[TeamId(name='Marist')] Flip court for periods: [[2]] because [total_shots={1: 57, 2: 62} long_shots={1: 2, 2: 56}]
+2026-08-01 07:06:57,025 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:16:06,408 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:16:44,539 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:17:48,255 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:20:33,371 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:23:11,936 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:24:18,222 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:24:18,222 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:27:59,008 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:27:59,008 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:28:37,461 INFO 5 starters not found for period 4; using estimate
+2026-08-01 07:34:13,276 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:41:05,834 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:41:49,717 INFO 5 starters not found for period 3; using estimate
+2026-08-01 07:42:09,032 INFO 5 starters not found for period 3; using estimate

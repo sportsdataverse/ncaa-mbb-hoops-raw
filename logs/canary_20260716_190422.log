@@ -1,0 +1,38 @@
+# NCAA proxy canary -- 20260716_190426
+
+10 MBB contests x 2 pages (play_by_play + individual_stats). PASS = >=90% clean games.
+
+
+  probing decodo (proxy_browser) ...
+    [decodo] game  1/10 play_by_play     challenge       0B  55.3s
+    [decodo] game  1/10 individual_stats challenge       0B  52.8s
+    [decodo] game  2/10 play_by_play     challenge       0B  53.3s
+    [decodo] game  2/10 individual_stats challenge       0B  52.5s
+    [decodo] game  3/10 play_by_play     challenge       0B  52.7s
+    [decodo] game  3/10 individual_stats challenge       0B  53.1s
+    [decodo] game  4/10 play_by_play     challenge       0B  52.7s
+    [decodo] game  4/10 individual_stats challenge       0B  52.8s
+    [decodo] game  5/10 play_by_play     challenge       0B  52.8s
+    [decodo] game  5/10 individual_stats challenge       0B  52.9s
+    [decodo] game  6/10 play_by_play     challenge       0B  52.7s
+    [decodo] game  6/10 individual_stats challenge       0B  53.7s
+    [decodo] game  7/10 play_by_play     challenge       0B  53.2s
+    [decodo] game  7/10 individual_stats challenge       0B  53.0s
+    [decodo] game  8/10 play_by_play     challenge       0B  53.1s
+    [decodo] game  8/10 individual_stats challenge       0B  53.1s
+    [decodo] game  9/10 play_by_play     challenge       0B  53.0s
+    [decodo] game  9/10 individual_stats challenge       0B  53.1s
+    [decodo] game 10/10 play_by_play     challenge       0B  53.1s
+    [decodo] game 10/10 individual_stats challenge       0B  53.1s
+  -> decodo  (proxy_browser) -- **FAIL**
+  netnut: SKIPPED (no proxies configured (placeholder/empty))
+  zyte: SKIPPED (no api_key configured (placeholder/empty))
+  brightdata_webunlocker: SKIPPED (no proxy endpoint configured (placeholder/empty))
+
+=== canary summary ===
+  decodo  (proxy_browser) -- **FAIL**
+  netnut: skipped
+  zyte: skipped
+  brightdata_webunlocker: skipped
+
+full scorecard -> canary_out\canary_20260716_190426.md

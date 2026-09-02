@@ -1,0 +1,26 @@
+log -> logs/parse_20260819_182520.log  (watch: tail -f logs/parse_20260819_182520.log)
+2026-08-19 18:42:21,678 INFO ncaa_identity: contest_id=859696 teams 2122/2122 matched, players 4977/5993 matched
+2026-08-19 18:42:24,514 INFO ncaa_identity: contest_id=859720 teams 2263/2263 matched, players 5963/6409 matched
+parsed=956 failed=0
+EXIT=0
+[2026-08-19 18:42:30]   ok   mbb 2011 (1030s)
+log -> logs/parse_20260819_184230.log  (watch: tail -f logs/parse_20260819_184230.log)
+2026-2026-08-19 18:52:35,596 INFO ncaa_identity: contest_id=836462 teams 2317/2317 matched, players 5973/6512 matc2026-08-19 18:52:36,639 INFO ncaa_identity: contest_id=836457 teams 2592/2592 matched, players 6872/7308 matched
+parsed=960 failed=0
+d=0
+EXIT=0
+[2026-08-19 18:52:45]   ok   mbb 2012 (615s)
+log -> logs/parse_20260819_185245.log  (watch: tail -f logs/parse_20260819_185245.log)
+2026-08-19 19:03:36,312 INFO ncaa_identity: contest_id=733660 teams 2534/2534 matched, players 7067/7135 matched
+parsed=991 failed=0
+iled=0
+EXIT=0
+[2026-08-19 19:03:44]   ok   mbb 2014 (659s)
+log -> logs/parse_20260819_190344.log  (watch: tail -f logs/parse_20260819_190344.log)
+4 matched, players 272/732 matched
+2026-08-19 19:12:35,527 INFO ncaa_identity: contest_id=1123222 teams 2340/2340 matched, players 433/990 matched
+parsed=952 failed=0
+EXIT=0
+[2026-08-19 19:12:42]   ok   mbb 2010 (538s)
+[2026-08-19 19:12:42] rerun done rc=0
+EXIT=0

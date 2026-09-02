@@ -1,0 +1,6 @@
+pending=6300 shard=3/4 assigned=1575
+transport: canary vendor 'decodo_us_w4'
+2026-07-22 14:34:20,421 INFO vendor decodo_us_w4: 2 prox(y/ies), sticky session re-minted -> session-cap1784745260
+2026-07-22 17:46:01,997 WARNING challenge not cleared for contest_id=6481323 -- bundle not written
+captured=605 skipped=969 failed=1
+EXIT=0
