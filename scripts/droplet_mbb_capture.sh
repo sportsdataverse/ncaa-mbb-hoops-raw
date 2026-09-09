@@ -38,4 +38,7 @@ if [ ! -x "${SDV_PY}/.venv/bin/python" ]; then
 fi
 
 echo "host=$(hostname) SDV_PY=${SDV_PY} vendor=${NCAA_VENDOR}"
-exec ./scripts/run_02_games.sh "$@"
+# Invoked via `bash`, not `./`: the stage scripts' exec bit is not uniform
+# (every run_*.sh in MBB is 100644, WBB's 01-03 are 100755) and is
+# meaningless on a Windows checkout. `./` here failed with rc=126.
+exec bash ./scripts/run_02_games.sh "$@"
