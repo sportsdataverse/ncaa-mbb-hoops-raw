@@ -239,6 +239,27 @@ ban will re-churn the pool. On a `BAN-SUSPECT` stop, WAIT for a multi-minute
 cooldown before resuming. (Follow-up: add inter-rotation backoff upstream in
 sdv-py.)
 
+## Droplet (Linux) capture
+
+`scripts/droplet_mbb_capture.sh` is the **droplet capture launcher**, the twin
+of `ncaa-wbb-hoops-raw/scripts/droplet_wbb_capture.sh`. The base runners default
+to the Windows dev-box venv (`C:/Users/...`), so on the droplet they resolve an
+interpreter that does not exist; this exports the droplet's `SDV_PY` and the
+`decodo_patchright` vendor transport (the US-residential sticky port pool in
+`canary_vendors.toml`, gitignored) and delegates to `run_02_games.sh`. Every
+other knob stays env-only, exactly as the base runners document them. It refuses
+to start without `canary_vendors.toml` or the droplet venv.
+
+It is **not** a cron entry point -- the safe-rate rule above still governs.
+stats.ncaa.org bans per-IP and permanently, so capture stays user-run.
+
+```sh
+./scripts/droplet_mbb_capture.sh --season 2026 --max-contests 25
+./scripts/droplet_mbb_capture.sh --season 2026 --shard 0/2 &   # see safe-rate rule
+tmux new -s mbb './scripts/droplet_mbb_capture.sh --season 2026'   # survive SSH loss
+tail -f logs/capture_<ts>.log
+```
+
 ## Resume story
 
 Every stage is idempotent and re-runnable:
@@ -302,6 +323,7 @@ ncaa-mbb-hoops-raw/
 │   ├── ncaa_mbb_06_xwalk_build.py
 │   └── ncaa_mbb_98_canary_probe.py
 ├── scripts/   # bash drivers (the daily/weekly entry points)
+│   ├── droplet_mbb_capture.sh
 │   ├── run_01_schedules.sh
 │   ├── run_02_games.sh
 │   ├── run_03_parse.sh
