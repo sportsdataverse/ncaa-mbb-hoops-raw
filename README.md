@@ -250,8 +250,12 @@ interpreter that does not exist; this exports the droplet's `SDV_PY` and the
 other knob stays env-only, exactly as the base runners document them. It refuses
 to start without `canary_vendors.toml` or the droplet venv.
 
-It is **not** a cron entry point -- the safe-rate rule above still governs.
-stats.ncaa.org bans per-IP and permanently, so capture stays user-run.
+**It IS a cron entry point as of 2026-09-09** (`scripts/daily_mbb_scraper.sh`,
+in-season only) -- the safe-rate rule above still governs the request volume
+(single worker, a per-run contest cap well under the ~1200 bundles/hr measured
+ceiling), it just no longer requires a human at the keyboard for it. A full
+multi-thousand-contest backfill still is not a cron target -- that stays
+user-run via `run_mbb_backfill.sh`/`run_mbb_backfill_range.sh`.
 
 ```sh
 ./scripts/droplet_mbb_capture.sh --season 2026 --max-contests 25

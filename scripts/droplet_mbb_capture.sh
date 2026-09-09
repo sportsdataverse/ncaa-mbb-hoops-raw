@@ -17,8 +17,11 @@
 #
 # Watch live:  tail -f logs/capture_<ts>.log   (path printed on start)
 #
-# NOT a cron entry point. Capture is user-run at a hand-held pace: stats.ncaa.org
-# bans per-IP and permanently, so an unattended loop is how a pool gets burned.
+# Cron-safe as of 2026-09-09 via scripts/daily_mbb_scraper.sh (single worker,
+# a bounded per-run --max-contests, decodo_patchright's disjoint sticky-port
+# pool). This standalone launcher is still meant for hand-run capture with no
+# cap set -- a large multi-thousand-contest run started here (or via
+# run_mbb_backfill_range.sh) should stay attended, not cron-driven.
 set -uo pipefail
 cd "$(dirname "$0")/.." || exit 1
 
