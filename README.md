@@ -190,7 +190,10 @@ Wrapper drivers around that per-stage sequence:
   `run_mbb_backfill.sh` per season: capture runs in chunked rounds (a
   fresh sticky IP each chunk) with cooldowns between rounds and after
   ban hard-stops, and up to `MAX_ROUNDS` straggler rounds per season
-  before moving on (re-run later to finish the remainder).
+  before moving on (re-run later to finish the remainder). A round where
+  only the parse stage failed (`run_mbb_backfill.sh` exit 3) is not a
+  ban: it gets the normal cooldown, and the campaign exits 3 naming those
+  seasons.
 - `scripts/run_reference_backfill.sh [start] [end]` — reference-only
   companion to the pbp backfill: per season (newest-first) it chains
   `run_01_schedules.sh` -> sharded `ncaa_mbb_04_rosters_scrape.py` -> `run_05_datasets.sh`,
