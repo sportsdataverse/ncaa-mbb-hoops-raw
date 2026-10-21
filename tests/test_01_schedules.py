@@ -8,12 +8,22 @@ from pathlib import Path
 import polars as pl
 import pytest
 from ncaa_mbb_01_schedules_scrape import _season_str, discover_season
+from sportsdataverse.errors import AssetFetchError
 
 # Sibling checkout: .../sdv-dev/{hoopR-dev/ncaa-mbb-hoops-raw, sdv-py}.
 FIXTURE = (
     Path(__file__).resolve().parent / "fixtures" / "ncaa" / "bigballr" / "html" / "team_609554.html"
 )
 _HTML = FIXTURE.read_text(encoding="utf-8")
+
+
+class _BanSuspect(AssetFetchError, RuntimeError):
+    """The NCAA fetcher's ban-suspect failure, as a stub raises it.
+
+    sdv-py 4.5 (#920) raises ``AssetFetchError`` and ``discover`` retries only that;
+    earlier sdv-py retried on ``RuntimeError``. Both bases keep the stubs valid on either
+    side of the sportsdataverse lock bump.
+    """
 
 
 def test_discover_season_offline() -> None:
@@ -110,7 +120,7 @@ def test_discover_resumes_from_checkpoint(tmp_path):
 
     def flaky_fetch(team_id):
         if team_id == 2:
-            raise RuntimeError("BAN-SUSPECT:stub")
+            raise _BanSuspect("BAN-SUSPECT:stub")
         return _HTML
 
     # First run: team 2 fails all retries -> skipped (tolerant sweep); teams
@@ -184,7 +194,7 @@ def test_discover_tolerates_flaky_team_and_skips_it() -> None:
     def flaky_fetch(team_id: int) -> str:
         tries[team_id] = tries.get(team_id, 0) + 1
         if team_id == 2:
-            raise RuntimeError("BAN-SUSPECT:stub")
+            raise _BanSuspect("BAN-SUSPECT:stub")
         return _HTML
 
     out = discover_season(2020, team_ids=[1, 2, 3], fetch_fn=flaky_fetch)
@@ -196,7 +206,7 @@ def test_discover_aborts_on_consecutive_team_failures() -> None:
     """A real ban looks like EVERY team failing -> abort on the run."""
 
     def _always_ban_fetch(team_id: int) -> str:
-        raise RuntimeError("BAN-SUSPECT:stub")
+        raise _BanSuspect("BAN-SUSPECT:stub")
 
     with pytest.raises(RuntimeError, match="consecutive teams failed"):
         discover_season(
